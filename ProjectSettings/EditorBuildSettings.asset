@@ -23,4 +23,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/SilviaScene.unity
     guid: 316ed2edfb468449980c70a18d6443e0
+  - enabled: 1
+    path: Assets/_Scenes/Esterno.unity
+    guid: 3d6e6baea7dda4238b0f41d06418103f
+  - enabled: 1
+    path: Assets/_Scenes/Studio1.unity
+    guid: d8316f6052bd14a33b226d717b097e2a
+  - enabled: 1
+    path: Assets/_Scenes/Studio2.unity
+    guid: 3b3988acecca24b14abe6eb731e8d7ab
+  - enabled: 1
+    path: Assets/_Scenes/Camper.unity
+    guid: 51d5ab1a22de442b88d2972daa73f33a
+  - enabled: 1
+    path: Assets/_Scenes/Camion.unity
+    guid: b5460f6cc85d0479fbbc52b9dbe4a687
   m_configObjects: {}
