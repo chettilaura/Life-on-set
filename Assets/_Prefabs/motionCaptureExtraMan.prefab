@@ -108,7 +108,7 @@ MonoBehaviour:
   _player: {fileID: 0}
   _animator: {fileID: 605988755044235345}
   _stoppingDistance: 2
-  walkRadius: 0
+  walkRadius: 168
 --- !u!195 &605988755044235346
 NavMeshAgent:
   m_ObjectHideFlags: 0
