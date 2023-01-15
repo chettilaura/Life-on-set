@@ -14,6 +14,16 @@ public class DialogueScript : MonoBehaviour
     [SerializeField] private GameObject _press_to_End_text;
     private GameObject _clone_press_to_End_text;
 
+    //audio
+    [SerializeField] private AudioClip _soundeffect;
+    private AudioSource audioSource;
+
+    [SerializeField] private bool stopAudioSource;
+    private int maxvisibleCharacter;
+
+    [Range(1,5)]
+    [SerializeField] private int frequencyLevel = 2;
+
     void Start()
     {
         textComponent.text = string.Empty;
@@ -39,16 +49,36 @@ public class DialogueScript : MonoBehaviour
 
     void StartDialogue(){
         _index = 0;
+        audioSource = this.gameObject.AddComponent<AudioSource>();
         StartCoroutine(TypeLine());
     }
 
-    IEnumerator TypeLine(){
-        foreach(char letter in lines[_index].ToCharArray()){ //prende stringa e la divide into char array
+    IEnumerator TypeLine()
+    {
+        foreach (char letter in lines[_index].ToCharArray())
+        { //prende stringa e la divide into char array
             textComponent.text += letter;
+            PlayDialogueSound(maxvisibleCharacter);
+            maxvisibleCharacter++;
             yield return new WaitForSeconds(textSpeed);
         }
     }
 
+    private void PlayDialogueSound(int currentDisplayCharacterCount)
+    {
+        if (currentDisplayCharacterCount % frequencyLevel == 0)
+        {
+            if (stopAudioSource)
+            {
+                audioSource.Stop();
+            }
+
+
+            //audioSource.pitch = Random.Range(min_pitch, max_pitch); suono distorto
+            audioSource.PlayOneShot(_soundeffect);
+        }
+
+    }
 
     void NextLine (){
         if (_index < lines.Length - 1){
