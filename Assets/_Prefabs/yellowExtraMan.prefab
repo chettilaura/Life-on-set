@@ -954,6 +954,7 @@ GameObject:
   - component: {fileID: 5141740868179257649}
   - component: {fileID: 1599261352279858817}
   - component: {fileID: 1599261352279858816}
+  - component: {fileID: 4633489887016040033}
   m_Layer: 0
   m_Name: yellowExtraMan
   m_TagString: Untagged
@@ -1043,6 +1044,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &4633489887016040033
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941295993914092017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 1.73, z: 0.74}
+  m_Center: {x: -0.03, y: 0.85, z: 0}
 --- !u!1 &2039601338514025521
 GameObject:
   m_ObjectHideFlags: 0

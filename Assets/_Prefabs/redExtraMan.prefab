@@ -2322,6 +2322,7 @@ GameObject:
   - component: {fileID: 3951656112868086106}
   - component: {fileID: 3951656112868086105}
   - component: {fileID: 3951656112868086104}
+  - component: {fileID: 100042216373063735}
   m_Layer: 0
   m_Name: redExtraMan
   m_TagString: Untagged
@@ -2411,6 +2412,19 @@ MonoBehaviour:
   _animator: {fileID: 3951656112868086106}
   _stoppingDistance: 2
   walkRadius: 151
+--- !u!65 &100042216373063735
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185660026123287098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.58, y: 1.73, z: 0.76}
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &4191412694072476144
 GameObject:
   m_ObjectHideFlags: 0
