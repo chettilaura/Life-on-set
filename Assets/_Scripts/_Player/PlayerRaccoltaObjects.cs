@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerRaccoltaObjects : MonoBehaviour
 {
-    private int number_object = 0;
-    private int max_object = 2;
+    public int number_object = 0;
+    public int max_object = 2;
 
     [SerializeField] public bool all_object_found = false;
 
@@ -14,15 +14,18 @@ public class PlayerRaccoltaObjects : MonoBehaviour
     [SerializeField] private GameObject object_found;
 
 
+
+
     void Start()
     {
-        
+
+
     }
 
-    
+
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider collider)
@@ -53,5 +56,3 @@ public class PlayerRaccoltaObjects : MonoBehaviour
     }
 
 }
-        
-
