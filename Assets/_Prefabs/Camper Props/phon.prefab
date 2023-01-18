@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 7646596972078567688}
   - component: {fileID: 6751442279436459693}
   - component: {fileID: 8814960308499901031}
+  - component: {fileID: 6210629221716372838}
   m_Layer: 0
   m_Name: phon
   m_TagString: Untagged
@@ -252,3 +253,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6210629221716372838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7013788806950308786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37283617, y: 0.28430724, z: 0.12200719}
+  m_Center: {x: -0.12488696, y: 0.05535555, z: -0.0010047872}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7988019692888167910}
   - component: {fileID: 6446056259193117251}
   - component: {fileID: 9119799459687132809}
+  - component: {fileID: 469584697940819116}
   m_Layer: 0
   m_Name: tazza
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &469584697940819116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318619024065875804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07674974, y: 0.060672343, z: 0.107820034}
+  m_Center: {x: -0.40552673, y: 0.8612331, z: -0.098199844}
