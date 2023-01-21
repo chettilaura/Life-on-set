@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 //ho dovuto commentare tutto perchè puntare bottone con il mouse non è fattibile 
 
-public class MainMenu_button : MonoBehaviour  //, IPointerDownHandler, IPointerUpHandler
+public class MainMenu_button_laurascene : MonoBehaviour  //, IPointerDownHandler, IPointerUpHandler
 {
 
     //bool isPressed = false; 

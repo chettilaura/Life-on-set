@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Start_button : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class Start_button_laurascene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     bool isPressed = false; 
 
