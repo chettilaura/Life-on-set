@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEditor;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
@@ -13,15 +13,18 @@ public class extrasMovement : MonoBehaviour
 {
     //public List<Transform> waypoints;
 
-    private NavMeshAgent _navMeshAgent;
+    public NavMeshAgent _navMeshAgent;
     [SerializeField] private Collider _groundCollider;
     [SerializeField] private GameObject _player;
     [SerializeField] private Animator _animator;
 
-    [SerializeField] private float _stoppingDistance = 1f;
+    private FiniteStateMachine<extrasMovement> _stateMachine;
+    public float _stoppingDistance = 1f;
     private float _speed = 1;
     [Range(1, 500)] public float walkRadius;
-    private bool _isNear;
+    public bool _isNear;
+    public bool _follow=false;
+    public bool _stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,45 +34,45 @@ public class extrasMovement : MonoBehaviour
         if(_navMeshAgent != null)
         {
             _navMeshAgent.speed = _speed;
-            SetDestination();
         }
+
+        _stateMachine = new FiniteStateMachine<extrasMovement>(this);
+
+        //STATES
+        State walkingState = new WalkingState("Walk", this);
+        State followState = new FollowState("Follow", this);
+        State stopState = new StopState("Stop", this);
+
+ 
+
+
+        //TRANSITIONS
+        _stateMachine.AddTransition(walkingState, stopState, () =>  _isNear);
+        _stateMachine.AddTransition(stopState, walkingState, () => !_isNear);
+        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E));
+        _stateMachine.AddTransition(followState, stopState, () => _stop);
+
+        //START STATE
+        _stateMachine.SetState(walkingState);
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        _isNear = IsTargetWithinDistance(_stoppingDistance);
-        if ((_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance) && !_isNear)
-        {
-            _navMeshAgent.isStopped = false;
-            ChangeAnimation(_isNear);
-            SetDestination();
-        }
-        else if((_navMeshAgent.remainingDistance > _navMeshAgent.stoppingDistance) && _isNear)
-        {
-            Talk();
-            //ChangeAnimation(_isNear);
-        } else if ((_navMeshAgent.remainingDistance > _navMeshAgent.stoppingDistance) && !_isNear)
-        {
-            _navMeshAgent.isStopped = false;
-            ChangeAnimation(_isNear);
-        }
-    }
+    void Update() => _stateMachine.Tik();
 
 
-    private void SetDestination()
+    public void StopAgent(bool stop) => _navMeshAgent.isStopped = stop;
+
+    public void FollowPlayer() => _navMeshAgent.SetDestination(_player.transform.position);
+
+    public void SetDestination()
     {
        NavMeshPath path = new NavMeshPath();
        Vector3 RandomPosition = GetRandomPositionOnGround();
-        //_navMeshAgent.CalculatePath(randomPosition, path);
         _navMeshAgent.SetDestination(RandomPosition);
-        Debug.Log(_navMeshAgent.path);
     }
 
-    private void Talk()
+    public void Talk()
     {
-        _navMeshAgent.isStopped = true;
         Vector3 targetDirection = _player.transform.position - transform.position;
         targetDirection.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
@@ -78,12 +81,12 @@ public class extrasMovement : MonoBehaviour
          ChangeAnimation(_isNear);
     }
 
-    private bool IsTargetWithinDistance(float distance)
+    public bool IsTargetWithinDistance(float distance)
     {
         return (_player.transform.position - transform.position).sqrMagnitude <= distance * distance;
     }
 
-    private void ChangeAnimation(bool _isNear)
+    public void ChangeAnimation(bool _isNear)
     {
         if (_isNear)
         {
@@ -102,5 +105,95 @@ public class extrasMovement : MonoBehaviour
         Vector3 min = _groundCollider.bounds.min;
         Vector3 max = _groundCollider.bounds.max;
         return new Vector3(Random.Range(min.x, max.x), 2f, Random.Range(min.z, max.z));
+    }
+}
+
+
+
+
+public class StopState : State
+{
+    private extrasMovement _extra;
+    public StopState(string name, extrasMovement extra) : base(name)
+    {
+        _extra = extra;
+    }
+
+    public override void Enter()
+    {
+        _extra.StopAgent(true);
+    }
+
+    public override void Tik()
+    {
+        _extra._isNear = _extra.IsTargetWithinDistance(_extra._stoppingDistance);
+        _extra.Talk();
+        /*if (Input.GetKeyDown(KeyCode.KeypadEnter))
+            _extra._follow = true;*/
+    }
+
+    public override void Exit()
+    {
+    }
+}
+
+public class WalkingState: State
+{
+    private extrasMovement _extra;
+    public WalkingState(string name, extrasMovement extra) : base(name)
+    {
+        _extra = extra;
+    }
+
+    public override void Enter()
+    {
+        _extra.StopAgent(false);
+        _extra.SetDestination();
+        _extra.ChangeAnimation(_extra._isNear);
+    }
+
+    public override void Tik()
+    {
+        _extra._isNear = _extra.IsTargetWithinDistance(_extra._stoppingDistance);
+        if ((_extra._navMeshAgent.remainingDistance <= _extra._navMeshAgent.stoppingDistance))
+        {
+            _extra.ChangeAnimation(_extra._isNear);
+            _extra.SetDestination();
+        }
+        else
+        {
+            _extra.ChangeAnimation(_extra._isNear);
+        }
+        _extra.SetDestination();
+    }
+
+    public override void Exit()
+    {
+    }
+}
+
+public class FollowState : State
+{
+    private extrasMovement _extra;
+    public FollowState(string name, extrasMovement extra) : base(name)
+    {
+        _extra = extra;
+    }
+
+    public override void Enter()
+    {
+        _extra.StopAgent(false);
+        //_extra.FollowPlayer();
+    }
+
+    public override void Tik()
+    {
+        _extra._isNear = _extra.IsTargetWithinDistance(_extra._stoppingDistance); 
+        _extra.ChangeAnimation(_extra._isNear);
+        _extra.FollowPlayer();
+    }
+
+    public override void Exit()
+    {
     }
 }
