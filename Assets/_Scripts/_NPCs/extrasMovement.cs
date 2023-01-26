@@ -17,6 +17,7 @@ public class extrasMovement : MonoBehaviour
     [SerializeField] private Collider _groundCollider;
     [SerializeField] private GameObject _player;
     [SerializeField] private Animator _animator;
+    [SerializeField] private bool _extra;
 
     private FiniteStateMachine<extrasMovement> _stateMachine;
     public float _stoppingDistance = 1f;
@@ -25,6 +26,7 @@ public class extrasMovement : MonoBehaviour
     public bool _isNear;
     public bool _follow=false;
     public bool _stop = false;
+    private float _chosenStoppingDistance = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,7 @@ public class extrasMovement : MonoBehaviour
 
         _stateMachine = new FiniteStateMachine<extrasMovement>(this);
 
+        Debug.Log(_player.transform.position);
         //STATES
         State walkingState = new WalkingState("Walk", this);
         State followState = new FollowState("Follow", this);
@@ -49,7 +52,7 @@ public class extrasMovement : MonoBehaviour
         //TRANSITIONS
         _stateMachine.AddTransition(walkingState, stopState, () =>  _isNear);
         _stateMachine.AddTransition(stopState, walkingState, () => !_isNear);
-        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E));
+        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E) && _extra);
         _stateMachine.AddTransition(followState, stopState, () => _stop);
 
         //START STATE
@@ -62,7 +65,19 @@ public class extrasMovement : MonoBehaviour
 
     public void StopAgent(bool stop) => _navMeshAgent.isStopped = stop;
 
-    public void FollowPlayer() => _navMeshAgent.SetDestination(_player.transform.position);
+    public void FollowPlayer()
+    {
+        _navMeshAgent.SetDestination(_player.transform.position);
+        if(_navMeshAgent.remainingDistance <= _chosenStoppingDistance)
+        {
+            _navMeshAgent.isStopped = true;
+            ChangeAnimation(true);
+        } else
+        {
+            ChangeAnimation(false);
+            _navMeshAgent.isStopped = false;
+        }
+    }
 
     public void SetDestination()
     {
@@ -128,8 +143,6 @@ public class StopState : State
     {
         _extra._isNear = _extra.IsTargetWithinDistance(_extra._stoppingDistance);
         _extra.Talk();
-        /*if (Input.GetKeyDown(KeyCode.KeypadEnter))
-            _extra._follow = true;*/
     }
 
     public override void Exit()
@@ -183,13 +196,11 @@ public class FollowState : State
     public override void Enter()
     {
         _extra.StopAgent(false);
-        //_extra.FollowPlayer();
     }
 
     public override void Tik()
     {
-        _extra._isNear = _extra.IsTargetWithinDistance(_extra._stoppingDistance); 
-        _extra.ChangeAnimation(_extra._isNear);
+        _extra.ChangeAnimation(false);
         _extra.FollowPlayer();
     }
 
