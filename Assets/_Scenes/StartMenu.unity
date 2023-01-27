@@ -941,6 +941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f390039efd292498b99a27ec79bff637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ciackOpen: {fileID: 4785890}
+  _container: {fileID: 4785889}
 --- !u!1 &1183776977
 GameObject:
   m_ObjectHideFlags: 0
