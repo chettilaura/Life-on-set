@@ -11,10 +11,11 @@ public class raccolta_suoni : MonoBehaviour
     [SerializeField] public bool all_object_found = false;
 
     private GameObject dialogueBoxClone;
+    Coroutine co;
 
     //per comunicare che tutti gli oggetti sono stati trovati
-    [SerializeField] private GameObject objects_found;
-    [SerializeField] private GameObject suono_registrato;
+    //[SerializeField] private GameObject objects_found;
+    //[SerializeField] private GameObject suono_registrato;
     [SerializeField] private GameObject registration_bar;
 
 
@@ -38,7 +39,7 @@ public class raccolta_suoni : MonoBehaviour
             
             Debug.Log("Player has entered the trigger");
 
-            StartCoroutine(registration(collider));
+            co = StartCoroutine(registration(collider));
             number_object++;
 
 
@@ -54,15 +55,28 @@ public class raccolta_suoni : MonoBehaviour
 
 
     }
+    private void OnTriggerExit(Collider collider)
+    {
+        if (collider.gameObject.layer == 12)
+        {
+            Debug.Log("Player exit");
+
+            StopCoroutine(co);
+            Destroy(dialogueBoxClone, 0.5f);
+        }
+    }
 
     IEnumerator registration(Collider collider)
     {
-        
 
-        dialogueBoxClone = (GameObject)GameObject.Instantiate(registration_bar, transform.position, Quaternion.identity);
+        dialogueBoxClone = GameObject.Instantiate(registration_bar, transform.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(5);
-        
+        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
+
         Destroy(collider.gameObject);
         Destroy(dialogueBoxClone, 6f);
     }
