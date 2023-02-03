@@ -35,6 +35,7 @@ public class NpcInteractable : MonoBehaviour
 
         if (num == 0)
             dialogueBoxClone = (GameObject)GameObject.Instantiate(dialogueBox_assegno_compito, transform.position, Quaternion.identity);
+        Debug.Log(transform.position);
         Debug.Log("istanziato assegnazione compito");
         _animator.SetBool("talk", true);
 

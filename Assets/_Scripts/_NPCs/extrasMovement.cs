@@ -17,15 +17,18 @@ public class extrasMovement : MonoBehaviour
     [SerializeField] private Collider _groundCollider;
     [SerializeField] private GameObject _player;
     [SerializeField] private Animator _animator;
-    [SerializeField] private bool _extra;
+    [SerializeField] internal bool _extra;
+    private NpcInteractable _npc;
+    [SerializeField] internal GameObject _comparsaSbagliata;
+    internal GameObject _dialogueBoxClone;
 
     private FiniteStateMachine<extrasMovement> _stateMachine;
     public float _stoppingDistance = 1f;
     private float _speed = 1;
     [Range(1, 500)] public float walkRadius;
-    public bool _isNear;
-    public bool _follow=false;
-    public bool _stop = false;
+    internal bool _isNear;
+    internal bool _follow=false;
+    internal bool _stop = false;
     private float _chosenStoppingDistance = 1f;
 
     // Start is called before the first frame update
@@ -143,6 +146,10 @@ public class StopState : State
     {
         _extra._isNear = _extra.IsTargetWithinDistance(_extra._stoppingDistance);
         _extra.Talk();
+        if(Input.GetKeyDown(KeyCode.E) && !_extra._extra)
+        {
+            _extra._dialogueBoxClone = (GameObject)GameObject.Instantiate(_extra._comparsaSbagliata, _extra.transform.localPosition, Quaternion.identity);
+        }
     }
 
     public override void Exit()

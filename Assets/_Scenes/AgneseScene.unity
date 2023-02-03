@@ -705,6 +705,10 @@ PrefabInstance:
       propertyPath: _groundCollider
       value: 
       objectReference: {fileID: 35452789}
+    - target: {fileID: 151928302638664084, guid: e67409204f79a0042a8e01a768fa2062, type: 3}
+      propertyPath: _comparsaSbagliata
+      value: 
+      objectReference: {fileID: 7950692023307359018, guid: 7d0b6d8d03dfa6c41a5d0f095698a8af, type: 3}
     - target: {fileID: 401234337877167026, guid: e67409204f79a0042a8e01a768fa2062, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -778,6 +782,10 @@ PrefabInstance:
       propertyPath: _groundCollider
       value: 
       objectReference: {fileID: 35452789}
+    - target: {fileID: 605988755044235347, guid: b126f0f24dac29b448ecc82e1d6ab414, type: 3}
+      propertyPath: _comparsaSbagliata
+      value: 
+      objectReference: {fileID: 7950692023307359018, guid: 7d0b6d8d03dfa6c41a5d0f095698a8af, type: 3}
     - target: {fileID: 1144581652306933941, guid: b126f0f24dac29b448ecc82e1d6ab414, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -851,6 +859,10 @@ PrefabInstance:
       propertyPath: _groundCollider
       value: 
       objectReference: {fileID: 35452789}
+    - target: {fileID: 713555976827743721, guid: 105940f591f0fc0478687910f7d279ff, type: 3}
+      propertyPath: _comparsaSbagliata
+      value: 
+      objectReference: {fileID: 7950692023307359018, guid: 7d0b6d8d03dfa6c41a5d0f095698a8af, type: 3}
     - target: {fileID: 1039687320662024341, guid: 105940f591f0fc0478687910f7d279ff, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1020,6 +1032,10 @@ PrefabInstance:
       propertyPath: _groundCollider
       value: 
       objectReference: {fileID: 35452789}
+    - target: {fileID: 1599261352279858817, guid: bbba08a37525a644d825a97804ea4a64, type: 3}
+      propertyPath: _comparsaSbagliata
+      value: 
+      objectReference: {fileID: 7950692023307359018, guid: 7d0b6d8d03dfa6c41a5d0f095698a8af, type: 3}
     - target: {fileID: 1941295993914092017, guid: bbba08a37525a644d825a97804ea4a64, type: 3}
       propertyPath: m_Name
       value: yellowExtraMan
@@ -1099,6 +1115,10 @@ PrefabInstance:
       propertyPath: _groundCollider
       value: 
       objectReference: {fileID: 35452789}
+    - target: {fileID: 3951656112868086104, guid: 4532a23130cd22e429d74479a77e3120, type: 3}
+      propertyPath: _comparsaSbagliata
+      value: 
+      objectReference: {fileID: 7950692023307359018, guid: 7d0b6d8d03dfa6c41a5d0f095698a8af, type: 3}
     - target: {fileID: 4185660026123287098, guid: 4532a23130cd22e429d74479a77e3120, type: 3}
       propertyPath: m_Name
       value: redExtraMan
@@ -1124,6 +1144,10 @@ PrefabInstance:
       propertyPath: _groundCollider
       value: 
       objectReference: {fileID: 35452789}
+    - target: {fileID: 8191487460159457716, guid: 917eb25ee618d004284ff02389fb8fbd, type: 3}
+      propertyPath: _comparsaSbagliata
+      value: 
+      objectReference: {fileID: 7950692023307359018, guid: 7d0b6d8d03dfa6c41a5d0f095698a8af, type: 3}
     - target: {fileID: 8513134858109572121, guid: 917eb25ee618d004284ff02389fb8fbd, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1193,6 +1217,10 @@ PrefabInstance:
       propertyPath: _groundCollider
       value: 
       objectReference: {fileID: 35452789}
+    - target: {fileID: 4607592218159633398, guid: 2e0ffb3c70382e347adfda7ee6cc8168, type: 3}
+      propertyPath: _comparsaSbagliata
+      value: 
+      objectReference: {fileID: 7950692023307359018, guid: 7d0b6d8d03dfa6c41a5d0f095698a8af, type: 3}
     - target: {fileID: 7431038016885833845, guid: 2e0ffb3c70382e347adfda7ee6cc8168, type: 3}
       propertyPath: m_RootOrder
       value: 2
