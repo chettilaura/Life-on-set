@@ -7,12 +7,12 @@ using System;
 //determina se si è colliso con un oggetto che sia collectible, se si lo prende
 public class Collector : MonoBehaviour
 {
-    void OnTriggerEnter (Collider collision)
+    private void OnTriggerEnter (Collider collision) //check se c'è collectible object
     {
         InterfaceCollectible collectible = collision.GetComponent<InterfaceCollectible>();
         if (collectible != null)
         {
-            collectible.Collect();
+            collectible.Collect(); //we tell it to collect itself
         }
     }
 }
