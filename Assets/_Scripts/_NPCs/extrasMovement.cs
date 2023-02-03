@@ -20,6 +20,7 @@ public class extrasMovement : MonoBehaviour
     [SerializeField] internal bool _extra;
     private NpcInteractable _npc;
     [SerializeField] internal GameObject _comparsaSbagliata;
+    [SerializeField] internal GameObject _troppeComparse;
     internal GameObject _dialogueBoxClone;
 
     private FiniteStateMachine<extrasMovement> _stateMachine;
@@ -30,6 +31,8 @@ public class extrasMovement : MonoBehaviour
     internal bool _follow=false;
     internal bool _stop = false;
     private float _chosenStoppingDistance = 1f;
+    internal int _numberToReach = 3;
+    internal int _nExtras= 0;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +58,7 @@ public class extrasMovement : MonoBehaviour
         //TRANSITIONS
         _stateMachine.AddTransition(walkingState, stopState, () =>  _isNear);
         _stateMachine.AddTransition(stopState, walkingState, () => !_isNear);
-        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E) && _extra);
+        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E) && _extra && _nExtras<_numberToReach);
         _stateMachine.AddTransition(followState, stopState, () => _stop);
 
         //START STATE
@@ -63,7 +66,10 @@ public class extrasMovement : MonoBehaviour
 
     }
 
-    void Update() => _stateMachine.Tik();
+    void Update()
+    {
+         _stateMachine.Tik();
+    } 
 
 
     public void StopAgent(bool stop) => _navMeshAgent.isStopped = stop;
@@ -149,6 +155,9 @@ public class StopState : State
         if(Input.GetKeyDown(KeyCode.E) && !_extra._extra)
         {
             _extra._dialogueBoxClone = (GameObject)GameObject.Instantiate(_extra._comparsaSbagliata, _extra.transform.localPosition, Quaternion.identity);
+        } else if(Input.GetKeyDown(KeyCode.E) && _extra._extra && _extra._nExtras == _extra._numberToReach)
+        {
+            _extra._dialogueBoxClone = (GameObject)GameObject.Instantiate(_extra._troppeComparse, _extra.transform.localPosition, Quaternion.identity);
         }
     }
 
@@ -203,6 +212,7 @@ public class FollowState : State
     public override void Enter()
     {
         _extra.StopAgent(false);
+        _extra._nExtras++;
     }
 
     public override void Tik()
