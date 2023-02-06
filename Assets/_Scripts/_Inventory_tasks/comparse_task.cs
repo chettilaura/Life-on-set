@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class comparse_task : Quest, InterfaceCollectible
+public class comparse_task : MonoBehaviour, InterfaceCollectible
 {
      public static event HandleItemCollected onItemDataCollected;
     //creo un tipo "HandleCoinCollected" da usare al posto di "Action" nella creazione di event che non permetteva di passare argomenti 
