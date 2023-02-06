@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7089974985627875862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1560818440185627249}
+  - component: {fileID: 5274362518910721662}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1560818440185627249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089974985627875862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.360615, y: -1.9900095, z: 10.974327}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5274362518910721662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089974985627875862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afce2cebe9a78064293d90c0e2270e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questList:
+  - title: "Caff\xE8"
+    id: 0
+    progress: 0
+    description: "Per imparare il funzionamento del gioco, il giocatore andr\xE0
+      a prendere il caff\xE8 da portare al registra"
+    questObjective: "Prendere caff\xE8 e portarli ai vari membri della crew"
+    questObjectiveCount: 0
+    questObjectiveRequirement: 6
+  - title: RaccoltaComparse
+    id: 1
+    progress: 0
+    description: "Il giocatore dovr\xE0 andare a cercare le comparse"
+    questObjective: 'Trovare gli alieni '
+    questObjectiveCount: 0
+    questObjectiveRequirement: 3
+  - title: DressUp
+    id: 2
+    progress: 0
+    description: "Il giocatore dovr\xE0 scegliere i giusti vestiti per gli attori"
+    questObjective: Scegliere vestiti
+    questObjectiveCount: 0
+    questObjectiveRequirement: 3
+  - title: Illuminazione
+    id: 3
+    progress: 0
+    description: Creare la giusta illuminazione per la scena
+    questObjective: Illuminare oggetti di scena/attori
+    questObjectiveCount: 0
+    questObjectiveRequirement: 3
+  - title: Sounds
+    id: 4
+    progress: 0
+    description: Registrare i suoni di sottofondo
+    questObjective: Andare a cercare le fonti dei suoni
+    questObjectiveCount: 0
+    questObjectiveRequirement: 3
+  - title: "Continuit\xE0"
+    id: 5
+    progress: 0
+    description: Controllare che i fotogrammi che si susseguono siano uguali
+    questObjective: Trovare le differenze
+    questObjectiveCount: 0
+    questObjectiveRequirement: 3
+  currentQuest:
+    title: 
+    id: 0
+    progress: 0
+    description: 
+    questObjective: 
+    questObjectiveCount: 0
+    questObjectiveRequirement: 0
