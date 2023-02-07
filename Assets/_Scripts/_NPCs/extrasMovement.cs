@@ -31,8 +31,6 @@ public class extrasMovement : MonoBehaviour
     internal bool _follow=false;
     internal bool _stop = false;
     private float _chosenStoppingDistance = 1f;
-    internal int _numberToReach = 3;
-    internal int _nExtras= 0;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +56,7 @@ public class extrasMovement : MonoBehaviour
         //TRANSITIONS
         _stateMachine.AddTransition(walkingState, stopState, () =>  _isNear);
         _stateMachine.AddTransition(stopState, walkingState, () => !_isNear);
-        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E) && _extra && _nExtras<_numberToReach);
+        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E) && _extra && QuestManager.questManager.currentQuest.questObjectiveCount< QuestManager.questManager.currentQuest.questObjectiveRequirement);
         _stateMachine.AddTransition(followState, stopState, () => _stop);
 
         //START STATE
@@ -68,7 +66,10 @@ public class extrasMovement : MonoBehaviour
 
     void Update()
     {
-         _stateMachine.Tik();
+        if (!QuestManager.questManager.RequestFinishedQuest(1))
+        {
+            _stateMachine.Tik();
+        } 
     } 
 
 
@@ -152,12 +153,14 @@ public class StopState : State
     {
         _extra._isNear = _extra.IsTargetWithinDistance(_extra._stoppingDistance);
         _extra.Talk();
-        if(Input.GetKeyDown(KeyCode.E) && !_extra._extra)
-        {
-            _extra._dialogueBoxClone = (GameObject)GameObject.Instantiate(_extra._comparsaSbagliata, _extra.transform.localPosition, Quaternion.identity);
-        } else if(Input.GetKeyDown(KeyCode.E) && _extra._extra && _extra._nExtras == _extra._numberToReach)
-        {
-            _extra._dialogueBoxClone = (GameObject)GameObject.Instantiate(_extra._troppeComparse, _extra.transform.localPosition, Quaternion.identity);
+        if (Input.GetKeyDown(KeyCode.E)){
+            if (!_extra._extra)
+            {
+                _extra._dialogueBoxClone = (GameObject)GameObject.Instantiate(_extra._comparsaSbagliata, _extra.transform.localPosition, Quaternion.identity);
+            } else if (_extra._extra && QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
+            {
+                _extra._dialogueBoxClone = (GameObject)GameObject.Instantiate(_extra._troppeComparse, _extra.transform.localPosition, Quaternion.identity);
+            } 
         }
     }
 
@@ -212,13 +215,18 @@ public class FollowState : State
     public override void Enter()
     {
         _extra.StopAgent(false);
-        _extra._nExtras++;
+        QuestManager.questManager.currentQuest.questObjectiveCount++;
     }
 
     public override void Tik()
     {
         _extra.ChangeAnimation(false);
         _extra.FollowPlayer();
+        if(QuestManager.questManager.currentQuest != null && QuestManager.questManager.currentQuest.questObjectiveCount >= QuestManager.questManager.currentQuest.questObjectiveRequirement)
+        {
+            QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
+            Debug.Log("Completed");
+        }
     }
 
     public override void Exit()

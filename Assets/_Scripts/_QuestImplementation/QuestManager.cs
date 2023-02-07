@@ -100,6 +100,18 @@ public class QuestManager : MonoBehaviour
         return false;
     }
 
+    public bool RequestFinishedQuest(int questID)
+    {
+        for (int i = 0; i < questList.Count; i++)
+        {
+            if (questList[i].id == questID && questList[i].progress == Quest.QuestProgress.DONE)
+                return true;
+        }
+        return false;
+    }
+
+
+
     //BOOLS 2
     public bool CheckAvailableQuest(QuestNPC questNPC)
     {
@@ -142,4 +154,5 @@ public class QuestManager : MonoBehaviour
         }
         return false;
     }
+
 }

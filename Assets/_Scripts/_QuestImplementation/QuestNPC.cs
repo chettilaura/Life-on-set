@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class QuestNPC : MonoBehaviour
 {
-    private bool _inTrigger = false;
+    public bool _inTrigger = false;
     public List<int> availableQuestIDs = new List<int> ();
     public int receivableQuestID;
-    [SerializeField] private GameObject _questAvailable;
-    [SerializeField] private GameObject _questCompleted;
+    public GameObject _questAvailable;
+    public GameObject _questCompleted;
+    public QuestNPC questNPC;
 
     void Start()
     {
         SetQuestMarker();
+        questNPC = this;
+        Debug.Log("Here");
     }
 
     public void SetQuestMarker()
     {
+        Debug.Log("Set quest marker");
         if (QuestManager.questManager.CheckCompleteQuest(this))
         {
             _questCompleted.SetActive(true);
@@ -24,22 +28,14 @@ public class QuestNPC : MonoBehaviour
         else if (QuestManager.questManager.CheckAvailableQuest(this))
         {
             _questAvailable.SetActive(true);
-        } else
+        }
+        else
         {
-            _questAvailable.SetActive(false);   
+            _questAvailable.SetActive(false);
+            _questCompleted.SetActive(false);
         }
 
     }
-
-    void Update()
-    {
-        if(_inTrigger && Input.GetKeyDown(KeyCode.E)) {
-            QuestManager.questManager.QuestRequest(this);
-        }
-        SetQuestMarker();
-    }
-
-
 
     private void OnTriggerEnter(Collider other)
     {
