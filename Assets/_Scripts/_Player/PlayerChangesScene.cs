@@ -9,6 +9,18 @@ public class PlayerChangesScene : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+
+        //layer 7 = esterno 
+        if (collider.gameObject.layer == 7)
+        {
+
+            Debug.Log("Player has entered the trigger");
+            //chiama scena successiva
+        
+             Scene_Loader.Load(Scene_Loader.Scene.Esterno);
+
+        }
+
         //layer 8 = studio1
         if (collider.gameObject.layer == 8)
         {
