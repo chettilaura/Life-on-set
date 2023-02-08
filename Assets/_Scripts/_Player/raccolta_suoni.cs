@@ -18,8 +18,6 @@ public class raccolta_suoni : MonoBehaviour
     //[SerializeField] private GameObject suono_registrato;
     [SerializeField] private GameObject registration_bar;
 
-
-
     void Start()
     {
         
@@ -27,12 +25,11 @@ public class raccolta_suoni : MonoBehaviour
 
     void Update()
     {
- 
+        
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        
 
         if (collider.gameObject.layer == 12)
         {
