@@ -1327,7 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contatore_diff: 0
-  immagini: {fileID: 0}
+  immagini: {fileID: 4313227752114927817}
   canvas_differenze: {fileID: 5722574506250263988}
   endgame_text: {fileID: 5722574505632166735}
 --- !u!1 &5722574506570903423
