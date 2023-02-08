@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class start_task_vestiti : MonoBehaviour
 {
+    private bool one_box = true;
     private GameObject dialogueBoxClone;
     [SerializeField] private GameObject comunicazione_start;
     [SerializeField] private GameObject start_task;
@@ -25,12 +26,16 @@ public class start_task_vestiti : MonoBehaviour
     {
         if(other.gameObject.layer == 14)
         {
-            Debug.Log("Player has entered the trigger");
-            dialogueBoxClone = GameObject.Instantiate(comunicazione_start,transform.position, Quaternion.identity);
+            if (one_box)
+            {
+                dialogueBoxClone = GameObject.Instantiate(comunicazione_start, transform.position, Quaternion.identity);
+                one_box = false;
+            }
 
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Destroy(dialogueBoxClone, 1f);
+
                 dialogueBoxClone = GameObject.Instantiate(start_task, transform.position, Quaternion.identity);
             }
         }
