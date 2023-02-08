@@ -753,7 +753,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586823527}
   serializedVersion: 2
-  m_Mass: 80
+  m_Mass: 80.31
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1256,6 +1256,10 @@ PrefabInstance:
     - target: {fileID: 3890875641333161445, guid: 0608f9af03c71a44e975a593878f81ef, type: 3}
       propertyPath: m_Name
       value: ComparseQuest
+      objectReference: {fileID: 0}
+    - target: {fileID: 3890875641333161445, guid: 0608f9af03c71a44e975a593878f81ef, type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 4518511665378117471, guid: 0608f9af03c71a44e975a593878f81ef, type: 3}
       propertyPath: m_RootOrder
