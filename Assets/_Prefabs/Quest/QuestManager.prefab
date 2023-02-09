@@ -87,7 +87,7 @@ MonoBehaviour:
     description: Controllare che i fotogrammi che si susseguono siano uguali
     questObjective: Trovare le differenze
     questObjectiveCount: 0
-    questObjectiveRequirement: 3
+    questObjectiveRequirement: 6
   currentQuest:
     title: 
     id: 0

@@ -10,16 +10,14 @@ public class player_starts_task : MonoBehaviour
     [SerializeField] private GameObject comunicazione_start;
     [SerializeField] private GameObject start_task;
     //quando mi avvicino al tavolo, compare box premi E per iniziare gioco
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerStay(Collider other)
