@@ -977,6 +977,20 @@ MonoBehaviour:
   comparse: {fileID: 1992847535}
   aliens: {fileID: 1778950483}
   spawner: {fileID: 1885517059}
+--- !u!136 &271653537
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271653532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.88
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!1001 &273138686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2418,10 +2432,6 @@ PrefabInstance:
     - target: {fileID: 8290195950125971420, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_Name
       value: quest_mark_available
-      objectReference: {fileID: 0}
-    - target: {fileID: 8290195950125971420, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8667003655063580006, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_RootOrder
