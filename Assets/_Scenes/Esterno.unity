@@ -4214,7 +4214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1070352775875645704, guid: e67409204f79a0042a8e01a768fa2062, type: 3}
       propertyPath: m_Name
-      value: yellowExtraWoman
+      value: comparseQuestGiver
       objectReference: {fileID: 0}
     - target: {fileID: 1070352775875645704, guid: e67409204f79a0042a8e01a768fa2062, type: 3}
       propertyPath: m_TagString
