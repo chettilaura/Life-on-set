@@ -32,6 +32,7 @@ public class QuestComparse : QuestNPC
             {
                 comparse.gameObject.SetActive(false);
                 aliens.gameObject.SetActive(false);
+                spawner.SetActive(false);
             }
 
         }

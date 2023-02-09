@@ -13,7 +13,7 @@ public class extrasMovement : MonoBehaviour
 {
     //public List<Transform> waypoints;
 
-    public NavMeshAgent _navMeshAgent;
+    internal NavMeshAgent _navMeshAgent;
     [SerializeField] private Collider _groundCollider;
     [SerializeField] private GameObject _player;
     [SerializeField] private Animator _animator;
@@ -35,8 +35,8 @@ public class extrasMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponent<Animator>();   
-        _navMeshAgent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
+        _navMeshAgent = this.GetOrAddComponent<NavMeshAgent>();
         if(_navMeshAgent != null)
         {
             _navMeshAgent.speed = _speed;
