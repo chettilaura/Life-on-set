@@ -898,7 +898,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890293057}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb4406fb0171d419b86979ab48b47be8, type: 3}
   m_Name: 
@@ -908,6 +908,7 @@ MonoBehaviour:
   gravityValue: -9.81
   rotationspeed: 5
   _animator: {fileID: 0}
+  useCharacterForward: 0
 --- !u!114 &890293071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,6 +955,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32768
   highlightMaterial: {fileID: -6629797300637803691, guid: b1e917aa910c82a47b05eff50a3b5dd0, type: 3}
+--- !u!114 &890293073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890293057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5281785fbe32be4488391fbe4acda0d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useCharacterForward: 0
+  lockToCameraForward: 0
+  turnSpeed: 10
+  sprintJoystick: 332
+  sprintKeyboard: 32
 --- !u!1 &1103443572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1457,11 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 1bd9e6e0e5c826b49b85dbd5d6b7ce81, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 10ff2e19c4bb04083b9a8349e90ec1eb, type: 2}
+      objectReference: {fileID: 9100000, guid: 7a9f599c49797434485c0e1d9e99f200, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 1bd9e6e0e5c826b49b85dbd5d6b7ce81, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd9e6e0e5c826b49b85dbd5d6b7ce81, type: 3}
 --- !u!1001 &1579421647
@@ -1566,7 +1588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 866660968593566582, guid: 6f06adfca41514e2f9097d273f1cfe4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7647705
+      value: 3.7649589
       objectReference: {fileID: 0}
     - target: {fileID: 866660968593566582, guid: 6f06adfca41514e2f9097d273f1cfe4d, type: 3}
       propertyPath: m_LocalPosition.y

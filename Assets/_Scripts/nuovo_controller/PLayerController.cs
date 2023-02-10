@@ -28,17 +28,10 @@ public class PLayerController : MonoBehaviour
     public Animator _animator;
 
     //prova
-
-    private CharacterController _characterController;
-
-    public float Speed = 5.0f;
-
-    public float RotationSpeed = 240.0f;
-
-    private float Gravity = 20.0f;
-
-    private Vector3 _moveDir = Vector3.zero;
-
+    private Vector2 input;
+    private float direction = 0f;
+    public bool useCharacterForward = false;
+    private Vector3 targetDirection;
 
     private void Start()
     {
@@ -54,102 +47,93 @@ public class PLayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
 
         //prova
-        _animator = GetComponent<Animator>();
-        _characterController = GetComponent<CharacterController>();
+        
     }
 
     void Update()
     {
-        /*groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+
+        Vector2 input = moveAction.ReadValue<Vector2>();
+
+        input.x = Input.GetAxis("Horizontal");
+        input.y = Input.GetAxis("Vertical");
+
+        if (input.y < 0f && useCharacterForward)
+            direction = input.y;
+        else
+            direction = 0f;
+
+
+
+            /*Vector3 move = new Vector3(input.x, 0, input.y);
+            move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
+            move.y = 0f;
+            controller.Move(move * Time.deltaTime * playerSpeed);*/
+
+            /*if (playerSpeed <= 0f)
+            {
+                _animator.SetBool("isMovingForward", false);
+                //changeAnimation(playerSpeed, _jumpKeyPress);
+                return;
+            }*/
+
+
+            // Changes the height position of the player..
+            if (jumpAction.triggered && groundedPlayer)
+            {
+                playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            }
+
+            playerVelocity.y += gravityValue * Time.deltaTime;
+            controller.Move(playerVelocity * Time.deltaTime);
+
+            float targetAngle = cameraTransform.eulerAngles.y;
+            Quaternion targetRotation = Quaternion.Euler(0, targetAngle, 0);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationspeed * Time.deltaTime);
+
+            //changeAnimation(playerSpeed, _jumpKeyPress);
+    }
+
+    /*private void changeAnimation(float _speed, bool _jumpKeyPress)
+    {
+        if (_speed > 0.3)
         {
-            playerVelocity.y = 0f;
-        }*/
-
-
-        // prova
-
-
-        // Get Input for axis
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-        // Calculate the forward vector
-        Vector3 camForward_Dir = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
-        Vector3 move = v * camForward_Dir + h * Camera.main.transform.right;
-
-        if (move.magnitude > 1f) move.Normalize();
-
-        // Calculate the rotation for the player
-        move = transform.InverseTransformDirection(move);
-
-        // Get Euler angles
-        float turnAmount = Mathf.Atan2(move.x, move.z);
-
-        transform.Rotate(0, turnAmount * RotationSpeed * Time.deltaTime, 0);
-
-        if (_characterController.isGrounded)
+            _animator.SetBool("isMovingForward", true);
+        }
+        else
         {
-            _animator.SetBool("run", move.magnitude > 0);
-
-            _moveDir = transform.forward * move.magnitude;
-
-            _moveDir *= Speed;
-
+            _animator.SetBool("isMovingForward", false);
         }
 
-        _moveDir.y -= Gravity * Time.deltaTime;
+        if (_jumpKeyPress)
+        {
+            _animator.SetBool("jump", true);
+        }
+    }*/
+    public virtual void UpdateTargetDirection()
+    {
+        if (!useCharacterForward)
+        {
+            var forward = cameraTransform.TransformDirection(Vector3.forward);
+            forward.y = 0;
 
-        _characterController.Move(_moveDir * Time.deltaTime);
+            //get the right-facing direction of the referenceTransform
+            var right = cameraTransform.TransformDirection(Vector3.right);
 
+            // determine the direction the player will face based on input and the referenceTransform's right and forward directions
+            targetDirection = input.x * right + input.y * forward;
+        }
+        else
+        {
+            
+            var forward = transform.TransformDirection(Vector3.forward);
+            forward.y = 0;
+
+            //get the right-facing direction of the referenceTransform
+            var right = transform.TransformDirection(Vector3.right);
+            targetDirection = input.x * right + Mathf.Abs(input.y) * forward;
+        }
     }
 }
 
-        /*Vector2 input = moveAction.ReadValue<Vector2>(); 
         
-        Vector3 move = new Vector3(input.x, 0, input.y);
-        move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
-        move.y = 0f;
-        controller.Move(move * Time.deltaTime * playerSpeed); */
-
-        /*if (playerSpeed <= 0f)
-        {
-            _animator.SetBool("isMovingForward", false);
-            //changeAnimation(playerSpeed, _jumpKeyPress);
-            return;
-        }*/
-
-
-        // Changes the height position of the player..
-        /*if (jumpAction.triggered && groundedPlayer)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        }
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
-
-        float targetAngle = cameraTransform.eulerAngles.y;
-        Quaternion targetRotation = Quaternion.Euler(0, targetAngle, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationspeed * Time.deltaTime);
-
-        //changeAnimation(playerSpeed, _jumpKeyPress);
-        }*/
-
-        /*private void changeAnimation(float _speed, bool _jumpKeyPress)
-        {
-            if (_speed > 0.3)
-            {
-                _animator.SetBool("isMovingForward", true);
-            }
-            else
-            {
-                _animator.SetBool("isMovingForward", false);
-            }
-
-            if (_jumpKeyPress)
-            {
-                _animator.SetBool("jump", true);
-            }
-        }*/
- 
