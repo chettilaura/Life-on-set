@@ -30,7 +30,7 @@ public class extrasMovement : MonoBehaviour
     internal bool _isNear;
     internal bool _follow=false;
     internal bool _stop = false;
-    private float _chosenStoppingDistance = 1f;
+    private float _chosenStoppingDistance = 1.5f;
 
     // Start is called before the first frame update
     void Start()
