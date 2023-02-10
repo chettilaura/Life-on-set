@@ -12,6 +12,7 @@ public class agnese : MonoBehaviour
     public int contatore_body = 0;
     public int contatore_legs = 0;
     public GameObject canvas_task;
+    public GameObject error_text;
 
     public void left_head_arrow()
     {
@@ -111,7 +112,7 @@ public class agnese : MonoBehaviour
         }
         else
         {
-
+            error_text.SetActive(true);
         }
         
     }
