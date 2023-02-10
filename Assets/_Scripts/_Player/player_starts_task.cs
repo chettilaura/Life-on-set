@@ -11,7 +11,7 @@ public class player_starts_task : MonoBehaviour
 
 
     [SerializeField] private GameObject start_task_differenze ;
-    [SerializeField] private Component start_script_task_luci ;
+    //[SerializeField] private Component start_script_task_luci ;
     [SerializeField] private GameObject start_task_costumi ;
     [SerializeField] private GameObject start_task_caffe ;
     [SerializeField] private GameObject start_task_suoni ;
@@ -57,7 +57,9 @@ public class player_starts_task : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                GetComponent<player_starts_task>().enabled = true;
+                GetComponent<LightGun>().enabled = true;
+
+                Debug.Log("task luci abilitato");
                 //GameObject.Instantiate(start_task_luci, transform.position, Quaternion.identity);
                 Destroy(dialogueBoxClone, 0.5f);
             }
