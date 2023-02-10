@@ -26,6 +26,7 @@ public class player_starts_task : MonoBehaviour
         {
             if (one_box)
             {
+                //istanzia la canvas del box di comunicazione
                 dialogueBoxClone = GameObject.Instantiate(comunicazione_start, transform.position, Quaternion.identity);
                 one_box = false;
             }
@@ -34,6 +35,7 @@ public class player_starts_task : MonoBehaviour
             {
                 Destroy(dialogueBoxClone, 1f);
 
+                //instanzia la canvas del task da far partire 
                 dialogueBoxClone = GameObject.Instantiate(start_task, transform.position, Quaternion.identity);
             }
         }
