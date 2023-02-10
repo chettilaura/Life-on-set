@@ -6774,7 +6774,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 32768
-  highlightMaterial: {fileID: -6478536213147159724, guid: 139061feddd37c44d864e9b520b9fdda, type: 3}
+  highlightMaterial: {fileID: -6478536213147159724, guid: 2dd6bbf960f42db46b7c1fdca8f37531, type: 3}
 --- !u!4 &2135900617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1910074579654621777, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
