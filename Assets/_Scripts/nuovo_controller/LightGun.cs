@@ -11,6 +11,7 @@ public class LightGun : MonoBehaviour
 
     private Transform cameraTransform;
     public LayerMask mask;
+    private int contatore_oggetti_illuminati=0;
     Camera cam;
 
     [SerializeField] private Material highlightMaterial;
@@ -45,7 +46,16 @@ public class LightGun : MonoBehaviour
                 var selectionRender = selection.GetComponent<Renderer>();
                 if (selectionRender != null)
                 {
-                    selectionRender.material = highlightMaterial;
+                    if (selectionRender.material!=highlightMaterial){
+                            selectionRender.material = highlightMaterial;
+                            contatore_oggetti_illuminati++;
+                            if(contatore_oggetti_illuminati==2){
+                                //la task è finita -> chiedere ad agnese come si segna che una quest è stata completata 
+                                Debug.Log("task finita");
+                            }
+                    }else{
+                        Debug.Log("oggetto già illuminato");
+                    }
                 }
             }
         }
