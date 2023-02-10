@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class agnese : MonoBehaviour
+public class task_costumi_su_canvas : MonoBehaviour
 {
     public List<GameObject> head;
     public List<GameObject> body;
     public List<GameObject> legs;
-    public int contatore_testa = 0;
-    public int contatore_body = 0;
-    public int contatore_legs = 0;
+    [SerializeField] private int contatore_testa = 0;
+    [SerializeField] private int contatore_body = 0;
+    [SerializeField] private int contatore_legs = 0;
     public GameObject canvas_task;
     public GameObject error_text;
 
@@ -31,6 +31,7 @@ public class agnese : MonoBehaviour
     public void right_head_arrow()
     {
         head[contatore_testa].SetActive(false);
+        Debug.Log(contatore_testa);
 
         if(contatore_testa == 2)
         {
