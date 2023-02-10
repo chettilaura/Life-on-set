@@ -12,6 +12,7 @@ public class QuestLuci : QuestNPC
         {
             QuestManager.questManager.QuestRequest(this);
             if (QuestManager.questManager.currentQuest != null)
+                //abilita il collider del relativo oggetto per iniziare la task (es. sedia regista per task differenze)
                 startTask.GetComponent<Collider>().enabled = true;
             else
                 startTask.GetComponent<Collider>().enabled = false;

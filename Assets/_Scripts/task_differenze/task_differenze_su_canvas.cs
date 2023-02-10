@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class find_diff : MonoBehaviour
+public class task_differenze_su_canvas : MonoBehaviour
 {
     public GameObject immagini;
     public GameObject canvas_differenze;

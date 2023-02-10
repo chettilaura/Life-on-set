@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Premi il tasto E per inziare il task
+  m_text: Premi INVIO per inziare il task
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5513f45be11ed8841994556316aac1b4, type: 2}
   m_sharedMaterial: {fileID: 7975829037029162370, guid: 5513f45be11ed8841994556316aac1b4, type: 2}

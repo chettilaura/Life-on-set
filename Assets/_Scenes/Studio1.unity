@@ -2186,7 +2186,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.62
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.89, z: 0}
@@ -3624,6 +3624,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1155012990181359580, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
+      propertyPath: start_task_luci
+      value: 
+      objectReference: {fileID: 5722574506250263988, guid: 7f723a3fb3a2945a89c4f529c30fc93b, type: 3}
+    - target: {fileID: 1155012990181359580, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
+      propertyPath: start_task_differenze
+      value: 
+      objectReference: {fileID: 5722574506250263988, guid: 47e85be93155543dd99acf6b882e5a8f, type: 3}
     - target: {fileID: 1281874536125522155, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_Name
       value: player
@@ -4012,7 +4020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7043241748464419943, guid: 4c8d94f56ba133f47910b222fccb34af, type: 3}
       propertyPath: m_Layer
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7707153891008978653, guid: 4c8d94f56ba133f47910b222fccb34af, type: 3}
       propertyPath: m_RootOrder
@@ -4076,7 +4084,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.04, y: 2.44, z: 1.21}
+  m_Size: {x: 1.42, y: 2.32, z: 1.65}
   m_Center: {x: 0.27, y: 1.23, z: -0.32}
 --- !u!65 &3580170732892824825
 BoxCollider:
