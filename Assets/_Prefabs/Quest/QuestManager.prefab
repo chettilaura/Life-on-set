@@ -66,7 +66,7 @@ MonoBehaviour:
     description: "Il giocatore dovr\xE0 scegliere i giusti vestiti per gli attori"
     questObjective: Scegliere vestiti
     questObjectiveCount: 0
-    questObjectiveRequirement: 3
+    questObjectiveRequirement: 1
   - title: Illuminazione
     id: 3
     progress: 0

@@ -22,10 +22,10 @@ TagManager:
   - Post Processing
   - task_differenze_2d
   - light_up
-  - task_luci_2d
-  - 
-  - 
-  - 
+  - task_luci
+  - task_costumi
+  - task_caffe
+  - 'task_suoni '
   - 
   - 
   - 
