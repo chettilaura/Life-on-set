@@ -9,8 +9,8 @@ public class task_costumi_su_canvas : MonoBehaviour
     public List<GameObject> body;
     public List<GameObject> legs;
     [SerializeField] private int contatore_testa = 0;
-    [SerializeField] private int contatore_body = 0;
-    [SerializeField] private int contatore_legs = 0;
+    [SerializeField] private int contatore_body = 1;
+    [SerializeField] private int contatore_legs = 2;
     public GameObject canvas_task;
     public GameObject error_text;
 
@@ -110,6 +110,7 @@ public class task_costumi_su_canvas : MonoBehaviour
         {
             canvas_task.SetActive(false);
             QuestManager.questManager.currentQuest.questObjectiveCount++;
+            QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
         }
         else
         {

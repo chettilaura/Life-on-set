@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -399,7 +399,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31946
+  m_Name: pb_Mesh111818
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24200,7 +24200,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31904
+  m_Name: pb_Mesh111776
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -48541,20 +48541,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7812488718640945871, guid: 2e0ffb3c70382e347adfda7ee6cc8168, type: 3}
   m_PrefabInstance: {fileID: 1840320581}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1840320583
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840320582}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.82
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!4 &1840320584 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7431038016885833845, guid: 2e0ffb3c70382e347adfda7ee6cc8168, type: 3}
@@ -48579,6 +48565,19 @@ MonoBehaviour:
   _questCompleted: {fileID: 1320820133}
   questNPC: {fileID: 0}
   startTask: {fileID: 478157525}
+--- !u!65 &1840320588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840320582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.8, z: 1.71721}
+  m_Center: {x: 0.0000000011757026, y: 0.9599999, z: 0.3586052}
 --- !u!1001 &9522250986118781
 PrefabInstance:
   m_ObjectHideFlags: 0

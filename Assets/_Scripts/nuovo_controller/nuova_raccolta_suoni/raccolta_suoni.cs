@@ -5,10 +5,8 @@ using UnityEngine.UI;
 
 public class raccolta_suoni : MonoBehaviour
 {
-    public int number_object = 0;
-    public int max_object = 2;
 
-    [SerializeField] public bool all_object_found = false;
+    //[SerializeField] public bool all_object_found = false;
 
     private GameObject dialogueBoxClone;
 
@@ -36,7 +34,7 @@ public class raccolta_suoni : MonoBehaviour
     {
         
 
-        if (collider.gameObject.layer == 8)
+        if (collider.gameObject.layer == 12)
         {
             
             Debug.Log("Player has entered the trigger");
@@ -46,11 +44,11 @@ public class raccolta_suoni : MonoBehaviour
                 co = StartCoroutine(registration(collider));
             //}
             //Destroy(dialogueBoxClone,7f);
-            number_object++;
+            QuestManager.questManager.currentQuest.questObjectiveCount++;
 
 
-            if (number_object == max_object)
-                all_object_found = true;
+            if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
+                QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
 
         }
 
@@ -64,7 +62,7 @@ public class raccolta_suoni : MonoBehaviour
 
     private void OnTriggerExit(Collider collider)
     {
-        if(collider.gameObject.layer == 8)
+        if(collider.gameObject.layer == 12)
         {
             Debug.Log("Player exit");
 

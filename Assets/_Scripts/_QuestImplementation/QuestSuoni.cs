@@ -18,16 +18,16 @@ public class QuestSuoni : QuestNPC
         {
             QuestManager.questManager.QuestRequest(this);
             if (QuestManager.questManager.currentQuest != null){
-            startTask.GetComponent<Collider>().enabled = true;
-            player.GetComponent<sound>().enabled = true; //attivo lo script per la raccolta dei suoni
-            motor_engine_sound.SetActive(true);
-            //talking_people_sound.SetActive(true);
-            //rain_sound.SetActive(true);
-            //leaves_sound.SetActive(true);
+                startTask.GetComponent<Collider>().enabled = true;
+                player.GetComponent<sound>().enabled = true; //attivo lo script per la raccolta dei suoni
+                motor_engine_sound.SetActive(true);
+                //talking_people_sound.SetActive(true);
+                //rain_sound.SetActive(true);
+                //leaves_sound.SetActive(true);
             }else{
-            startTask.GetComponent<Collider>().enabled = false;
-            player.GetComponent<sound>().enabled = false;
-            //non li metto il setactive(false) perche quando li raccolgo i suoni vengono distrutti 
+                startTask.GetComponent<Collider>().enabled = false;
+                player.GetComponent<sound>().enabled = false;
+                //non li metto il setactive(false) perche quando li raccolgo i suoni vengono distrutti 
             }
                
         }

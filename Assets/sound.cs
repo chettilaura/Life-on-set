@@ -35,5 +35,10 @@ public class sound : MonoBehaviour
 
         Destroy(collider.gameObject);
         Destroy(dialogueBoxClone, 4f);
+        QuestManager.questManager.currentQuest.questObjectiveCount++;
+        if(QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
+        {
+            QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
+        }
     }
 }
