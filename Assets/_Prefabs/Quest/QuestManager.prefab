@@ -90,7 +90,7 @@ MonoBehaviour:
     questObjectiveRequirement: 6
   currentQuest:
     title: 
-    id: 0
+    id: -1
     progress: 0
     description: 
     questObjective: 

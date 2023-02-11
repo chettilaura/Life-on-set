@@ -8,7 +8,7 @@ public class QuestManager : MonoBehaviour
 
     public static QuestManager questManager;
     public List<Quest> questList = new List<Quest> ();
-    public Quest currentQuest;
+    public Quest currentQuest = null;
 
     private void Awake()
     {
@@ -53,10 +53,14 @@ public class QuestManager : MonoBehaviour
     {
         for(int i = 0; i < questList.Count; i++)
         {
-            if (questList[i].id == questID && questList[i].progress == Quest.QuestProgress.AVAILABLE)
+            Debug.Log(currentQuest.id);
+            if (questList[i].id == questID && questList[i].progress == Quest.QuestProgress.AVAILABLE && currentQuest.id == -1)
             {
                 questList[i].progress = Quest.QuestProgress.ACCEPTED;
                 currentQuest = questList[i];
+            } else if (currentQuest.id != -1)
+            {
+                Debug.Log("Previous task not completed");
             }
         }
     }
@@ -68,7 +72,7 @@ public class QuestManager : MonoBehaviour
         if(currentQuest.id == questID && currentQuest.progress == Quest.QuestProgress.COMPLETE)
         {
             currentQuest.progress = Quest.QuestProgress.DONE;
-            currentQuest = null;
+            currentQuest.id = -1;
         }
     }
 

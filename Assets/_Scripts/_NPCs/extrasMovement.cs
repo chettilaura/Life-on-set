@@ -197,7 +197,7 @@ public class WalkingState: State
         {
             _extra.ChangeAnimation(_extra._isNear);
         }
-        _extra.SetDestination();
+       // _extra.SetDestination();
     }
 
     public override void Exit()
