@@ -394,6 +394,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1bd9e6e0e5c826b49b85dbd5d6b7ce81, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 950539370621747276, guid: 1bd9e6e0e5c826b49b85dbd5d6b7ce81, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -749,7 +753,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704494592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90785739622c44fc4baff074bc6f6366, type: 3}
   m_Name: 
@@ -765,7 +769,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704494592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81907c724084e4db6bd76c244aed7ed4, type: 3}
   m_Name: 
@@ -825,6 +829,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &704494600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704494592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99cb34b0d4ebc4497b1a26d8a1095890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  registration_bar: {fileID: 6041744198588797523, guid: af09eb9f71a094d0d95128c7d8630b1b, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,14 +1196,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c12b7ab403dcc43ad875ebddac214b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mouseSensitivity: 5
-  _playerBody: {fileID: 704494597}
-  _offset: {x: 0, y: 1, z: -3.5}
+  _player: {fileID: 704494592}
+  DistanceFromPlayer: 5
+  height: 2
 --- !u!1 &1024222209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 335956182812287503, guid: b126f0f24dac29b448ecc82e1d6ab414, type: 3}
@@ -1686,7 +1703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1072519240685977647, guid: 15705762ed85246bdb1cdfdb7b5eab41, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15705762ed85246bdb1cdfdb7b5eab41, type: 3}
