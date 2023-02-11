@@ -4275,7 +4275,7 @@ GameObject:
   - component: {fileID: 8191487460159457715}
   - component: {fileID: 8191487460159457714}
   - component: {fileID: 8191487460159457716}
-  - component: {fileID: 3388105616509024071}
+  - component: {fileID: 2108979954563220979}
   m_Layer: 0
   m_Name: motionCaptureExtraWoman
   m_TagString: Untagged
@@ -4361,10 +4361,13 @@ MonoBehaviour:
   _groundCollider: {fileID: 0}
   _player: {fileID: 0}
   _animator: {fileID: 8191487460159457715}
+  _extra: 0
+  _comparsaSbagliata: {fileID: 0}
+  _troppeComparse: {fileID: 0}
   _stoppingDistance: 2
   walkRadius: 148
---- !u!65 &3388105616509024071
-BoxCollider:
+--- !u!136 &2108979954563220979
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4373,9 +4376,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.72, y: 1.82, z: 0.72}
-  m_Center: {x: 0, y: 0.89, z: -0.05}
+  m_Radius: 0.25
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &9085173205188943745
 GameObject:
   m_ObjectHideFlags: 0

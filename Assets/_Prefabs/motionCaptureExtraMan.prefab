@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 605988755044235345}
   - component: {fileID: 605988755044235347}
   - component: {fileID: 605988755044235346}
-  - component: {fileID: 5297326071127059571}
+  - component: {fileID: 8288588669430237612}
   m_Layer: 0
   m_Name: motionCaptureExtraMan
   m_TagString: Untagged
@@ -108,6 +108,9 @@ MonoBehaviour:
   _groundCollider: {fileID: 0}
   _player: {fileID: 0}
   _animator: {fileID: 605988755044235345}
+  _extra: 0
+  _comparsaSbagliata: {fileID: 0}
+  _troppeComparse: {fileID: 0}
   _stoppingDistance: 2
   walkRadius: 168
 --- !u!195 &605988755044235346
@@ -132,8 +135,8 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &5297326071127059571
-BoxCollider:
+--- !u!136 &8288588669430237612
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -142,9 +145,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.63, y: 1.73, z: 0.67}
-  m_Center: {x: 0.06, y: 0.86, z: 0}
+  m_Radius: 0.26
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &375459608063282249
 GameObject:
   m_ObjectHideFlags: 0

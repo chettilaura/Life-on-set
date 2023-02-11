@@ -2273,7 +2273,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2593328214623068513, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
 --- !u!1001 &384642985
 PrefabInstance:
@@ -3350,6 +3351,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db687f10e6af14218b02a9f6151ff658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &689416835
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689416818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.26
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0.14, y: 0.93, z: 0}
 --- !u!4 &702912394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4831012669268828076, guid: 9e97dd8cbbbdf42448913afec3426032, type: 3}
@@ -6323,7 +6338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7431038016885833845, guid: 2e0ffb3c70382e347adfda7ee6cc8168, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.032
       objectReference: {fileID: 0}
     - target: {fileID: 7431038016885833845, guid: 2e0ffb3c70382e347adfda7ee6cc8168, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6763,7 +6778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1144581652306933941, guid: b126f0f24dac29b448ecc82e1d6ab414, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.038
       objectReference: {fileID: 0}
     - target: {fileID: 1144581652306933941, guid: b126f0f24dac29b448ecc82e1d6ab414, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6883,10 +6898,6 @@ PrefabInstance:
     - target: {fileID: 371096927740754479, guid: 105940f591f0fc0478687910f7d279ff, type: 3}
       propertyPath: m_Name
       value: Alien
-      objectReference: {fileID: 0}
-    - target: {fileID: 713555976827743721, guid: 105940f591f0fc0478687910f7d279ff, type: 3}
-      propertyPath: _extra
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 713555976827743721, guid: 105940f591f0fc0478687910f7d279ff, type: 3}
       propertyPath: _player
@@ -7146,10 +7157,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 689416818}
     - target: {fileID: 8191487460159457716, guid: 917eb25ee618d004284ff02389fb8fbd, type: 3}
-      propertyPath: _navMeshAgent
-      value: 
-      objectReference: {fileID: 1687986270}
-    - target: {fileID: 8191487460159457716, guid: 917eb25ee618d004284ff02389fb8fbd, type: 3}
       propertyPath: _groundCollider
       value: 
       objectReference: {fileID: 4879373522941095486}
@@ -7163,7 +7170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8513134858109572121, guid: 917eb25ee618d004284ff02389fb8fbd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.039
       objectReference: {fileID: 0}
     - target: {fileID: 8513134858109572121, guid: 917eb25ee618d004284ff02389fb8fbd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7206,11 +7213,6 @@ PrefabInstance:
 --- !u!4 &1687986269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8513134858109572121, guid: 917eb25ee618d004284ff02389fb8fbd, type: 3}
-  m_PrefabInstance: {fileID: 1687986268}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &1687986270 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 8191487460159457714, guid: 917eb25ee618d004284ff02389fb8fbd, type: 3}
   m_PrefabInstance: {fileID: 1687986268}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1728987384
@@ -7381,7 +7383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3557178713236906112, guid: 4532a23130cd22e429d74479a77e3120, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3557178713236906112, guid: 4532a23130cd22e429d74479a77e3120, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8230,7 +8232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1992847535
 Transform:
   m_ObjectHideFlags: 0

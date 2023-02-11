@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 6380926433337047791}
   - component: {fileID: 713555976827743721}
   - component: {fileID: 713555976827743720}
-  - component: {fileID: 6629162390006928988}
+  - component: {fileID: 6753280245560200465}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Untagged
@@ -163,11 +163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08d07a7d3211dc4183a3dcb39aa7651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _navMeshAgent: {fileID: 0}
   _groundCollider: {fileID: 0}
-  _player: {fileID: 8132986632745223338, guid: e372d91018e788d4ca9bc92fe69894bf, type: 3}
+  _player: {fileID: 0}
   _animator: {fileID: 6380926433337047791}
-  _extra: 0
+  _extra: 1
   _comparsaSbagliata: {fileID: 0}
   _troppeComparse: {fileID: 0}
   _stoppingDistance: 2
@@ -194,8 +193,8 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &6629162390006928988
-BoxCollider:
+--- !u!136 &6753280245560200465
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -204,9 +203,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.78, y: 1.73, z: 0.46}
-  m_Center: {x: 0, y: 0.87, z: 0}
+  m_Radius: 0.21
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.82, z: 0}
 --- !u!1 &499444209671871957
 GameObject:
   m_ObjectHideFlags: 0
