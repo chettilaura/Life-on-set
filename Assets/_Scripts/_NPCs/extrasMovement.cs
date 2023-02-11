@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
@@ -23,6 +24,7 @@ public class extrasMovement : MonoBehaviour
     [SerializeField] internal GameObject _troppeComparse;
     internal GameObject _dialogueBoxClone;
 
+
     private FiniteStateMachine<extrasMovement> _stateMachine;
     public float _stoppingDistance = 1f;
     private float _speed = 1;
@@ -41,7 +43,6 @@ public class extrasMovement : MonoBehaviour
         {
             _navMeshAgent.speed = _speed;
         }
-
         _stateMachine = new FiniteStateMachine<extrasMovement>(this);
 
         Debug.Log(_player.transform.position);

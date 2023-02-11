@@ -37,7 +37,12 @@ public class ambient_light : MonoBehaviour
 
     private void StartAim()
     {
-        main_light.intensity = 0.25f;
+        if(QuestManager.questManager.currentQuest != null)
+        {
+            if(QuestManager.questManager.currentQuest.id == 3)
+                main_light.intensity = 0.25f;
+        }
+            
 
     }
 

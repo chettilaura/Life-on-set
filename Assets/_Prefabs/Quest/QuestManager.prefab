@@ -73,14 +73,14 @@ MonoBehaviour:
     description: Creare la giusta illuminazione per la scena
     questObjective: Illuminare oggetti di scena/attori
     questObjectiveCount: 0
-    questObjectiveRequirement: 3
+    questObjectiveRequirement: 2
   - title: Sounds
     id: 4
     progress: 0
     description: Registrare i suoni di sottofondo
     questObjective: Andare a cercare le fonti dei suoni
     questObjectiveCount: 0
-    questObjectiveRequirement: 3
+    questObjectiveRequirement: 4
   - title: "Continuit\xE0"
     id: 5
     progress: 0

@@ -11,6 +11,8 @@ public class LightGun : MonoBehaviour
 
     private Transform cameraTransform;
     public LayerMask mask;
+    public bool Alien;
+    public bool Ufo;
     Camera cam;
 
     [SerializeField] private Material highlightMaterial;
@@ -45,18 +47,25 @@ public class LightGun : MonoBehaviour
                 var selectionRender = selection.GetComponent<Renderer>();
                 if (selectionRender != null)
                 {
-                    if (selectionRender.material!=highlightMaterial){
-                            selectionRender.material = highlightMaterial;
-                            
-                            if(contatore_oggetti_illuminati==2){
-                                //la task è finita -> chiedere ad agnese come si segna che una quest è stata completata 
-                                Debug.Log("task finita");
+                    if(hit.transform.name == "Alien" && !Alien)
+                    {
+                        Alien = true;
+                        selectionRender.material = highlightMaterial;
+                        QuestManager.questManager.currentQuest.questObjectiveCount++;
+                        if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
+                            {
+                                QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
                             }
-                    }else{
-                        Debug.Log("oggetto già illuminato");
+                    } else if(hit.transform.name == "ufo" && !Ufo)
+                    {
+                        Ufo = true;
+                        selectionRender.material = highlightMaterial;
+                        QuestManager.questManager.currentQuest.questObjectiveCount++;
+                        if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
+                        {
+                            QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
+                        }
                     }
-                    selectionRender.material = highlightMaterial;
-                }
                 }
             }
         }
