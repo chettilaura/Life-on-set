@@ -10,8 +10,11 @@ public class registration_bar : MonoBehaviour
     public int rec = 0;
     public int rec_max = 100;
 
+    //public bool flag;
+
     public Image barra;
-   
+    
+
     void Start()
     {
         rec = 0;
@@ -22,10 +25,12 @@ public class registration_bar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+        rec = 0;
+     //StartCoroutine(aggiornaemtno());
+     //GetCurrentFill();
     }
 
-    void GetCurrentFill()
+     void GetCurrentFill()
     {
         float percentuale = (float)rec / (float)rec_max;
         barra.fillAmount = percentuale;
@@ -34,6 +39,7 @@ public class registration_bar : MonoBehaviour
 
     IEnumerator aggiornaemtno() {
         rec = 0;
+
         yield return new WaitForSeconds(1);
         rec = 20;
         GetCurrentFill();
