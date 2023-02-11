@@ -3898,11 +3898,23 @@ PrefabInstance:
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: startTask
       value: 
+      objectReference: {fileID: 621097659}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: receivableQuestID
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: motor_engine_sound
       value: 
       objectReference: {fileID: 1721727016}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: availableQuestIDs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: availableQuestIDs.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5767816728501486813, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -7634,7 +7646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 286427271109779679, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_RootOrder
