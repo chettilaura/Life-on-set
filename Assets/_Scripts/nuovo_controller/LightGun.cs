@@ -45,55 +45,25 @@ public class LightGun : MonoBehaviour
                 var selectionRender = selection.GetComponent<Renderer>();
                 if (selectionRender != null)
                 {
+                    if (selectionRender.material!=highlightMaterial){
+                            selectionRender.material = highlightMaterial;
+                            
+                            if(contatore_oggetti_illuminati==2){
+                                //la task è finita -> chiedere ad agnese come si segna che una quest è stata completata 
+                                Debug.Log("task finita");
+                            }
+                    }else{
+                        Debug.Log("oggetto già illuminato");
+                    }
                     selectionRender.material = highlightMaterial;
+                }
                 }
             }
         }
     }
 
 
-    // Start is called before the first frame update
-    /*private void Awake()
-    {
-        Debug.Log("ok1");
-        playerInput = GetComponent<PlayerInput>();
-        lightAction = playerInput.actions["Light"];
 
-        cameraTransform = Camera.main.transform;
-    }
-
-    private void OnEnable()
-    {
-        Debug.Log("ok2");
-        lightAction.performed += _ => startLighting();
-        //startLighting();
-    }
-
-    private void OnDisable()
-    {
-        lightAction.performed -= _ => startLighting();
-    }
-
-    private void startLighting()
-    {
-        
-        RaycastHit hit;
-        Debug.Log("ok3");
-        if (Physics.Raycast(cameraTransform.position + new Vector3(0f, 0f, 2f), cameraTransform.forward, out hit, Mathf.Infinity))
-        {
-            Debug.DrawRay(cameraTransform.position + new Vector3(0f, 0f, 2f), cameraTransform.forward, Color.green);
-            //GameObject torch = GameObject.Instantiate(torch_light, cameraTransform.position, Quaternion.identity);
-            Debug.Log("ok4");
-            Debug.Log(hit.collider.name);
-            var selection = hit.transform;
-            var selectionRender = selection.GetComponent<Renderer>();
-            if(selectionRender != null)
-            {
-                selectionRender.material = highlightMaterial;
-            }
-
-        }
-    }*/
 
     private void UpdateCursor()
     {
