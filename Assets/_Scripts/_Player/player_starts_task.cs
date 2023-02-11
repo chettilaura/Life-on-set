@@ -11,7 +11,7 @@ public class player_starts_task : MonoBehaviour
 
 
     [SerializeField] private GameObject start_task_differenze ;
-    //[SerializeField] private Component start_script_task_luci ;
+    [SerializeField] private GameObject start_task_luci ; //qui ci metto la AIM CAMERA in modo che posso puntare solo se task luci attivo
     [SerializeField] private GameObject start_task_costumi ;
     [SerializeField] private GameObject start_task_caffe ;
     [SerializeField] private GameObject start_task_suoni ;
@@ -58,6 +58,7 @@ public class player_starts_task : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 GetComponent<LightGun>().enabled = true;
+                start_task_luci.SetActive(true);
 
                 Debug.Log("task luci abilitato");
                 //GameObject.Instantiate(start_task_luci, transform.position, Quaternion.identity);

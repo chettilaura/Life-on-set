@@ -2481,7 +2481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 866660968593566582, guid: 6f06adfca41514e2f9097d273f1cfe4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0014296
+      value: -1.9986508
       objectReference: {fileID: 0}
     - target: {fileID: 866660968593566582, guid: 6f06adfca41514e2f9097d273f1cfe4d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3228,7 +3228,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: -8606235221373664737, guid: f0196a74312714ded97ea99eb633b9db, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4214,7 +4214,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 2dd6bbf960f42db46b7c1fdca8f37531, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: -8606235221373664737, guid: f0196a74312714ded97ea99eb633b9db, type: 3}
     - target: {fileID: 919132149155446097, guid: 2dd6bbf960f42db46b7c1fdca8f37531, type: 3}
       propertyPath: m_Name
       value: ufo (1)
@@ -6687,7 +6687,7 @@ PrefabInstance:
     - target: {fileID: 1155012990181359580, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: start_task_luci
       value: 
-      objectReference: {fileID: 5722574506250263988, guid: 7f723a3fb3a2945a89c4f529c30fc93b, type: 3}
+      objectReference: {fileID: 870464618}
     - target: {fileID: 1155012990181359580, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: start_task_suoni
       value: 
