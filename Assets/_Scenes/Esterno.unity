@@ -9564,15 +9564,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6562219920775432507, guid: 7a2347a03fd127d429fc28f42e05f801, type: 3}
       propertyPath: m_Size.y
-      value: -0.01
+      value: 0.013161537
       objectReference: {fileID: 0}
     - target: {fileID: 6562219920775432507, guid: 7a2347a03fd127d429fc28f42e05f801, type: 3}
       propertyPath: m_Size.z
-      value: -0.02
+      value: 0.020000003
       objectReference: {fileID: 0}
     - target: {fileID: 6562219920775432507, guid: 7a2347a03fd127d429fc28f42e05f801, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562219920775432507, guid: 7a2347a03fd127d429fc28f42e05f801, type: 3}
+      propertyPath: m_Center.x
+      value: 0.000026993752
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562219920775432507, guid: 7a2347a03fd127d429fc28f42e05f801, type: 3}
+      propertyPath: m_Center.y
+      value: 0.0017139978
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562219920775432507, guid: 7a2347a03fd127d429fc28f42e05f801, type: 3}
+      propertyPath: m_Center.z
+      value: 0.009003799
       objectReference: {fileID: 0}
     - target: {fileID: 6562219920775432507, guid: 7a2347a03fd127d429fc28f42e05f801, type: 3}
       propertyPath: m_IsTrigger
