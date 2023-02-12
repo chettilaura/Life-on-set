@@ -11,10 +11,18 @@ public class QuestSuoni : QuestNPC
     public GameObject talking_people_sound;
     public GameObject rain_sound;
     public GameObject leaves_sound;
+    public GameObject dialoguebox_sound;
+    private GameObject dialogueBoxClone;
+    public GameObject infoFonico;
+    private bool info = false;
     void Update()
     {
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
+        
+
+        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && info == false)
         {
+            dialogueBoxClone = (GameObject)GameObject.Instantiate(infoFonico, transform.position, Quaternion.identity);
+            info = true;
             QuestManager.questManager.QuestRequest(this);
             if (QuestManager.questManager.currentQuest.id == 4){
                 startTask.GetComponent<Collider>().enabled = true;
@@ -30,5 +38,13 @@ public class QuestSuoni : QuestNPC
                
         }
         SetQuestMarker();
+
+        if(info == true){
+            if ( Input.GetKeyDown(KeyCode.Space)){
+                Destroy(dialogueBoxClone);
+
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound, transform.position, Quaternion.identity);
+        }
+        }
     }
 }
