@@ -161,7 +161,7 @@ RectTransform:
   m_GameObject: {fileID: 8063295096971241713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0034016, y: 1.0034016, z: 1.0034016}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6956511533713167173}
@@ -169,9 +169,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: -200, y: -600}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 957, y: 609}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5837140719248851839
 CanvasRenderer:
@@ -194,15 +194,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: db7eb4677ef483443b08391f8b85062b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -229,7 +229,7 @@ MonoBehaviour:
   - "Una parte fondamentale delle riprese \xE8 la registrazione dei suoni."
   - Cerca nell'ambiente tutti i suoni e avvicinati ad essi per registrarli.
   - Attenzione! Devi effettuare la registrazione per almeno 5 secondi.
-  - Apenna hai finito torna da me!
+  - Appena hai finito torna da me!
   textSpeed: 0.1
   _press_to_End_text: {fileID: 6509040576353696010, guid: 66875f78b0fa54c2ca884f9169fa4912, type: 3}
   _soundeffect: {fileID: 0}
@@ -262,7 +262,7 @@ RectTransform:
   m_GameObject: {fileID: 8517650644621569389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0825391, y: 1.0825391, z: 1.0825391}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 549338615975324218}
@@ -270,7 +270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5, y: -369}
   m_SizeDelta: {x: 1600, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3077189921040527123
