@@ -15,6 +15,7 @@ public class QuestSuoni : QuestNPC
     private GameObject dialogueBoxClone;
     public GameObject infoFonico;
     private bool info = false;
+    private bool _coffeeReceived = false;
     void Update()
     {
         
@@ -36,6 +37,13 @@ public class QuestSuoni : QuestNPC
                 player.GetComponent<sound>().enabled = false;
             }
                
+        }
+        else if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Return) && player.GetComponent<task_caffè>().CaffèPreso && !_coffeeReceived)
+        {
+            QuestManager.questManager.currentQuest.questObjectiveCount++;
+            _coffeeReceived = true;
+            if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
+                QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
         }
         SetQuestMarker();
 

@@ -21,6 +21,8 @@ public class QuestCaffe :  QuestNPC
         {
             QuestManager.questManager.currentQuest.questObjectiveCount++;
             _coffeeReceived = true;
+            if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
+                QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
         }
         SetQuestMarker();
     }

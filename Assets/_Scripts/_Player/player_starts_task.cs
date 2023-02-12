@@ -12,7 +12,6 @@ public class player_starts_task : MonoBehaviour
 
     [SerializeField] private GameObject start_task_differenze ;
     [SerializeField] private GameObject start_task_costumi ;
-    [SerializeField] private GameObject start_task_caffe ;
     [SerializeField] private GameObject start_task_suoni ;
     [SerializeField] private GameObject start_task_comparse ; 
 
@@ -78,21 +77,6 @@ public class player_starts_task : MonoBehaviour
             }
         }
 
-        //task caffe 
-        if(other.gameObject.layer == 18)
-        {
-            if (one_box)
-            {
-                dialogueBoxClone = GameObject.Instantiate(comunicazione_start, transform.position, Quaternion.identity);
-                one_box = false;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                GameObject.Instantiate(start_task_caffe, transform.position, Quaternion.identity);
-                Destroy(dialogueBoxClone, 0.5f);
-            }
-        }
 
         //task suoni  
         if(other.gameObject.layer == 19)

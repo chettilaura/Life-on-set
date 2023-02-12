@@ -52,7 +52,7 @@ MonoBehaviour:
       a prendere il caff\xE8 da portare al registra"
     questObjective: "Prendere caff\xE8 e portarli ai vari membri della crew"
     questObjectiveCount: 0
-    questObjectiveRequirement: 6
+    questObjectiveRequirement: 3
   - title: RaccoltaComparse
     id: 1
     progress: 0

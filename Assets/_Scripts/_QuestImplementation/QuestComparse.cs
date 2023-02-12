@@ -7,6 +7,8 @@ public class QuestComparse : QuestNPC
     public Transform comparse;
     public Transform aliens;
     public GameObject spawner;
+    private bool _coffeeReceived = false;
+    public GameObject Player;
 
 
     private void Update()
@@ -35,6 +37,13 @@ public class QuestComparse : QuestNPC
                 spawner.SetActive(false);
             }
 
+        }
+        else if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Return) && Player.GetComponent<task_caffè>().CaffèPreso && !_coffeeReceived)
+        {
+            QuestManager.questManager.currentQuest.questObjectiveCount++;
+            _coffeeReceived = true;
+            if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
+                QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
         }
         SetQuestMarker();
     }
