@@ -10034,6 +10034,8 @@ MonoBehaviour:
   questNPC: {fileID: 0}
   coffeeMachine: {fileID: 6126083417185839104}
   Player: {fileID: 689416818}
+  dialoguebox_caffe: {fileID: 4855936148645797204, guid: c333de8e62a84428daaf4652e29b2223, type: 3}
+  info_regista: {fileID: 2149116276955257173, guid: 5a01d8ba1af6943f6977d84315339042, type: 3}
 --- !u!136 &2026950213
 CapsuleCollider:
   m_ObjectHideFlags: 0

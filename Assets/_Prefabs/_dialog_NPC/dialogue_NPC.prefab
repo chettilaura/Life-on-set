@@ -231,6 +231,9 @@ MonoBehaviour:
   - Could you please bring it back to me?
   textSpeed: 0.1
   _press_to_End_text: {fileID: 6509040576353696010, guid: 66875f78b0fa54c2ca884f9169fa4912, type: 3}
+  _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
+  stopAudioSource: 0
+  frequencyLevel: 2
 --- !u!1 &8517650644621569389
 GameObject:
   m_ObjectHideFlags: 0

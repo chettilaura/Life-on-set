@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6653601543979388618}
   m_Layer: 0
-  m_Name: dialogo_sound
+  m_Name: dialogo_caffe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - Ciao ! Io sono il fonico.
+  - 'Ciao ! Io sono il regista! '
   - "Una parte fondamentale delle riprese \xE8 la registrazione dei suoni."
   - Cerca nell'ambiente tutti i suoni e avvicinati ad essi per registrarli.
   - Attenzione! Devi effettuare la registrazione per almeno 5 secondi.

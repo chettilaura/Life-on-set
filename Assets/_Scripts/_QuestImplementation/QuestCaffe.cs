@@ -7,11 +7,16 @@ public class QuestCaffe :  QuestNPC
     public GameObject coffeeMachine;
     public GameObject Player;
     private bool _coffeeReceived = false;
-
+    public GameObject dialoguebox_caffe;
+    private GameObject dialogueBoxClone;
+    public GameObject info_regista;
+    private bool info = false;
     void Update()
     {
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
+        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && info == false)
         {
+            dialogueBoxClone = (GameObject)GameObject.Instantiate(info_regista, transform.position, Quaternion.identity);
+            info = true;
             QuestManager.questManager.QuestRequest(this);
             if (QuestManager.questManager.currentQuest.id == 0)
                 coffeeMachine.GetComponent<Collider>().enabled = true;
@@ -25,5 +30,12 @@ public class QuestCaffe :  QuestNPC
                 QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
         }
         SetQuestMarker();
+
+         if(info == true){
+            if (Input.GetKeyDown(KeyCode.Space)){
+                Destroy(dialogueBoxClone);
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe, transform.position, Quaternion.identity);
+            }
+         }
     }
 }
