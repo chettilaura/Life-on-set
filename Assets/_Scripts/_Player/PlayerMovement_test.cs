@@ -9,6 +9,7 @@ public class PlayerMovement_test : MonoBehaviour
     private float speed;
     private float rotationAngle;
     public Animator _animator;
+    public AudioSource footSteps;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +32,10 @@ public class PlayerMovement_test : MonoBehaviour
                 speed = 0.02f;
                 rotationAngle = 0.5f;
             }
+            footSteps.enabled = true;
             _animator.SetBool("isMovingForward", true);
             transform.Rotate(Vector3.up, rotationAngle * mouseMovement.normalizedMousePos.x); }
+        else { footSteps.enabled = false; }
         transform.position += transform.forward * speed * Input.GetAxis("Vertical");
     }
 }
