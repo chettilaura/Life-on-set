@@ -11,7 +11,7 @@ public class PlayerChangesScene : MonoBehaviour
     {
 
         //layer 7 = esterno 
-        if (collider.gameObject.layer == 7)
+        if (collider.gameObject.layer == 7 && QuestManager.questManager.currentQuest.id == -1)
         {
 
             Debug.Log("Player has entered the trigger");
@@ -22,7 +22,7 @@ public class PlayerChangesScene : MonoBehaviour
         }
 
         //layer 8 = studio1
-        if (collider.gameObject.layer == 8)
+        if (collider.gameObject.layer == 8 && QuestManager.questManager.currentQuest.id == -1)
         {
 
             Debug.Log("Player has entered the trigger");
@@ -33,7 +33,7 @@ public class PlayerChangesScene : MonoBehaviour
         }
 
       //layer 9 = studio2
-        if (collider.gameObject.layer == 9)
+        if (collider.gameObject.layer == 9 && QuestManager.questManager.currentQuest.id == -1)
         {
 
             Debug.Log("Player has entered the trigger");
@@ -44,7 +44,7 @@ public class PlayerChangesScene : MonoBehaviour
         }   
 
          //layer 10 = camper
-        if (collider.gameObject.layer == 10)
+        if (collider.gameObject.layer == 10 && QuestManager.questManager.currentQuest.id == -1)
         {
 
             Debug.Log("Player has entered the trigger");
@@ -55,7 +55,7 @@ public class PlayerChangesScene : MonoBehaviour
         }
 
          //layer 11 = camion
-        if (collider.gameObject.layer == 11)
+        if (collider.gameObject.layer == 11 && QuestManager.questManager.currentQuest.id == -1)
         {
 
             Debug.Log("Player has entered the trigger");

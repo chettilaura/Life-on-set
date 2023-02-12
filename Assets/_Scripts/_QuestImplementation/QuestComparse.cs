@@ -15,7 +15,7 @@ public class QuestComparse : QuestNPC
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
         {
             QuestManager.questManager.QuestRequest(this);
-            if (QuestManager.questManager.currentQuest != null)
+            if (QuestManager.questManager.currentQuest.id == 1)
             {
                 for (int i = 0; i < comparse.childCount; i++)
                 {

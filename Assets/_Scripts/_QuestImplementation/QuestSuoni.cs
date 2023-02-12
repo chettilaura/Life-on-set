@@ -16,7 +16,7 @@ public class QuestSuoni : QuestNPC
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
         {
             QuestManager.questManager.QuestRequest(this);
-            if (QuestManager.questManager.currentQuest != null){
+            if (QuestManager.questManager.currentQuest.id == 4){
                 startTask.GetComponent<Collider>().enabled = true;
                 player.GetComponent<sound>().enabled = true; //attivo lo script per la raccolta dei suoni
                 motor_engine_sound.SetActive(true);

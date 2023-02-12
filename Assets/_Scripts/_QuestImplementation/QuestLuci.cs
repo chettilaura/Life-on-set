@@ -13,7 +13,7 @@ public class QuestLuci : QuestNPC
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
         {
             QuestManager.questManager.QuestRequest(this);
-            if (QuestManager.questManager.currentQuest != null)
+            if (QuestManager.questManager.currentQuest.id == 3)
             {
                 //abilita il collider del relativo oggetto per iniziare la task (es. sedia regista per task differenze)
                 startTask.GetComponent<Collider>().enabled = true;

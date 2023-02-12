@@ -11,7 +11,7 @@ public class QuestDifferenze : QuestNPC
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
         {
             QuestManager.questManager.QuestRequest(this);
-            if (QuestManager.questManager.currentQuest != null)
+            if (QuestManager.questManager.currentQuest.id == 5)
                 startTask.GetComponent<Collider>().enabled = true;
             else
                 startTask.GetComponent<Collider>().enabled = false;

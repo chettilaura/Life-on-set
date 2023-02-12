@@ -8,9 +8,9 @@ public class task_costumi_su_canvas : MonoBehaviour
     public List<GameObject> head;
     public List<GameObject> body;
     public List<GameObject> legs;
-    [SerializeField] private int contatore_testa = 0;
-    [SerializeField] private int contatore_body = 1;
-    [SerializeField] private int contatore_legs = 2;
+    private int contatore_testa = 1;
+    private int contatore_body = 2;
+    private int contatore_legs = 0;
     public GameObject canvas_task;
     public GameObject error_text;
 
@@ -45,7 +45,7 @@ public class task_costumi_su_canvas : MonoBehaviour
 
     public void left_body_arrow()
     {
-        body[contatore_testa].SetActive(false);
+        body[contatore_body].SetActive(false);
 
         if (contatore_body == 0)
         {
