@@ -9,16 +9,21 @@ public class QuestComparse : QuestNPC
     public GameObject spawner;
     private bool _coffeeReceived = false;
     public GameObject Player;
-
+    public GameObject dialoguebox_comparse;
+    private GameObject dialogueBoxClone;
+    public GameObject info_aiutoregista;
+    private bool info = false;
 
     private void Update()
     {
 
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
+        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && info == false)
         {
             QuestManager.questManager.QuestRequest(this);
             if (QuestManager.questManager.currentQuest.id == 1)
             {
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(info_aiutoregista, transform.position, Quaternion.identity);
+                info = true;
                 for (int i = 0; i < comparse.childCount; i++)
                 {
                     comparse.GetChild(i).gameObject.SetActive(true);
@@ -46,6 +51,13 @@ public class QuestComparse : QuestNPC
                 QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
         }
         SetQuestMarker();
+
+        if(info == true){
+            if (Input.GetKeyDown(KeyCode.Space)){
+                Destroy(dialogueBoxClone);
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_comparse, transform.position, Quaternion.identity);
+            }
+         }
     }
 
 }

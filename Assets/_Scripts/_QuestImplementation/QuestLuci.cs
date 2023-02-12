@@ -35,15 +35,14 @@ public class QuestLuci : QuestNPC
                 LightGun.GetComponent<LightGun>().enabled = false;
                 Camera.SetActive(false);
             }
-
-            if(info == true){
-                if ( Input.GetKeyDown(KeyCode.Space)){
-                Destroy(dialogueBoxClone);
-
-                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci, transform.position, Quaternion.identity);
-            }
-        }
         }
         SetQuestMarker();
+
+        if(info == true){
+            if (Input.GetKeyDown(KeyCode.Space)){
+                Destroy(dialogueBoxClone);
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci, transform.position, Quaternion.identity);
+            }
+         }
     }
 }

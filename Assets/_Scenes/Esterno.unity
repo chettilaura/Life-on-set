@@ -994,6 +994,8 @@ MonoBehaviour:
   aliens: {fileID: 1778950483}
   spawner: {fileID: 1885517059}
   Player: {fileID: 689416818}
+  dialoguebox_comparse: {fileID: 4855936148645797204, guid: 28983880f3d2543f0a141180b968dde2, type: 3}
+  info_aiutoregista: {fileID: 2149116276955257173, guid: d7f45ba0432d740fc89ff7d5f010d8e9, type: 3}
 --- !u!136 &271653537
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4165,7 +4167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _coffee_bar: {fileID: 6041744198588797523, guid: a468e4b90b4af475e95563b922854106, type: 3}
   _coffeeMachine: {fileID: 6126083417185839104}
-  "Caff\xE8Preso": 0
+  CaffePreso: 0
 --- !u!4 &702912394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4831012669268828076, guid: 9e97dd8cbbbdf42448913afec3426032, type: 3}
