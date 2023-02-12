@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class QuestCaffe :  QuestNPC
 {
-    public GameObject startTask;
+    public GameObject coffeeMachine;
 
     void Update()
     {
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
         {
             QuestManager.questManager.QuestRequest(this);
-            if (QuestManager.questManager.currentQuest != null)
-                startTask.GetComponent<Collider>().enabled = true;
+            if (QuestManager.questManager.currentQuest.id == 0)
+                coffeeMachine.GetComponent<Collider>().enabled = true;
             else
-                startTask.GetComponent<Collider>().enabled = false;
+                coffeeMachine.GetComponent<Collider>().enabled = false;
         }
         SetQuestMarker();
     }
