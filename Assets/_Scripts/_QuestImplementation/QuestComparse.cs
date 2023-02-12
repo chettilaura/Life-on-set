@@ -38,7 +38,7 @@ public class QuestComparse : QuestNPC
             }
 
         }
-        else if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Return) && Player.GetComponent<task_caffè>().CaffèPreso && !_coffeeReceived)
+        else if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Return) && Player.GetComponent<task_caffe>().CaffePreso && !_coffeeReceived)
         {
             QuestManager.questManager.currentQuest.questObjectiveCount++;
             _coffeeReceived = true;

@@ -17,7 +17,7 @@ public class QuestCaffe :  QuestNPC
                 coffeeMachine.GetComponent<Collider>().enabled = true;
             else
                 coffeeMachine.GetComponent<Collider>().enabled = false;
-        } else if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Return) && Player.GetComponent<task_caffè>().CaffèPreso && !_coffeeReceived)
+        } else if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Return) && Player.GetComponent<task_caffe>().CaffePreso && !_coffeeReceived)
         {
             QuestManager.questManager.currentQuest.questObjectiveCount++;
             _coffeeReceived = true;

@@ -38,7 +38,7 @@ public class QuestSuoni : QuestNPC
             }
                
         }
-        else if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Return) && player.GetComponent<task_caffè>().CaffèPreso && !_coffeeReceived)
+        else if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Return) && player.GetComponent<task_caffe>().CaffePreso && !_coffeeReceived)
         {
             QuestManager.questManager.currentQuest.questObjectiveCount++;
             _coffeeReceived = true;

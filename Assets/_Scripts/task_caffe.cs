@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class task_caffè : MonoBehaviour
+public class task_caffe : MonoBehaviour
 {
     [SerializeField] private GameObject _coffee_bar;
     [SerializeField] private GameObject _coffeeMachine;
 
     private GameObject dialogueBoxClone;
     public Coroutine co;
-    public bool CaffèPreso = false;
+    public bool CaffePreso = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -45,7 +45,7 @@ public class task_caffè : MonoBehaviour
         //Destroy(collider.gameObject);
         collider.enabled = false;
         Destroy(dialogueBoxClone, 4f);
-        CaffèPreso = true;
+        CaffePreso = true;
 
     }
 
