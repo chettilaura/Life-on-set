@@ -9,6 +9,7 @@ public class registration_bar : MonoBehaviour
 
     public int rec = 0;
     public int rec_max = 100;
+    public int seconds;
 
     //public bool flag;
 
@@ -40,23 +41,23 @@ public class registration_bar : MonoBehaviour
     IEnumerator aggiornaemtno() {
         rec = 0;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(seconds);
         rec = 20;
         GetCurrentFill();
         
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(seconds);
         rec = 40;
         GetCurrentFill();
         
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(seconds);
         rec =  60;
         GetCurrentFill();
         
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(seconds);
         rec = 80;
         GetCurrentFill();
         
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(seconds);
         rec = 100;
         GetCurrentFill();
         

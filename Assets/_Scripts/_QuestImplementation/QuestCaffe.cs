@@ -5,6 +5,8 @@ using UnityEngine;
 public class QuestCaffe :  QuestNPC
 {
     public GameObject coffeeMachine;
+    public GameObject Player;
+    private bool _coffeeReceived = false;
 
     void Update()
     {
@@ -15,6 +17,10 @@ public class QuestCaffe :  QuestNPC
                 coffeeMachine.GetComponent<Collider>().enabled = true;
             else
                 coffeeMachine.GetComponent<Collider>().enabled = false;
+        } else if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Return) && Player.GetComponent<task_caffè>().CaffèPreso && !_coffeeReceived)
+        {
+            QuestManager.questManager.currentQuest.questObjectiveCount++;
+            _coffeeReceived = true;
         }
         SetQuestMarker();
     }

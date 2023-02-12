@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class task_caffè : MonoBehaviour
 {
-    [SerializeField] private GameObject coffee_bar;
+    [SerializeField] private GameObject _coffee_bar;
+    [SerializeField] private GameObject _coffeeMachine;
 
     private GameObject dialogueBoxClone;
     public Coroutine co;
+    public bool CaffèPreso = false;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 18)
         {
             co = StartCoroutine(CoffeePreparation(other));
-        }
+            _coffeeMachine.GetComponent<AudioSource>().enabled = true;
+        } 
 
     }
 
@@ -25,24 +28,25 @@ public class task_caffè : MonoBehaviour
             StopCoroutine(co);
 
             Destroy(dialogueBoxClone, 0.5f);
+            _coffeeMachine.GetComponent<AudioSource>().enabled = false;
         }
     }
 
     IEnumerator CoffeePreparation(Collider collider)
     {
-        dialogueBoxClone = (GameObject)GameObject.Instantiate(coffee_bar, transform.position, Quaternion.identity);
+        dialogueBoxClone = (GameObject)GameObject.Instantiate(_coffee_bar, transform.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(1);
-        yield return new WaitForSeconds(1);
-        yield return new WaitForSeconds(1);
-        yield return new WaitForSeconds(1);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2);
 
         //Destroy(collider.gameObject);
         collider.enabled = false;
         Destroy(dialogueBoxClone, 4f);
-        QuestManager.questManager.currentQuest.questObjectiveCount = 6;
-        QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
+        CaffèPreso = true;
 
     }
+
 }
