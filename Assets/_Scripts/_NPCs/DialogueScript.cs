@@ -11,8 +11,8 @@ public class DialogueScript : MonoBehaviour
 
     private int _index;
 
-    [SerializeField] private GameObject _press_to_End_text;
-    private GameObject _clone_press_to_End_text;
+    //[SerializeField] private GameObject _press_to_End_text;
+    //private GameObject _clone_press_to_End_text;
 
     //audio
     [SerializeField] private AudioClip _soundeffect;
@@ -90,11 +90,11 @@ public class DialogueScript : MonoBehaviour
             
             
             //mostro a schermo per 2 secondi la scritta dove si dice di premere E per chiudere il dialogo
-            _clone_press_to_End_text = (GameObject)GameObject.Instantiate(_press_to_End_text, transform.position, Quaternion.identity);
-            Destroy(_clone_press_to_End_text, 1f);
+            //_clone_press_to_End_text = (GameObject)GameObject.Instantiate(_press_to_End_text, transform.position, Quaternion.identity);
+            //Destroy(_clone_press_to_End_text, 1f);
             
             gameObject.SetActive(false);
-            PlayerNPCinteraction._end_dialogue = true;
+            //PlayerNPCinteraction._end_dialogue = true;
 
         }
     }

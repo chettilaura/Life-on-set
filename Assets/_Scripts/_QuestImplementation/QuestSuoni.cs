@@ -11,11 +11,18 @@ public class QuestSuoni : QuestNPC
     public GameObject talking_people_sound;
     public GameObject rain_sound;
     public GameObject leaves_sound;
-    public GameObject dialoguebox_sound;
+    public GameObject dialoguebox_sound; //questo è il dialogo dell'NPC che da la task per la prima volta
+    public GameObject dialoguebox_sound_inProgress; //questo è il dialogo dell'NPC che ripete la task quando il player ci ritorna 
+    public GameObject dialoguebox_sound_completed; //questo è il dialogo dell'NPC che dice di aver concluso la task 
     private GameObject dialogueBoxClone;
     public GameObject infoFonico;
-    private bool info = false;
+    private bool info = false; //info diventa true quando la spiegazione è stata fatta vedere  
+    private bool nonCompletedYet = false; //questa variabile diventa true quando torna dal NPC ma non ha ancora raccolto tutti i suoni 
     private bool _coffeeReceived = false;
+
+    public GameObject suonoAmbienteGioco;
+
+
     void Update()
     {
         
@@ -28,11 +35,15 @@ public class QuestSuoni : QuestNPC
             if (QuestManager.questManager.currentQuest.id == 4){
                 startTask.GetComponent<Collider>().enabled = true;
                 player.GetComponent<sound>().enabled = true; //attivo lo script per la raccolta dei suoni
+                //abbassa il volume del gioco 
+                suonoAmbienteGioco.GetComponent<AudioSource>().volume = 0.05f;
                 motor_engine_sound.SetActive(true);
                 talking_people_sound.SetActive(true);
                 rain_sound.SetActive(true);
                 leaves_sound.SetActive(true);
             }else{
+                //rialza il volume del gioco 
+                suonoAmbienteGioco.GetComponent<AudioSource>().volume = 0.2f;
                 startTask.GetComponent<Collider>().enabled = false;
                 player.GetComponent<sound>().enabled = false;
             }
@@ -47,12 +58,29 @@ public class QuestSuoni : QuestNPC
         }
         SetQuestMarker();
 
-        if(info == true){
-            if ( Input.GetKeyDown(KeyCode.Space)){
+        if(questNPC._inTrigger &&  info == true){
+            if (Input.GetKeyDown(KeyCode.Space)){
                 Destroy(dialogueBoxClone);
 
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound, transform.position, Quaternion.identity);
+                nonCompletedYet = true;
+            }
         }
-        }
+
+
+        
+         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && nonCompletedYet == true && QuestManager.questManager.currentQuest.questObjectiveCount != 4){
+                //esce dialogo "non hai ancora completato il task"
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound_inProgress, transform.position, Quaternion.identity);
+
+         }
+
+         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && QuestManager.questManager.currentQuest.questObjectiveCount == 4 ){
+            //esce dialogo " hai completato il task" & duiventa verde 
+            dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound_completed, transform.position, Quaternion.identity);
+
+         }
+
+
     }
 }
