@@ -159,4 +159,20 @@ public class QuestManager : MonoBehaviour
         return false;
     }
 
+    //check if everything is done
+    public bool CheckEverythingDone()
+    {
+        int contatoreDone = 0;
+        for(int i=0; i<questList.Count; i++)
+        {
+            if (questList[i].progress == Quest.QuestProgress.DONE)
+                contatoreDone++;
+        }
+        if(contatoreDone == questList.Count)
+        {
+            return true;
+        }
+        return false;
+    }
+
 }

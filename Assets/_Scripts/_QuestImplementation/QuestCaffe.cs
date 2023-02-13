@@ -35,7 +35,8 @@ public class QuestCaffe :  QuestNPC
         }
         SetQuestMarker();
 
-         if(info == true){
+         if(info == true && questNPC._inTrigger)
+        {
             if (Input.GetKeyDown(KeyCode.Space)){
                 Destroy(dialogueBoxClone);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe, transform.position, Quaternion.identity);

@@ -64,6 +64,7 @@ public class LightGun : MonoBehaviour
                         if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
                         {
                             QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
+                            Cursor.lockState = CursorLockMode.None;
                         }
                     }
                 }
@@ -79,7 +80,7 @@ public class LightGun : MonoBehaviour
         if (Cursor.lockState == CursorLockMode.None && Input.GetMouseButtonDown(1))
             Cursor.lockState = CursorLockMode.Locked;
 
-        if (Cursor.lockState == CursorLockMode.Locked && Input.GetKeyDown(KeyCode.Escape))
-            Cursor.lockState = CursorLockMode.None;
+       // if (Cursor.lockState == CursorLockMode.Locked && Input.GetKeyDown(KeyCode.Escape))
+        //    Cursor.lockState = CursorLockMode.None;
     }
 }

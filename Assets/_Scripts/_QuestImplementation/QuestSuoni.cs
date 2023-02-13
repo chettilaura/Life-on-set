@@ -29,14 +29,14 @@ public class QuestSuoni : QuestNPC
 
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) )
         {
-            if (info == false)
+            if (info == false)   //instanzia la spiegazione
             {
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(infoFonico, transform.position, Quaternion.identity);
                 info = true;
             }
 
             QuestManager.questManager.QuestRequest(this);
-            if (QuestManager.questManager.currentQuest.id == 4){
+            if (QuestManager.questManager.currentQuest.id == 4){    //controllo che la quest attiva sia quella dei suoni 
                 startTask.GetComponent<Collider>().enabled = true;
                 player.GetComponent<sound>().enabled = true; //attivo lo script per la raccolta dei suoni
                 //abbassa il volume del gioco 
@@ -45,22 +45,44 @@ public class QuestSuoni : QuestNPC
                 talking_people_sound.SetActive(true);
                 rain_sound.SetActive(true);
                 leaves_sound.SetActive(true);
-            }else{
+
+                if (nonCompletedYet == true && QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.ACCEPTED)
+                {
+                    //esce dialogo "non hai ancora completato il task"
+                    dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound_inProgress, transform.position, Quaternion.identity);
+
+                }
+
+                if (QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE)
+                {
+                    //esce dialogo " hai completato il task" & duiventa verde 
+                    dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound_completed, transform.position, Quaternion.identity);
+
+                }
+            }
+            else{
                 //rialza il volume del gioco 
                 suonoAmbienteGioco.GetComponent<AudioSource>().volume = 0.2f;
                 startTask.GetComponent<Collider>().enabled = false;
                 player.GetComponent<sound>().enabled = false;
+
+                //qui mettere dialogo di quando si avvicina ma è attiva un'altra task
+
+                //to do
+
+                if(player.GetComponent<task_caffe>().CaffePreso && !_coffeeReceived)
+                {
+                    QuestManager.questManager.currentQuest.questObjectiveCount++;
+                    _coffeeReceived = true;
+                    if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
+                        QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
+
+                    //qui mettere dialogo da inserire quando è attiva la task del caffè e viene consegnato il caffè
+                }
             }
                
         }
-        else if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Return) && player.GetComponent<task_caffe>().CaffePreso && !_coffeeReceived)
-        {
-            QuestManager.questManager.currentQuest.questObjectiveCount++;
-            _coffeeReceived = true;
-            if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
-                QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
-        }
-        SetQuestMarker();
+        SetQuestMarker();   //controlla se la task è finita e se è finita mette il punto esclamativo
 
         if(questNPC._inTrigger &&  info == true){
             if (Input.GetKeyDown(KeyCode.Space)){
@@ -72,18 +94,7 @@ public class QuestSuoni : QuestNPC
         }
 
 
-        
-         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && nonCompletedYet == true && QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.ACCEPTED){
-                //esce dialogo "non hai ancora completato il task"
-                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound_inProgress, transform.position, Quaternion.identity);
 
-         }
-
-         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE){
-            //esce dialogo " hai completato il task" & duiventa verde 
-            dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound_completed, transform.position, Quaternion.identity);
-
-         }
 
 
     }

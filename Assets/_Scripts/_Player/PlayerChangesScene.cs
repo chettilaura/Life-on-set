@@ -11,7 +11,7 @@ public class PlayerChangesScene : MonoBehaviour
     {
 
         //layer 7 = esterno 
-        if (collider.gameObject.layer == 7 && QuestManager.questManager.currentQuest.id == -1)
+        if (collider.gameObject.layer == 7 && QuestManager.questManager.currentQuest.id == -1) //currentQuest.id diventa -1 quando non c'è nessuna task attiva
         {
 
             Debug.Log("Player has entered the trigger");
@@ -33,7 +33,7 @@ public class PlayerChangesScene : MonoBehaviour
         }
 
       //layer 9 = studio2
-        if (collider.gameObject.layer == 9 && QuestManager.questManager.currentQuest.id == -1)
+        if (collider.gameObject.layer == 9 && QuestManager.questManager.CheckEverythingDone())
         {
 
             Debug.Log("Player has entered the trigger");
