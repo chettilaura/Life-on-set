@@ -40,12 +40,12 @@ public class QuestDifferenze : QuestNPC
             }
         }
 
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && nonCompletedYet == true && QuestManager.questManager.currentQuest.questObjectiveCount != 3){
+        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && nonCompletedYet == true && QuestManager.questManager.currentQuest.questObjectiveCount != 5){
             //esce dialogo "non hai ancora completato il task"
             dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_diff_inProgress, transform.position, Quaternion.identity);
         }
 
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && QuestManager.questManager.currentQuest.questObjectiveCount == 3 ){
+        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && QuestManager.questManager.currentQuest.questObjectiveCount == 5){
             //esce dialogo " hai completato il task" & duiventa verde 
             dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_diff_completed, transform.position, Quaternion.identity);
 
