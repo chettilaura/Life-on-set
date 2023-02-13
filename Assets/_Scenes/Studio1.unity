@@ -3835,6 +3835,8 @@ MonoBehaviour:
   startTask: {fileID: 121885343363920813}
   dialoguebox_DOP: {fileID: 4855936148645797204, guid: df19b478106304e069ab7a1eb33f8169, type: 3}
   infoDOP: {fileID: 2149116276955257173, guid: 0ec936fe162db4fce95be5120ee909ec, type: 3}
+  dialoguebox_diff_inProgress: {fileID: 4855936148645797204, guid: cca5098de8d3541c382d84b9c1863947, type: 3}
+  dialoguebox_diff_completed: {fileID: 4855936148645797204, guid: 760e20004ad7545ad9ee4bdc2163a85b, type: 3}
 --- !u!65 &1162085926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4673,7 +4675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1483732368
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5466,6 +5468,8 @@ MonoBehaviour:
   LightGun: {fileID: 2135900615}
   dialoguebox_luci: {fileID: 4855936148645797204, guid: 4120a558e792b410c94da855fb4dbdc6, type: 3}
   infoLuci: {fileID: 2149116276955257173, guid: f0f32752eadaf4abcb968f096cc36058, type: 3}
+  dialoguebox_luci_completed: {fileID: 4855936148645797204, guid: 13989deccb74c4c4094ce5f7c6bb2e8b, type: 3}
+  dialoguebox_luci_inProgress: {fileID: 4855936148645797204, guid: 9d4c3e97c0b8846129c9b7cd8418292c, type: 3}
 --- !u!1001 &1725023263
 PrefabInstance:
   m_ObjectHideFlags: 0
