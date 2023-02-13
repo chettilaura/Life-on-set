@@ -73,13 +73,13 @@ public class QuestSuoni : QuestNPC
 
 
         
-         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && nonCompletedYet == true && QuestManager.questManager.currentQuest.questObjectiveCount != 4){
+         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && nonCompletedYet == true && QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.ACCEPTED){
                 //esce dialogo "non hai ancora completato il task"
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound_inProgress, transform.position, Quaternion.identity);
 
          }
 
-         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && QuestManager.questManager.currentQuest.questObjectiveCount == 4 ){
+         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE){
             //esce dialogo " hai completato il task" & duiventa verde 
             dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound_completed, transform.position, Quaternion.identity);
 

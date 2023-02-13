@@ -85,6 +85,7 @@ public class task_differenze_su_canvas : MonoBehaviour
             //compare scritta di fine gioco
             endgame_text.SetActive(true);
             Invoke("end_text", 5);
+            QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
             
         }
     } 

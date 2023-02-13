@@ -8,6 +8,7 @@ public class OptionsButton : MonoBehaviour
     [SerializeField] private Slider _volumeSlider;
 
     [SerializeField] private AudioSource _audioSource;
+    public Toggle MusicToggle;
 
     public void Start()
     {
@@ -28,12 +29,12 @@ public class OptionsButton : MonoBehaviour
 
     public void Audio()
     {
-        if (_audioSource.isPlaying)
+        if (MusicToggle.isOn)
         {
-            _audioSource.Stop();
+            AudioListener.volume = _volumeSlider.value;
         } else
         {
-            _audioSource.Play();
+            AudioListener.volume = 0;
         }
     }
 }
