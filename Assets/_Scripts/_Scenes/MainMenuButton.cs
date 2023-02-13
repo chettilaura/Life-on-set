@@ -5,13 +5,19 @@ using UnityEngine.EventSystems;
 
 public class MainMenuButton : MonoBehaviour  //, IPointerDownHandler, IPointerUpHandler
 {
+
+    
     void Update(){
 
         //premo Esc per andare al menu principale
          if (Input.GetKeyDown(KeyCode.Escape)) 
         {
-            Scene_Loader.Load(Scene_Loader.Scene.MainMenu);
+
+            //va salvata la scena corrente prima di passare al main menu perchè poi ci deve ritornare
+            //Scene_Loader.Load(Scene_Loader.Scene.MainMenu);
+            //MainMenu_prefab.setActive(true);
         }
+
 
     } 
 }
