@@ -17,13 +17,17 @@ public class QuestComparse : QuestNPC
     private void Update()
     {
 
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && info == false)
+        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) )
         {
             QuestManager.questManager.QuestRequest(this);
             if (QuestManager.questManager.currentQuest.id == 1)
             {
-                dialogueBoxClone = (GameObject)GameObject.Instantiate(info_aiutoregista, transform.position, Quaternion.identity);
-                info = true;
+                if (info == false)
+                {
+                    dialogueBoxClone = (GameObject)GameObject.Instantiate(info_aiutoregista, transform.position, Quaternion.identity);
+                    info = true;
+                }
+
                 for (int i = 0; i < comparse.childCount; i++)
                 {
                     comparse.GetChild(i).gameObject.SetActive(true);

@@ -27,10 +27,14 @@ public class QuestSuoni : QuestNPC
     {
         
 
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && info == false)
+        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) )
         {
-            dialogueBoxClone = (GameObject)GameObject.Instantiate(infoFonico, transform.position, Quaternion.identity);
-            info = true;
+            if (info == false)
+            {
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(infoFonico, transform.position, Quaternion.identity);
+                info = true;
+            }
+
             QuestManager.questManager.QuestRequest(this);
             if (QuestManager.questManager.currentQuest.id == 4){
                 startTask.GetComponent<Collider>().enabled = true;

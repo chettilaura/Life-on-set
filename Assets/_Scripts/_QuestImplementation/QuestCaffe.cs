@@ -13,10 +13,14 @@ public class QuestCaffe :  QuestNPC
     private bool info = false;
     void Update()
     {
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && info == false)
+        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) )
         {
-            dialogueBoxClone = (GameObject)GameObject.Instantiate(info_regista, transform.position, Quaternion.identity);
-            info = true;
+            if (info == false)
+            {
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(info_regista, transform.position, Quaternion.identity);
+                info = true;
+            }
+
             QuestManager.questManager.QuestRequest(this);
             if (QuestManager.questManager.currentQuest.id == 0)
                 coffeeMachine.GetComponent<Collider>().enabled = true;
