@@ -57,7 +57,7 @@ public class extrasMovement : MonoBehaviour
         //TRANSITIONS
         _stateMachine.AddTransition(walkingState, stopState, () =>  _isNear);
         _stateMachine.AddTransition(stopState, walkingState, () => !_isNear);
-        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.Return) && _extra && QuestManager.questManager.currentQuest.questObjectiveCount< QuestManager.questManager.currentQuest.questObjectiveRequirement);
+        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E) && _extra && QuestManager.questManager.currentQuest.questObjectiveCount< QuestManager.questManager.currentQuest.questObjectiveRequirement);
         _stateMachine.AddTransition(followState, stopState, () => _stop);
 
         //START STATE
@@ -154,7 +154,7 @@ public class StopState : State
     {
         _extra._isNear = _extra.IsTargetWithinDistance(_extra._stoppingDistance);
         _extra.Talk();
-        if (Input.GetKeyDown(KeyCode.Return)){
+        if (Input.GetKeyDown(KeyCode.E)){
             if (!_extra._extra)
             {
                 _extra._dialogueBoxClone = (GameObject)GameObject.Instantiate(_extra._comparsaSbagliata, _extra.transform.localPosition, Quaternion.identity);
