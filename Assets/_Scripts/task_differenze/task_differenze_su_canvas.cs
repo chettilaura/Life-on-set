@@ -10,6 +10,7 @@ public class task_differenze_su_canvas : MonoBehaviour
     public GameObject canvas_differenze;
     public GameObject endgame_text;
     
+    private bool completed=false;
     private bool[] pressedButtons = {false, false, false, false, false, false};
     
     
@@ -74,7 +75,7 @@ public class task_differenze_su_canvas : MonoBehaviour
 
 
     void Update(){
-        if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
+        if (completed==false && QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
         {
             Debug.Log("Hai trovato tutte le differenze!");
             //cancellla le due immagini 
@@ -83,10 +84,11 @@ public class task_differenze_su_canvas : MonoBehaviour
 
             
             //compare scritta di fine gioco
-            endgame_text.SetActive(true);
-            Invoke("end_text", 5);
+            //endgame_text.SetActive(true);
+            //Invoke("end_text", 5);
             QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
-            
+            completed=true;
+
         }
     } 
 
