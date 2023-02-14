@@ -11,10 +11,11 @@ public class PlayerChangesScene : MonoBehaviour
     {
 
         //layer 7 = esterno 
-        if (collider.gameObject.layer == 7 && QuestManager.questManager.currentQuest.id == -1) //currentQuest.id diventa -1 quando non c'è nessuna task attiva
+        if (collider.gameObject.layer == 7 && QuestManager.questManager.currentQuest.id == -1) //currentQuest.id diventa -1 quando non c'ï¿½ nessuna task attiva
         {
 
             Debug.Log("Player has entered the trigger");
+            Debug.Log("non puoi ancora andare all'esterno fino a che non hai finito di aiutare chi ti ha chiesto aiuto");
             //chiama scena successiva
         
              Scene_Loader.Load(Scene_Loader.Scene.Esterno);
@@ -27,6 +28,7 @@ public class PlayerChangesScene : MonoBehaviour
 
             Debug.Log("Player has entered the trigger");
             //chiama scena successiva
+             Debug.Log("non puoi ancora entrare nello studio1 fino a che non hai finito di aiutare chi ti ha chiesto aiuto");
         
              Scene_Loader.Load(Scene_Loader.Scene.Studio1);
 
@@ -38,6 +40,7 @@ public class PlayerChangesScene : MonoBehaviour
 
             Debug.Log("Player has entered the trigger");
             //chiama scena successiva
+             Debug.Log("non puoi ancora entrare nello studio2 fino a che non hai finito di aiutare tutti");
         
              Scene_Loader.Load(Scene_Loader.Scene.Studio2);
 
@@ -49,13 +52,15 @@ public class PlayerChangesScene : MonoBehaviour
 
             Debug.Log("Player has entered the trigger");
             //chiama scena successiva
+            Debug.Log("non puoi ancora entrare nel camper fino a che non hai finito di aiutare chi ti ha chiesto aiuto");
         
              Scene_Loader.Load(Scene_Loader.Scene.Camper);
 
         }
 
-         //layer 11 = camion
-        if (collider.gameObject.layer == 11 && QuestManager.questManager.currentQuest.id == -1)
+        //camion non Ã¨ available  
+         //layer 11 = camion 
+       /* if (collider.gameObject.layer == 11 && QuestManager.questManager.currentQuest.id == -1)
         {
 
             Debug.Log("Player has entered the trigger");
@@ -64,6 +69,7 @@ public class PlayerChangesScene : MonoBehaviour
              Scene_Loader.Load(Scene_Loader.Scene.Camion);
 
         }
+        */
 
     }
 
