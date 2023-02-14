@@ -58,22 +58,23 @@ public class QuestCaffe :  QuestNPC
 
             //si avvicina all'NPC premendo E mentre è attiva la task caffe e non ha ancora ricevuto il caffe
             if(Player.GetComponent<task_caffe>().CaffePreso && !_coffeeReceived){
-                  QuestManager.questManager.currentQuest.questObjectiveCount++;
-                  dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe_ricevuto , transform.position, Quaternion.identity);
+                QuestManager.questManager.currentQuest.questObjectiveCount++;
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe_ricevuto , transform.position, Quaternion.identity);
                     
-                    if(QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement){
-                        QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
-                    }
-                    _coffeeReceived = true;
+                if(QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement){
+                    QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
+                }
+                _coffeeReceived = true;
             }
 
 
 
              //se ha portato tutti e tre i caffè ha finito 
             if (QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE && inizio_task == 2){
-                    Debug.Log("questObjectiveCount==questObjectiveRequirement");
-                    dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe_completed , transform.position, Quaternion.identity);
-                }
+                Debug.Log("questObjectiveCount==questObjectiveRequirement");
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe_completed , transform.position, Quaternion.identity);
+                QuestManager.questManager.FirstTaskDone = true;
+            }
 
         }
 

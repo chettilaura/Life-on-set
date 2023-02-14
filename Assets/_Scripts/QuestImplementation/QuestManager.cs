@@ -9,6 +9,7 @@ public class QuestManager : MonoBehaviour
     public static QuestManager questManager;
     public List<Quest> questList = new List<Quest> ();
     public Quest currentQuest = null;
+    public bool FirstTaskDone = false;
 
     private void Awake()
     {
