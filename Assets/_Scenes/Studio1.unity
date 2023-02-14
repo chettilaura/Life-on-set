@@ -10426,7 +10426,9 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6995231899665877897, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
+    - {fileID: 6995231899665878007, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
 --- !u!1 &2135900615 stripped
 GameObject:
@@ -10502,7 +10504,7 @@ MonoBehaviour:
   lockToCameraForward: 0
   turnSpeed: 10
   sprintJoystick: 332
-  sprintKeyboard: 32
+  sprintKeyboard: 304
 --- !u!114 &2135900620
 MonoBehaviour:
   m_ObjectHideFlags: 0
