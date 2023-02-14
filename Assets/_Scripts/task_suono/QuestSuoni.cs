@@ -35,7 +35,6 @@ public class QuestSuoni : QuestNPC
             if( inizio_task == 1){
                 if (Input.GetKeyDown(KeyCode.Space)){
                      Destroy(spiegazione_canvas);
-
                      dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound, transform.position, Quaternion.identity);
                     inizio_task = 2;
                     }

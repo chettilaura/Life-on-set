@@ -12254,7 +12254,10 @@ MonoBehaviour:
   coffeeMachine: {fileID: 6126083417185839104}
   Player: {fileID: 689416818}
   dialoguebox_caffe: {fileID: 4855936148645797204, guid: c333de8e62a84428daaf4652e29b2223, type: 3}
-  info_regista: {fileID: 2149116276955257173, guid: 5a01d8ba1af6943f6977d84315339042, type: 3}
+  dialoguebox_caffe_completed: {fileID: 4855936148645797204, guid: 0b38acd0dde124ddabb44095b0305027, type: 3}
+  dialoguebox_caffe_ricevuto: {fileID: 4855936148645797204, guid: 8359da96addd7445495502c23520e293, type: 3}
+  dialoguebox_caffe_inAttesa: {fileID: 4855936148645797204, guid: 51cf6fbf28db5405b9d2f5e5a8836248, type: 3}
+  spiegazione_canvas: {fileID: 2149116276955257173, guid: 5a01d8ba1af6943f6977d84315339042, type: 3}
 --- !u!136 &2026950213
 CapsuleCollider:
   m_ObjectHideFlags: 0
