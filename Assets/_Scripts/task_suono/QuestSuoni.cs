@@ -51,17 +51,19 @@ public class QuestSuoni : QuestNPC
                 player.GetComponent<sound>().enabled = true; //attivo lo script per la raccolta dei suoni
                 //abbassa il volume del gioco 
                 suonoAmbienteGioco.GetComponent<AudioSource>().volume = 0.05f;
-                //attiva i suoni nell'ambiente 
-                motor_engine_sound.SetActive(true);
-                talking_people_sound.SetActive(true);
-                rain_sound.SetActive(true);
-                leaves_sound.SetActive(true);
+                
 
                 //instanzia la spiegazione
                 if (inizio_task == 0)    
                 {
                 spiegazione_canvas = (GameObject)GameObject.Instantiate(infoFonico, transform.position, Quaternion.identity);
                 inizio_task = 1;
+
+                //attiva i suoni nell'ambiente 
+                motor_engine_sound.SetActive(true);
+                talking_people_sound.SetActive(true);
+                rain_sound.SetActive(true);
+                leaves_sound.SetActive(true);
                 }
 
                 //si avvicina all'NPC premendo E ma non ha ancora finito questa task

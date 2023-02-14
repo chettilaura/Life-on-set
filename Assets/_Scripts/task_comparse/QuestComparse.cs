@@ -38,7 +38,7 @@ public class QuestComparse : QuestNPC
 
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) )
         {
-            QuestManager.questManager.QuestRequest(this); //assegna questa come quest corrente 
+            QuestManager.questManager.QuestRequest(this); //assegna questa come quest corrente che come DONE 
 
 
             if (QuestManager.questManager.currentQuest.id == 1)
@@ -86,7 +86,6 @@ public class QuestComparse : QuestNPC
                 //si avvicina all'NPC premendo E e ha appena finito questa 
                 if (QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE && inizio_task == 2) //se quest comparse è sengnata come fatta
                 {
-                   
                     //esce dialogo " hai completato il task" 
                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialogo_comparse_completed, transform.position, Quaternion.identity);
                     nonCompletedYet=false;
