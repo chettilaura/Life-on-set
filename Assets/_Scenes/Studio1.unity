@@ -3189,11 +3189,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394601786527, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_VerticalAxis.m_MaxSpeed
-      value: 0.03
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835383394601786527, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
+      propertyPath: m_VerticalAxis.m_MaxValue
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835383394601786527, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
+      propertyPath: m_VerticalAxis.m_MinValue
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394601786527, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_HorizontalAxis.m_MaxSpeed
-      value: 0.08
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_RootOrder
@@ -3255,7 +3263,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7835383394601786524, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
 --- !u!1 &786371993 stripped
 GameObject:
