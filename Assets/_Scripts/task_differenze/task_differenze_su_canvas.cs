@@ -9,7 +9,7 @@ public class task_differenze_su_canvas : MonoBehaviour
     public GameObject immagini;
     public GameObject canvas_differenze;
     public GameObject endgame_text;
-    GameObject thisFireball;
+    
     private bool[] pressedButtons = {false, false, false, false, false, false};
     
     
@@ -79,7 +79,7 @@ public class task_differenze_su_canvas : MonoBehaviour
             Debug.Log("Hai trovato tutte le differenze!");
             //cancellla le due immagini 
             immagini.SetActive(false);
-            //thisFireball = (GameObject)Instantiate(endgame_text);
+            
 
             
             //compare scritta di fine gioco
@@ -91,7 +91,7 @@ public class task_differenze_su_canvas : MonoBehaviour
     } 
 
     public void end_text(){
-        //Destroy(thisFireball);
+        
         endgame_text.SetActive(false);
         Debug.Log("end_text");
         canvas_differenze.SetActive(false);

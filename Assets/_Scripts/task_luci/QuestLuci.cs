@@ -10,22 +10,38 @@ public class QuestLuci : QuestNPC
     public GameObject LightGun;
     public GameObject dialoguebox_luci;
     private GameObject dialogueBoxClone;
+    public GameObject spiegazione_canvas;
     public GameObject infoLuci;
     public GameObject dialoguebox_luci_completed;
     public GameObject dialoguebox_luci_inProgress;
-    private bool info = false; //info diventa true quando la spiegazione è stata fatta vedere  
-    private bool nonCompletedYet = false; //questa variabile diventa true quando torna dal NPC ma non ha ancora raccolto tutti i suoni 
-    private bool _coffeeReceived = false;
+
+    private bool nonCompletedYet = true; //questa variabile diventa true quando torna dal NPC ma non ha ancora raccolto tutti i suoni 
+    private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
  
     void Update()
     {
+
+
+         //istanzia il primo dialogo di partenza se è stato premuto spazio dopo aver visto la spiegazione
+            if( inizio_task == 1){
+                if (Input.GetKeyDown(KeyCode.Return)){
+                     Destroy(spiegazione_canvas);
+                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci, transform.position, Quaternion.identity);
+                    inizio_task = 2;
+                    }
+             }
+
+
+
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
         {
-            if(info == false){
-                dialogueBoxClone = (GameObject)GameObject.Instantiate(infoLuci, transform.position, Quaternion.identity);
-                info = true;
+            if(inizio_task == 0){
+                spiegazione_canvas = (GameObject)GameObject.Instantiate(infoLuci, transform.position, Quaternion.identity);
+                inizio_task = 1;
+
             }
-            QuestManager.questManager.QuestRequest(this);
+            QuestManager.questManager.QuestRequest(this); //mette come current quest la luci task & controlla DONE
+
             if (QuestManager.questManager.currentQuest.id == 3)
             {
                
@@ -36,34 +52,38 @@ public class QuestLuci : QuestNPC
                 LightGun.GetComponent<LightGun>().enabled = true ;
                 //start_task_luci.SetActive(true);
 
+
+                //si avvicina all'NPC premendo E ma non ha ancora finito questa task
+                if (nonCompletedYet == true && QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.ACCEPTED && inizio_task == 2)
+                {
+                    //esce dialogo "non hai ancora completato il task"
+                    dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci_inProgress, transform.position, Quaternion.identity);
+
+                }
+
             } else
             {
                 startTask.GetComponent<Collider>().enabled = false;
                 Light.GetComponent<ambient_light>().enabled = false;
                 LightGun.GetComponent<LightGun>().enabled = false;
                 Camera.SetActive(false);
+
+                 //si avvicina all'NPC premendo E e ha appena finito questa 
+                if (QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE && inizio_task == 2) //se quest comparse è sengnata come fatta
+                {
+
+                    //esce dialogo " hai completato il task" 
+                    dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci_completed, transform.position, Quaternion.identity);
+                    nonCompletedYet=false;
+                }
+
+
+
             }
         }
         SetQuestMarker();
 
-        if(questNPC._inTrigger && info == true){
-            if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.Space)){
-                Destroy(dialogueBoxClone);
+        
 
-                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci, transform.position, Quaternion.identity);
-                nonCompletedYet = true;
-            }
-        }
-
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && nonCompletedYet == true && QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.ACCEPTED){
-            //esce dialogo "non hai ancora completato il task"
-            dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci_inProgress, transform.position, Quaternion.identity);
-        }
-
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE ){
-            //esce dialogo " hai completato il task" & duiventa verde 
-            dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci_completed, transform.position, Quaternion.identity); 
-
-        }
     }
 }

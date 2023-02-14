@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class player_starts_task : MonoBehaviour
 {
     private bool one_box = true;
+    private bool active_differenze=false;
     private GameObject dialogueBoxClone;
     [SerializeField] private GameObject comunicazione_start;
 
@@ -27,6 +28,7 @@ public class player_starts_task : MonoBehaviour
         //task differenze
         if(other.gameObject.layer == 14)
         {
+            /*
             if (one_box)
             {
                 //istanzia la canvas del box di comunicazione
@@ -38,9 +40,14 @@ public class player_starts_task : MonoBehaviour
             {
                 
                 //instanzia la canvas del task da far partire 
+                */
+                if(active_differenze==false){
                 GameObject.Instantiate(start_task_differenze, transform.position, Quaternion.identity);
-                Destroy(dialogueBoxClone, 0.5f);
-            }
+                active_differenze=true;
+                }
+
+                //Destroy(dialogueBoxClone, 0.5f);
+            //}
 
         }
 
