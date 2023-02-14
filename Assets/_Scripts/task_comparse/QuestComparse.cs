@@ -78,7 +78,15 @@ public class QuestComparse : QuestNPC
             } else //la quest attiva non è più questa
             {
                 //disattiva tutte le comparse
+                for (int i = 0; i < comparse.childCount; i++)
+                {
+                    comparse.GetChild(i).gameObject.SetActive(false);
+                }
                 comparse.gameObject.SetActive(false);
+                for (int i = 0; i < aliens.childCount; i++)
+                {
+                    aliens.GetChild(i).gameObject.SetActive(false);
+                }
                 aliens.gameObject.SetActive(false);
                 spawner.SetActive(false);
 
