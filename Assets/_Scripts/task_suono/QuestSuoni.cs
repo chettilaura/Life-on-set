@@ -33,7 +33,7 @@ public class QuestSuoni : QuestNPC
         
         //istanzia il primo dialogo di partenza se è stato premuto spazio dopo aver visto la spiegazione
             if( inizio_task == 1){
-                if (Input.GetKeyDown(KeyCode.Space)){
+                if (Input.GetKeyDown(KeyCode.Return)){
                      Destroy(spiegazione_canvas);
                      dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound, transform.position, Quaternion.identity);
                     inizio_task = 2;

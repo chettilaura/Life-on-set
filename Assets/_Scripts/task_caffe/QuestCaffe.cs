@@ -21,7 +21,7 @@ public class QuestCaffe :  QuestNPC
         //se si preme spazio dopo la spiegazione parte il primo dialogo 
         if(inizio_task == 1)
         {
-            if (Input.GetKeyDown(KeyCode.Space)){
+            if (Input.GetKeyDown(KeyCode.Return)){
                 Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe, transform.position, Quaternion.identity);
                 inizio_task = 2;
@@ -60,15 +60,18 @@ public class QuestCaffe :  QuestNPC
             if(Player.GetComponent<task_caffe>().CaffePreso && !_coffeeReceived){
                   QuestManager.questManager.currentQuest.questObjectiveCount++;
                   dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe_ricevuto , transform.position, Quaternion.identity);
+                    
+                    if(QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement){
+                        QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
+                    }
                     _coffeeReceived = true;
             }
 
 
 
              //se ha portato tutti e tre i caffè ha finito 
-            if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement && QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE && inizio_task == 2){
+            if (QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE && inizio_task == 2){
                     Debug.Log("questObjectiveCount==questObjectiveRequirement");
-                    QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe_completed , transform.position, Quaternion.identity);
                 }
 

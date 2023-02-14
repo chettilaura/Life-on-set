@@ -223,7 +223,7 @@ public class FollowState : State
     {
         _extra.ChangeAnimation(false);
         _extra.FollowPlayer();
-        if(QuestManager.questManager.currentQuest != null && QuestManager.questManager.currentQuest.questObjectiveCount >= QuestManager.questManager.currentQuest.questObjectiveRequirement)
+        if(QuestManager.questManager.currentQuest.id ==1 && QuestManager.questManager.currentQuest.questObjectiveCount >= QuestManager.questManager.currentQuest.questObjectiveRequirement)
         {
             QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
             Debug.Log("Completed");

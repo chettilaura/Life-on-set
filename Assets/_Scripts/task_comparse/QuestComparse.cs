@@ -27,7 +27,7 @@ public class QuestComparse : QuestNPC
     {
 
          if(inizio_task ==1){
-            if (Input.GetKeyDown(KeyCode.Space)){
+            if (Input.GetKeyDown(KeyCode.Return)){
                 Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_comparse_iniziale, transform.position, Quaternion.identity);
                 inizio_task = 2;
@@ -86,6 +86,8 @@ public class QuestComparse : QuestNPC
                 //si avvicina all'NPC premendo E e ha appena finito questa 
                 if (QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE && inizio_task == 2) //se quest comparse è sengnata come fatta
                 {
+
+                    Debug.Log("è entrato nell'if di conclusione task");
                     //esce dialogo " hai completato il task" 
                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialogo_comparse_completed, transform.position, Quaternion.identity);
                     nonCompletedYet=false;
