@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 766512356223148490}
   m_Layer: 0
-  m_Name: tutorial iniziale 3
+  m_Name: tutorial iniziale comandi (ultimo)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -98, y: 151}
+  m_AnchoredPosition: {x: -98, y: 175}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7961624502134921003
@@ -172,10 +172,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ogni personaggio con il punto interrogativo ha un compito da assegnarti
-    ! Ma attenzione prima di iniziare parla con il Regista che si trova vicino allo
-    studio 1 ! Ogni volta che finisci un compito torna da chi te lo ha assegnato
-    ! Non perdere tempo ! '
+  m_text: "Ogni persona con il punto interrogativo ha bisogno di te!  \n\nQuando
+    termini il compito che ti \xE8 stato assegnato torna da chi te lo ha commissionato:
+    vedrai che il punto interrogativo si sar\xE0 trasformato in esclamativo.\n\nAttenzione:
+    prima di iniziare vai a presentarti al Regista che si trova vicino allo studio
+    1.\n\nNon perdere tempo ! "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e94e657a1d7097d4ab5bf28af07089d2, type: 2}
   m_sharedMaterial: {fileID: -1510907224840488828, guid: e94e657a1d7097d4ab5bf28af07089d2, type: 2}
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
