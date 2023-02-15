@@ -27,7 +27,7 @@ public class extrasMovement : MonoBehaviour
 
     private FiniteStateMachine<extrasMovement> _stateMachine;
     public float _stoppingDistance = 1f;
-    private float _speed = 1;
+    private float _speed = 2;
     [Range(1, 500)] public float walkRadius;
     internal bool _isNear;
     internal bool _follow=false;

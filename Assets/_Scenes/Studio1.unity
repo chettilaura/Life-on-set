@@ -3964,7 +3964,7 @@ MonoBehaviour:
   questNPC: {fileID: 0}
   startTask: {fileID: 121885343363920813}
   dialoguebox_DOP: {fileID: 4855936148645797204, guid: df19b478106304e069ab7a1eb33f8169, type: 3}
-  infoDOP: {fileID: 2149116276955257173, guid: 0ec936fe162db4fce95be5120ee909ec, type: 3}
+  infoContinuity: {fileID: 5666554398098583085, guid: 8b7ac2ce8e64f1c4e9a92e6e85fa5f44, type: 3}
   dialoguebox_diff_completed: {fileID: 4855936148645797204, guid: 760e20004ad7545ad9ee4bdc2163a85b, type: 3}
 --- !u!65 &1162085926
 BoxCollider:
@@ -3977,8 +3977,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.632687, y: 1.8, z: 1}
-  m_Center: {x: -0.3163427, y: 0.8699949, z: 4.1025394e-10}
+  m_Size: {x: 2.2600214, y: 1.8, z: 2.3184247}
+  m_Center: {x: -0.19597182, y: 0.8699949, z: -0.16770172}
 --- !u!1001 &1162837405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5760,11 +5760,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 036205fcf4e0a430db17cd88c5281678, type: 2}
     - target: {fileID: 4633489887016040033, guid: bbba08a37525a644d825a97804ea4a64, type: 3}
       propertyPath: m_Size.x
-      value: 1.14
+      value: 2.6803236
       objectReference: {fileID: 0}
     - target: {fileID: 4633489887016040033, guid: bbba08a37525a644d825a97804ea4a64, type: 3}
       propertyPath: m_Size.z
-      value: 1.01
+      value: 2.1099875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4633489887016040033, guid: bbba08a37525a644d825a97804ea4a64, type: 3}
+      propertyPath: m_Center.x
+      value: 0.012754858
+      objectReference: {fileID: 0}
+    - target: {fileID: 4633489887016040033, guid: bbba08a37525a644d825a97804ea4a64, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06300319
       objectReference: {fileID: 0}
     - target: {fileID: 4633489887016040033, guid: bbba08a37525a644d825a97804ea4a64, type: 3}
       propertyPath: m_IsTrigger

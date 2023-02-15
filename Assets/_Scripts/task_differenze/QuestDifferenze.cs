@@ -8,7 +8,7 @@ public class QuestDifferenze : QuestNPC
     public GameObject dialoguebox_DOP;
     private GameObject dialogueBoxClone;
     private GameObject spiegazione_canvas;
-    public GameObject infoDOP;
+    public GameObject infoContinuity;
 
     //public GameObject dialoguebox_diff_inProgress; //qui non lo facciamo perché deve finirlo per forza una volta iniziato 
     public GameObject dialoguebox_diff_completed;
@@ -40,7 +40,7 @@ public class QuestDifferenze : QuestNPC
             {
                 if (inizio_task == 0)
                 {
-                    spiegazione_canvas = (GameObject)GameObject.Instantiate(infoDOP, transform.position, Quaternion.identity);
+                    spiegazione_canvas = (GameObject)GameObject.Instantiate(infoContinuity, transform.position, Quaternion.identity);
                     inizio_task = 1;
 
                 }
