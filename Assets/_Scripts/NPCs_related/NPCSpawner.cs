@@ -36,4 +36,12 @@ public class NPCSpawner : MonoBehaviour
         Vector3 max = _groundCollider.bounds.max;
         return new Vector3(Random.Range(min.x, max.x), 2f, Random.Range(min.z, max.z));
     }
+
+    public void DestroyAgents()
+    {
+        for (int i = 0; i < _navMeshAgentsToSpawn -1; i++)
+        {
+            Destroy(_agents[i]);
+        }
+    }
 }

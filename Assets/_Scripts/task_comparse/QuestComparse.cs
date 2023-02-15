@@ -6,7 +6,6 @@ public class QuestComparse : QuestNPC
 {
     public Transform comparse;
     public Transform aliens;
-    public GameObject spawner;
     private bool _coffeeReceived = false;
     public GameObject Player;
     private GameObject dialogueBoxClone;
@@ -64,7 +63,6 @@ public class QuestComparse : QuestNPC
                         aliens.GetChild(i).gameObject.SetActive(true);
                     }
                     aliens.gameObject.SetActive(true);
-                    spawner.SetActive(true);
 
 
 
@@ -91,7 +89,7 @@ public class QuestComparse : QuestNPC
                         aliens.GetChild(i).gameObject.SetActive(false);
                     }
                     aliens.gameObject.SetActive(false);
-                    spawner.SetActive(false);
+                    
 
 
                     //si avvicina all'NPC premendo E e ha appena finito questa 

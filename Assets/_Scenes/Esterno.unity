@@ -1211,7 +1211,6 @@ MonoBehaviour:
   questNPC: {fileID: 0}
   comparse: {fileID: 1992847535}
   aliens: {fileID: 1778950483}
-  spawner: {fileID: 1885517059}
   Player: {fileID: 689416818}
   info_aiutoregista: {fileID: 2149116276955257173, guid: d7f45ba0432d740fc89ff7d5f010d8e9, type: 3}
   dialoguebox_comparse_iniziale: {fileID: 4855936148645797204, guid: 28983880f3d2543f0a141180b968dde2, type: 3}
@@ -2448,6 +2447,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5962299466770505676, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
+      propertyPath: sprintKeyboard
+      value: 304
+      objectReference: {fileID: 0}
     - target: {fileID: 6013694622968901153, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -2491,18 +2494,6 @@ PrefabInstance:
     - target: {fileID: 6791943358347659674, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_Layer
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: footSteps
-      value: 
-      objectReference: {fileID: 689416843}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7031618311364965303, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_Layer
