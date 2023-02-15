@@ -7,6 +7,7 @@ public class player_starts_task : MonoBehaviour
 {
     private bool one_box = true;
     private bool active_differenze=false;
+    private bool active_costumi=false;
     private GameObject dialogueBoxClone;
     [SerializeField] private GameObject comunicazione_start;
 
@@ -71,17 +72,23 @@ public class player_starts_task : MonoBehaviour
         //task costumi 
         if(other.gameObject.layer == 17)
         {
+            /*
             if (one_box)
             {
                 dialogueBoxClone = GameObject.Instantiate(comunicazione_start, transform.position, Quaternion.identity);
                 one_box = false;
             }
+            */
 
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
+            //if (Input.GetKeyDown(KeyCode.Return))
+            //{
+                if(active_costumi==false){
                 GameObject.Instantiate(start_task_costumi, transform.position, Quaternion.identity);
-                Destroy(dialogueBoxClone, 0.5f);
-            }
+                active_costumi=true;
+                }
+                //Destroy(dialogueBoxClone, 0.5f);
+
+            //}
         }
 
 
