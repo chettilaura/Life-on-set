@@ -14,6 +14,7 @@ public class LightGun : MonoBehaviour
     public bool Alien;
     public bool Ufo;
     Camera cam;
+    public bool Finished= false;
 
     [SerializeField] private Material highlightMaterial;
 
@@ -65,6 +66,7 @@ public class LightGun : MonoBehaviour
                         {
                             QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
                             Cursor.lockState = CursorLockMode.None;
+                            Finished = true;
                         }
                     }
                 }
@@ -77,7 +79,7 @@ public class LightGun : MonoBehaviour
 
     private void UpdateCursor()
     {
-        if (Cursor.lockState == CursorLockMode.None && Input.GetMouseButtonDown(1))
+        if (Cursor.lockState == CursorLockMode.None && Input.GetMouseButtonDown(1) && !Finished)
             Cursor.lockState = CursorLockMode.Locked;
 
        // if (Cursor.lockState == CursorLockMode.Locked && Input.GetKeyDown(KeyCode.Escape))

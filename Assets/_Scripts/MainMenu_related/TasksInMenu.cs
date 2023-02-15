@@ -26,7 +26,7 @@ public class TasksInMenu : MonoBehaviour
             FinishedTasks[4] = GeneralTasks[0]; //suoni
             FinishedTasks[5] = GeneralTasks[1]; //fonico
         }
-        if (QuestManager.questManager.questList[1].progress == Quest.QuestProgress.DONE && !FinishedTasks.Contains(GeneralTasks[4])) //differenze/continuita'
+        if (QuestManager.questManager.questList[5].progress == Quest.QuestProgress.DONE && !FinishedTasks.Contains(GeneralTasks[4])) //differenze/continuita'
             FinishedTasks[6] = GeneralTasks[4]; //continuity
         if (QuestManager.questManager.questList[0].progress == Quest.QuestProgress.DONE && !FinishedTasks.Contains(GeneralTasks[3])) // caffe e regista
             FinishedTasks[0] = GeneralTasks[3]; //regista
