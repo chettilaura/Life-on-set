@@ -28,7 +28,7 @@ public class QuestDifferenze : QuestNPC
          //istanzia il primo dialogo di partenza se è stato premuto spazio dopo aver visto la spiegazione
          if( inizio_task == 1){
             if (Input.GetKeyDown(KeyCode.Return)){
-                Destroy(dialoguebox_diff_completed);
+                Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_DOP, transform.position, Quaternion.identity);
                 inizio_task = 2;
             }
@@ -40,7 +40,7 @@ public class QuestDifferenze : QuestNPC
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                Destroy(spiegazione_canvas);
+                Destroy(dialoguebox_diff_completed);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(FinishedAllTasks, transform.position, Quaternion.identity);
                 inizio_task = 4;
             }

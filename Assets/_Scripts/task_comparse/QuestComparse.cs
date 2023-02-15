@@ -121,7 +121,7 @@ public class QuestComparse : QuestNPC
                     }
                 }
 
-            } else
+            } else if (!Player.GetComponent<task_caffe>().CaffePreso)
             {
                 //mettere dialogo per task caffè non ancora fatta
                  dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_prima_il_caffe, transform.position, Quaternion.identity);

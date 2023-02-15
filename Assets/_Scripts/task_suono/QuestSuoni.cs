@@ -120,7 +120,7 @@ public class QuestSuoni : QuestNPC
                     }
                 }
 
-            } else
+            } else if(!player.GetComponent<task_caffe>().CaffePreso)
             {
                 //qui dialogo per dire che non ha ancora fatto task caffè
                 Debug.Log("Fai prima la task del caffè");
