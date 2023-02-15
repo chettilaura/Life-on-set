@@ -3967,6 +3967,7 @@ MonoBehaviour:
   infoContinuity: {fileID: 5666554398098583085, guid: 8b7ac2ce8e64f1c4e9a92e6e85fa5f44, type: 3}
   dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: edbc86320afa54dba816f1052e5eca5c, type: 3}
   dialoguebox_diff_completed: {fileID: 4855936148645797204, guid: 760e20004ad7545ad9ee4bdc2163a85b, type: 3}
+  FinishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
 --- !u!65 &1162085926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5851,6 +5852,7 @@ MonoBehaviour:
   dialoguebox_luci_completed: {fileID: 4855936148645797204, guid: 13989deccb74c4c4094ce5f7c6bb2e8b, type: 3}
   dialoguebox_luci_inProgress: {fileID: 4855936148645797204, guid: 9d4c3e97c0b8846129c9b7cd8418292c, type: 3}
   dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: 53cf9164ab66e4afca428d356e3bc622, type: 3}
+  FinishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
 --- !u!1001 &1725023263
 PrefabInstance:
   m_ObjectHideFlags: 0

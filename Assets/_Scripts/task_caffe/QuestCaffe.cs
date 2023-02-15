@@ -14,7 +14,7 @@ public class QuestCaffe :  QuestNPC
     public GameObject dialoguebox_caffe_inAttesa;
     private GameObject dialogueBoxClone;
     public GameObject spiegazione_canvas;
-    private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
+    private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3->Finito
     void Update()
     {
 

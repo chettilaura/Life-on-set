@@ -25,6 +25,7 @@ public class QuestSuoni : QuestNPC
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
     private bool nonCompletedYet = true; 
     private bool _coffeeReceived = false; //questa variabile diventa true quando il player ha consegnato il caffè
+    public GameObject FinishedAllTasks;
 
     public GameObject suonoAmbienteGioco;
 
@@ -40,6 +41,20 @@ public class QuestSuoni : QuestNPC
                 inizio_task = 2;
             }
         }
+
+
+        //istanzia il dialogo super finale
+
+        if (inizio_task == 3)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Destroy(spiegazione_canvas);
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(FinishedAllTasks, transform.position, Quaternion.identity);
+                inizio_task = 4;
+            }
+        }
+
 
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) )
         {
@@ -98,6 +113,10 @@ public class QuestSuoni : QuestNPC
                         //esce dialogo " hai completato il task" 
                         dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_sound_completed, transform.position, Quaternion.identity);
                         nonCompletedYet = false;
+                        if (QuestManager.questManager.CheckEverythingDone())
+                        {
+                            inizio_task = 3;
+                        }
                     }
                 }
 

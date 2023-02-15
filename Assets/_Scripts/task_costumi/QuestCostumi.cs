@@ -11,7 +11,8 @@ public class QuestCostumi : QuestNPC
     public GameObject infoCosumista;
     public GameObject dialoguebox_costumi_completed;
     public GameObject dialoguebox_prima_il_caffe;
-    private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
+    public GameObject FinishedAllTasks;
+    private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3-> finito
 
 
     void Update()
@@ -27,6 +28,17 @@ public class QuestCostumi : QuestNPC
             }
          }
 
+        //istanzia il dialogo super finale
+
+        if (inizio_task == 3)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Destroy(spiegazione_canvas);
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(FinishedAllTasks, transform.position, Quaternion.identity);
+                inizio_task = 4;
+            }
+        }
 
 
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
@@ -56,6 +68,10 @@ public class QuestCostumi : QuestNPC
                 {
                     //esce dialogo " hai completato il task" & diventa verde 
                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_costumi_completed, transform.position, Quaternion.identity);
+                    if (QuestManager.questManager.CheckEverythingDone())
+                    {
+                        inizio_task = 3;
+                    }
                 }
                     
 

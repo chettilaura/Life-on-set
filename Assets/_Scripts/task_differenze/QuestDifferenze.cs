@@ -15,7 +15,9 @@ public class QuestDifferenze : QuestNPC
     public GameObject dialoguebox_diff_completed;
     
     //private bool nonCompletedYet = true; //questa variabile diventa true quando torna dal NPC ma non ha ancora raccolto tutti i suoni 
-    private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
+    private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3 ->finito
+
+    public GameObject FinishedAllTasks;
 
 
     void Update()
@@ -26,12 +28,23 @@ public class QuestDifferenze : QuestNPC
          //istanzia il primo dialogo di partenza se è stato premuto spazio dopo aver visto la spiegazione
          if( inizio_task == 1){
             if (Input.GetKeyDown(KeyCode.Return)){
-                Destroy(spiegazione_canvas);
+                Destroy(dialoguebox_diff_completed);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_DOP, transform.position, Quaternion.identity);
                 inizio_task = 2;
             }
          }
 
+        //istanzia il dialogo super finale
+
+        if (inizio_task == 3)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Destroy(spiegazione_canvas);
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(FinishedAllTasks, transform.position, Quaternion.identity);
+                inizio_task = 4;
+            }
+        }
 
 
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
@@ -61,6 +74,10 @@ public class QuestDifferenze : QuestNPC
                 {
                     //esce dialogo " hai completato il task" & duiventa verde 
                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_diff_completed, transform.position, Quaternion.identity);
+                    if (QuestManager.questManager.CheckEverythingDone())
+                    {
+                        inizio_task = 3;
+                    }
                     //nonCompletedYet = false;
                 }
             } else

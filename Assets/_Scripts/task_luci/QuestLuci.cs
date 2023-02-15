@@ -15,6 +15,7 @@ public class QuestLuci : QuestNPC
     public GameObject dialoguebox_luci_completed;
     public GameObject dialoguebox_luci_inProgress;
     public GameObject dialoguebox_prima_il_caffe;
+    public GameObject FinishedAllTasks;
 
     private bool nonCompletedYet = true; //questa variabile diventa true quando torna dal NPC ma non ha ancora raccolto tutti i suoni 
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
@@ -32,6 +33,18 @@ public class QuestLuci : QuestNPC
             }
          }
 
+
+        //istanzia il dialogo super finale
+
+        if (inizio_task == 3)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Destroy(spiegazione_canvas);
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(FinishedAllTasks, transform.position, Quaternion.identity);
+                inizio_task = 4;
+            }
+        }
 
 
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
@@ -80,6 +93,10 @@ public class QuestLuci : QuestNPC
                         //esce dialogo " hai completato il task" 
                         dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci_completed, transform.position, Quaternion.identity);
                         nonCompletedYet = false;
+                        if (QuestManager.questManager.CheckEverythingDone())
+                        {
+                            inizio_task = 3;
+                        }
                     }
 
 

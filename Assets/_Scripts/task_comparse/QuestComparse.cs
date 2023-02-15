@@ -19,6 +19,7 @@ public class QuestComparse : QuestNPC
     public GameObject dialoguebox_comparse_inProgress;
     public GameObject dialogo_comparse_completed;
     public GameObject dialoguebox_prima_il_caffe;
+    public GameObject FinishedAllTasks;
     
     
      private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
@@ -33,6 +34,18 @@ public class QuestComparse : QuestNPC
                 inizio_task = 2;
             }
          }
+
+        //istanzia il dialogo super finale
+
+        if (inizio_task == 3)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Destroy(spiegazione_canvas);
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(FinishedAllTasks, transform.position, Quaternion.identity);
+                inizio_task = 4;
+            }
+        }
 
 
 
@@ -101,6 +114,10 @@ public class QuestComparse : QuestNPC
                         //esce dialogo " hai completato il task" 
                         dialogueBoxClone = (GameObject)GameObject.Instantiate(dialogo_comparse_completed, transform.position, Quaternion.identity);
                         nonCompletedYet = false;
+                        if (QuestManager.questManager.CheckEverythingDone())
+                        {
+                            inizio_task = 3;
+                        }
                     }
                 }
 
