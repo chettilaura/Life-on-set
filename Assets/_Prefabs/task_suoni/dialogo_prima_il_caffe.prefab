@@ -229,7 +229,7 @@ MonoBehaviour:
   - 'Avrei bisogno del tuo aiuto '
   - 'Ma prima vai ad aiutare il regista '
   - Appena finisci torna da me!
-  textSpeed: 0.1
+  textSpeed: 0.08
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2

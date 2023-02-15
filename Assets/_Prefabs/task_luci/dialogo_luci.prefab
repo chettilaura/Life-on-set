@@ -230,7 +230,7 @@ MonoBehaviour:
   - Avvicinati al greenscreen e illumina i personaggi. Puoi puntare all'oggetto con
     il tasto destro del mouse e illuminarlo con quello sinistro!
   - Appena finisci torna da me!
-  textSpeed: 0.1
+  textSpeed: 0.08
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2

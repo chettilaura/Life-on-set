@@ -226,7 +226,7 @@ MonoBehaviour:
   textComponent: {fileID: 4990690722522834579}
   lines:
   - "Grazie per avermi portato il caff\xE8!"
-  textSpeed: 0.1
+  textSpeed: 0.08
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2

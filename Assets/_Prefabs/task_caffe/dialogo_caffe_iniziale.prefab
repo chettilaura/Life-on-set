@@ -230,7 +230,7 @@ MonoBehaviour:
   - "Riusciresti a portare il caff\xE8 a me e ai miei due colleghi qui fuori?"
   - "La macchina del caff\xE8 si trova sotto ai tendoni"
   - "vai e portaceli! non c'\xE8 un minuto da perdere!"
-  textSpeed: 0.1
+  textSpeed: 0.08
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2

@@ -230,7 +230,7 @@ MonoBehaviour:
   - Avvicinati al computer vicino alla sedia del direttore e trova le differenze
     tra le due immagini premendo con il tasto sinistro.
   - Appena finisci torna da me!
-  textSpeed: 0.1
+  textSpeed: 0.08
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2
