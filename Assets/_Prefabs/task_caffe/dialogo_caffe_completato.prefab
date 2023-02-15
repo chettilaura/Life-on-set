@@ -225,7 +225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - 'Ciao ! Io sono il regista! '
   - "Grazie per aver portato a tutti noi  il caff\xE8"
   - 'Ho saputo che ti stavano cercando '
   - "vai pure non ho pi\xF9 bisogno di te, grazie !"

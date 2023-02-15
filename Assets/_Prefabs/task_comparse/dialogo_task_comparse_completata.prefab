@@ -225,7 +225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - Ciao ! Io sono l'aiuto regista
   - 'grazie per avermi portato tutte le comparse di cui avevo bisogno! '
   textSpeed: 0.1
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}

@@ -892,7 +892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.40420628
+      value: -0.40420622
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1217,6 +1217,7 @@ MonoBehaviour:
   dialoguebox_caffe_ricevuto: {fileID: 4855936148645797204, guid: 0a9598c711e584b6b960fc81d92fb46b, type: 3}
   dialoguebox_comparse_inProgress: {fileID: 4855936148645797204, guid: 78ffb1303015a48d899e133f4345a3d5, type: 3}
   dialogo_comparse_completed: {fileID: 4855936148645797204, guid: cbb465a6b297c4307b67ba39546b5388, type: 3}
+  dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: 6e8f1abc888b74fdc96972404b4544ae, type: 3}
 --- !u!136 &271653537
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4673,6 +4674,10 @@ PrefabInstance:
       propertyPath: dialoguebox_caffe_ricevuto
       value: 
       objectReference: {fileID: 4855936148645797204, guid: f48bb95ed10ed456ead6c3e646a22fcd, type: 3}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: dialoguebox_prima_il_caffe
+      value: 
+      objectReference: {fileID: 4855936148645797204, guid: d5cda5e0f8bac438e8ad6bc56540609d, type: 3}
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: dialoguebox_caffe_in_attesa
       value: 
@@ -10839,7 +10844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073621080119642947}
   m_LocalRotation: {x: 0.05233596, y: 0, z: 0, w: 0.9986295}
-  m_LocalPosition: {x: 7.83, y: -0.40420628, z: 7.2649403}
+  m_LocalPosition: {x: 7.83, y: -0.40420622, z: 7.2649403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

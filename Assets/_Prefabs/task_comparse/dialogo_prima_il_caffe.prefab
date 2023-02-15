@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6653601543979388618}
   m_Layer: 0
-  m_Name: dialogo_task_comparse_inProgress
+  m_Name: dialogo_prima_il_caffe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - 'sto aspettando che mi porti tutte le comparse! '
+  - Ciao ! Io sono l'aiuto regista!
+  - 'Avrei bisogno del tuo aiuto '
+  - 'Ma prima vai ad aiutare il regista '
+  - Appena finisci torna da me!
   textSpeed: 0.1
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0

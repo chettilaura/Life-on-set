@@ -9,6 +9,7 @@ public class QuestDifferenze : QuestNPC
     private GameObject dialogueBoxClone;
     private GameObject spiegazione_canvas;
     public GameObject infoContinuity;
+    public GameObject dialoguebox_prima_il_caffe;
 
     //public GameObject dialoguebox_diff_inProgress; //qui non lo facciamo perché deve finirlo per forza una volta iniziato 
     public GameObject dialoguebox_diff_completed;
@@ -65,6 +66,7 @@ public class QuestDifferenze : QuestNPC
             } else
             {
                 //dialogo task caffè non fatta
+                GameObject.Instantiate(dialoguebox_prima_il_caffe, transform.position, Quaternion.identity);
             }
 
         }

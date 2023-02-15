@@ -18,6 +18,7 @@ public class QuestComparse : QuestNPC
     public GameObject dialoguebox_caffe_ricevuto;
     public GameObject dialoguebox_comparse_inProgress;
     public GameObject dialogo_comparse_completed;
+    public GameObject dialoguebox_prima_il_caffe;
     
     
      private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
@@ -106,6 +107,7 @@ public class QuestComparse : QuestNPC
             } else
             {
                 //mettere dialogo per task caffè non ancora fatta
+                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_prima_il_caffe, transform.position, Quaternion.identity);
 
             }
 

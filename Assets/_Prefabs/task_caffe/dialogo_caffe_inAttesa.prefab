@@ -225,9 +225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - 'Ciao ! Io sono il regista! '
-  - "sto aspettando il caff\xE8"
-  - "non c'\xE8 tempo da perdere!"
+  - "Sto aspettando il caff\xE8!"
+  - "Non c'\xE8 tempo da perdere!"
   textSpeed: 0.1
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0

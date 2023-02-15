@@ -14,6 +14,7 @@ public class QuestSuoni : QuestNPC
     public GameObject dialoguebox_sound; //questo è il dialogo dell'NPC che da la task per la prima volta
     public GameObject dialoguebox_sound_inProgress; //questo è il dialogo dell'NPC che ripete la task quando il player ci ritorna 
     public GameObject dialoguebox_sound_completed; //questo è il dialogo dell'NPC che dice di aver concluso la task 
+    public GameObject dialoguebox_prima_il_caffe;
    
 
     public GameObject dialoguebox_caffe_ricevuto; 
@@ -104,6 +105,7 @@ public class QuestSuoni : QuestNPC
             {
                 //qui dialogo per dire che non ha ancora fatto task caffè
                 Debug.Log("Fai prima la task del caffè");
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_prima_il_caffe, transform.position, Quaternion.identity);
             }
             //si avvicina all'NPC premendo E ma è attiva la task caffe
             if (player.GetComponent<task_caffe>().CaffePreso && !_coffeeReceived)

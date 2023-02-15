@@ -14,6 +14,7 @@ public class QuestLuci : QuestNPC
     public GameObject infoLuci;
     public GameObject dialoguebox_luci_completed;
     public GameObject dialoguebox_luci_inProgress;
+    public GameObject dialoguebox_prima_il_caffe;
 
     private bool nonCompletedYet = true; //questa variabile diventa true quando torna dal NPC ma non ha ancora raccolto tutti i suoni 
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
@@ -87,6 +88,7 @@ public class QuestLuci : QuestNPC
             } else
             {
                 //dialogo da far uscire quando non ha ancora fatto task caffè
+                GameObject.Instantiate(dialoguebox_prima_il_caffe, transform.position, Quaternion.identity);
             }
 
         }
