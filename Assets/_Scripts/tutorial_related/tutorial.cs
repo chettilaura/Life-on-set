@@ -11,7 +11,7 @@ public class tutorial : MonoBehaviour
 
     public void RightArrow()
     {
-        Debug.Log(contatore);
+        
         lista_tutorial[contatore].SetActive(false);
         if(contatore == lista_tutorial.Count - 1)
         {

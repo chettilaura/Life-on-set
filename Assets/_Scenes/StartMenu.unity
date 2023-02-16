@@ -703,7 +703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &117957873
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1268,7 +1268,7 @@ RectTransform:
   m_GameObject: {fileID: 295398273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4861, y: 1.4861, z: 1.4861}
+  m_LocalScale: {x: 1.6042448, y: 1.6042448, z: 1.6042448}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 287977653}
@@ -4515,7 +4515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7091f7420de6c42bea0d03214330f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeStart: 9.8
+  delayBeforeStart: 11.3
   timeBtwChars: 0.1
   leadingChar: 
   leadingCharBeforeDelay: 0
