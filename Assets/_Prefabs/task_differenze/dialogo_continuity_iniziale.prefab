@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - Ciao ! Io sono il direttore della fotografia!
+  - Ciao ! Io sono il segretario di edizione!
   - Ci sono due fotogrammi che sembrerebbero incongruenti.
   - Avvicinati al computer vicino alla sedia del direttore e trova le differenze
     tra le due immagini premendo con il tasto sinistro.

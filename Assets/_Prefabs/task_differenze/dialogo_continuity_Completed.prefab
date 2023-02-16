@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - 'Ottimo lavoro! Ora le due scene combaciano! '
+  - 'Ottimo lavoro! Ora i due fotogrammi combaciano! '
   textSpeed: 0.08
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0

@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - Ciao ! Io sono il tecnci delle luci.
+  - Ciao ! Io sono il tecnico delle luci.
   - "\xC8 importante in un set cinematografico avere la giusta luce."
   - Avvicinati al greenscreen e illumina i personaggi. Puoi puntare all'oggetto con
     il tasto destro del mouse e illuminarlo con quello sinistro!
