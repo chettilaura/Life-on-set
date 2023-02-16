@@ -12,7 +12,7 @@ public class TasksInMenu : MonoBehaviour
     public void FillFinishedTasks()  //controlla quali quests sono già finite e possono essere mostrate
     {
         if (QuestManager.questManager.questList[1].progress == Quest.QuestProgress.DONE && !FinishedTasks.Contains(GeneralTasks[7])) //comparse
-            FinishedTasks[0]=GeneralTasks[7]; //aiuto regista
+            FinishedTasks[7]=GeneralTasks[7]; //aiuto regista
             
         if (QuestManager.questManager.questList[2].progress == Quest.QuestProgress.DONE && !FinishedTasks.Contains(GeneralTasks[2])) //costumi
             FinishedTasks[1] = GeneralTasks[2]; //costumista
