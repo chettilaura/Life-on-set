@@ -7,7 +7,7 @@ public class ExitButton : MonoBehaviour
 {
    //chiusura applicazione: non funziona in play mode da editor unity
 
-    void Update(){
+    public void ExitGame(){
         Application.Quit();
     }
 
