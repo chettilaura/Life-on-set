@@ -11,7 +11,6 @@ public static class Scene_Loader
 
 
 public enum Scene{
-    MainMenu,
     Loading,
     Camper, 
     Esterno, 
