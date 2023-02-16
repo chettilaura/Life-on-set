@@ -40,7 +40,6 @@ public class QuestLuci : QuestNPC
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(FinishedAllTasks, transform.position, Quaternion.identity);
                 inizio_task = 4;
             }

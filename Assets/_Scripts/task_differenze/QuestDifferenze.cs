@@ -40,7 +40,6 @@ public class QuestDifferenze : QuestNPC
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                Destroy(dialoguebox_diff_completed);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(FinishedAllTasks, transform.position, Quaternion.identity);
                 inizio_task = 4;
             }
