@@ -24016,9 +24016,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5275001309970654282, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
+      propertyPath: m_text
+      value: Torna sul set
+      objectReference: {fileID: 0}
     - target: {fileID: 5275001310895777586, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
       propertyPath: m_Name
       value: Canvas_menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275001310895777586, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5275001310895777590, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
       propertyPath: m_Pivot.x
