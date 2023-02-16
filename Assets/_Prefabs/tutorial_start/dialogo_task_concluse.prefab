@@ -225,9 +225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - Complimenti ! Hai completato tutti i compiti che ti sono stati assegnati!
-  - 'E'' arrivato il momento di vedere il prodotto concluso ! '
-  - Corri in studio 2 ! Buona visione !
+  - Complimenti! Mi hanno detto che abbiamo terminato le riprese!
+  - 'E'' arrivato il momento di vedere il prodotto concluso! '
+  - Corri in studio 2! Buona visione!
   textSpeed: 0.08
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
