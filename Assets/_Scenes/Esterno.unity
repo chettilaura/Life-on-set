@@ -2678,7 +2678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.66
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2686,7 +2686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.16
+      value: -24.6
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3860,7 +3860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.1
+      value: -20.9
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3868,7 +3868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.9
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5356,7 +5356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.36
+      value: 27.3
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5364,7 +5364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4
+      value: 11.9
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8322,7 +8322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.2
+      value: 23.3
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8330,7 +8330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.4
+      value: -37
       objectReference: {fileID: 0}
     - target: {fileID: 7986995179650488934, guid: c4ad7c1a0cd924793984e5cebf76450a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8377,7 +8377,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 33db5de5d16404dbc975de4430edd3df, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 42bed351cb0ad4af4bc1296339ed705d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
