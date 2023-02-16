@@ -33,7 +33,7 @@ public class QuestCaffe :  QuestNPC
         {
 
             //se è la prima volta che si preme E vicino al regista mostra spiegazione regista
-            if (inizio_task == 0)
+            if (inizio_task == 0 && QuestManager.questManager.questList[0].progress != Quest.QuestProgress.DONE)
             {
                 spiegazione_canvas = (GameObject)GameObject.Instantiate(spiegazione_canvas, transform.position, Quaternion.identity);
                 inizio_task = 1;
