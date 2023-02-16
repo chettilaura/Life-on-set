@@ -24253,7 +24253,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -24352,6 +24352,7 @@ MonoBehaviour:
   turnSpeed: 10
   sprintJoystick: 332
   sprintKeyboard: 304
+  footSteps: {fileID: 0}
 --- !u!1 &938441419
 GameObject:
   m_ObjectHideFlags: 0
@@ -48596,6 +48597,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 10ff2e19c4bb04083b9a8349e90ec1eb, type: 2}
+    - target: {fileID: 5962299466770505676, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
+      propertyPath: footSteps
+      value: 
+      objectReference: {fileID: 869581359}
     - target: {fileID: 5962299466770505676, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_Enabled
       value: 0
