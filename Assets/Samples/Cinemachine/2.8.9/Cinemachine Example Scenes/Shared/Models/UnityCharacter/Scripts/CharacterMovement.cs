@@ -11,6 +11,7 @@ public class CharacterMovement : MonoBehaviour
     public float turnSpeed = 10f;
     public KeyCode sprintJoystick = KeyCode.JoystickButton2;
     public KeyCode sprintKeyboard = KeyCode.Space;
+    public AudioSource footSteps;
 
     private float turnSpeedMultiplier;
     private float speed = 0f;
@@ -33,7 +34,12 @@ public class CharacterMovement : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-	    input.x = Input.GetAxis("Horizontal");
+            if (speed >0.5f)
+                footSteps.enabled = true;
+            else
+                footSteps.enabled = false;
+
+        input.x = Input.GetAxis("Horizontal");
 	    input.y = Input.GetAxis("Vertical");
 
 		// set speed to both vertical and horizontal inputs
