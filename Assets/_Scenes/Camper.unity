@@ -24246,7 +24246,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869581346}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b83c79b888d5497408cbb7f16bb1c8f7, type: 3}
@@ -24342,7 +24342,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869581346}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5281785fbe32be4488391fbe4acda0d3, type: 3}
   m_Name: 
@@ -24352,7 +24352,7 @@ MonoBehaviour:
   turnSpeed: 10
   sprintJoystick: 332
   sprintKeyboard: 304
-  footSteps: {fileID: 0}
+  footSteps: {fileID: 869581359}
 --- !u!1 &938441419
 GameObject:
   m_ObjectHideFlags: 0
@@ -48547,7 +48547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1831512275991687161, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1910074579654621777, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_RootOrder
@@ -48596,7 +48596,7 @@ PrefabInstance:
     - target: {fileID: 5503924729086271531, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 10ff2e19c4bb04083b9a8349e90ec1eb, type: 2}
+      objectReference: {fileID: 9100000, guid: 7a9f599c49797434485c0e1d9e99f200, type: 2}
     - target: {fileID: 5962299466770505676, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: footSteps
       value: 
@@ -48620,6 +48620,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2135900617, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
     - {fileID: 1155012990181359580, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
+    - {fileID: 5962299466770505676, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
 --- !u!95 &1625639011 stripped
 Animator:
@@ -48638,7 +48639,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869581346}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea705d1601c214437a3b14cd2d7d96e5, type: 3}
   m_Name: 
