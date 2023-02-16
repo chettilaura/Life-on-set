@@ -48623,36 +48623,11 @@ PrefabInstance:
     - {fileID: 5962299466770505676, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
     - {fileID: 9120628434284843115, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
---- !u!95 &1625639011 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5503924729086271531, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
-  m_PrefabInstance: {fileID: 1625639010}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1625639012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1910074579654621777, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
   m_PrefabInstance: {fileID: 1625639010}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1625639013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869581346}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea705d1601c214437a3b14cd2d7d96e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GroundCheckTransform: {fileID: 1294624142}
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  _animator: {fileID: 1625639011}
-  _speed: 1
-  _rotationSpeed: 40
-  _cameraT: {fileID: 631863809}
 --- !u!43 &1751007466
 Mesh:
   m_ObjectHideFlags: 0
