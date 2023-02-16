@@ -7066,7 +7066,7 @@ PrefabInstance:
     - target: {fileID: 1155012990181359580, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: start_task_suoni
       value: 
-      objectReference: {fileID: 5722574506250263988, guid: 5772ea00ed0ea499fb373530613d3c3c, type: 3}
+      objectReference: {fileID: 5722574506250263988, guid: 47e85be93155543dd99acf6b882e5a8f, type: 3}
     - target: {fileID: 1155012990181359580, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: start_task_differenze
       value: 
@@ -7363,6 +7363,10 @@ PrefabInstance:
       propertyPath: footSteps
       value: 
       objectReference: {fileID: 2135900621}
+    - target: {fileID: 5962299466770505676, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
+      propertyPath: sprintKeyboard
+      value: 304
+      objectReference: {fileID: 0}
     - target: {fileID: 6013694622968901153, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -7518,6 +7522,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6995231899665877897, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
     - {fileID: 6995231899665878007, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
+    - {fileID: 1831512275991687161, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
+    - {fileID: 9120628434284843115, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
 --- !u!1 &2135900615 stripped
 GameObject:
