@@ -1059,13 +1059,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3525476838036964735, guid: ff9b022ec6e434f068f16ac936f27e78, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525476838036964735, guid: ff9b022ec6e434f068f16ac936f27e78, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 198
+      objectReference: {fileID: 0}
     - target: {fileID: 3563818703036645873, guid: ff9b022ec6e434f068f16ac936f27e78, type: 3}
       propertyPath: m_Name
       value: tutorial iniziale mappa
       objectReference: {fileID: 0}
     - target: {fileID: 3563818703036645873, guid: ff9b022ec6e434f068f16ac936f27e78, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903472403857783669, guid: ff9b022ec6e434f068f16ac936f27e78, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903472403857783669, guid: ff9b022ec6e434f068f16ac936f27e78, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9b022ec6e434f068f16ac936f27e78, type: 3}
@@ -1215,7 +1231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3563818703036645873, guid: 1a37966bd11c43547a8482693c13d266, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7841569526873163919, guid: 1a37966bd11c43547a8482693c13d266, type: 3}
       propertyPath: m_AnchoredPosition.y
