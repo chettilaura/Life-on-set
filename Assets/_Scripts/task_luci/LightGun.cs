@@ -54,9 +54,11 @@ public class LightGun : MonoBehaviour
                         selectionRender.material = highlightMaterial;
                         QuestManager.questManager.currentQuest.questObjectiveCount++;
                         if (QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement)
-                            {
+                        {
                                 QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
-                            }
+                                Cursor.lockState = CursorLockMode.None;
+                                Finished = true;
+                        }
                     } else if(hit.transform.name == "ufo" && !Ufo)
                     {
                         Ufo = true;
