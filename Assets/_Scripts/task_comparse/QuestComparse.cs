@@ -66,7 +66,7 @@ public class QuestComparse : QuestNPC
 
 
                     //attiva tutte le comparse
-                    for (int i = 0; i < comparse.childCount; i++)
+                    /*for (int i = 0; i < comparse.childCount; i++)
                     {
                         comparse.GetChild(i).gameObject.SetActive(true);
                     }
@@ -75,7 +75,7 @@ public class QuestComparse : QuestNPC
                     {
                         aliens.GetChild(i).gameObject.SetActive(true);
                     }
-                    aliens.gameObject.SetActive(true);
+                    aliens.gameObject.SetActive(true); */
 
 
 
@@ -92,6 +92,7 @@ public class QuestComparse : QuestNPC
                 else //la quest attiva non è più questa
                 {
                     //disattiva tutte le comparse
+                    /*
                     for (int i = 0; i < comparse.childCount; i++)
                     {
                         comparse.GetChild(i).gameObject.SetActive(false);
@@ -101,7 +102,7 @@ public class QuestComparse : QuestNPC
                     {
                         aliens.GetChild(i).gameObject.SetActive(false);
                     }
-                    aliens.gameObject.SetActive(false);
+                    aliens.gameObject.SetActive(false); */
                     
 
 

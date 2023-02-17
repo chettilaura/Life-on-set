@@ -30,7 +30,6 @@ public class extrasMovement : MonoBehaviour
     [Range(1, 500)] public float walkRadius;
     internal bool _isNear;
     internal bool _follow=false;
-    internal bool _stop = false;
     private float _chosenStoppingDistance = 1.5f;
 
     // Start is called before the first frame update
@@ -54,10 +53,10 @@ public class extrasMovement : MonoBehaviour
 
 
         //TRANSITIONS
-        _stateMachine.AddTransition(walkingState, stopState, () =>  _isNear);
+        _stateMachine.AddTransition(walkingState, stopState, () => _isNear && QuestManager.questManager.questList[1].progress == Quest.QuestProgress.ACCEPTED);
         _stateMachine.AddTransition(stopState, walkingState, () => !_isNear);
-        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E) && _extra && QuestManager.questManager.currentQuest.questObjectiveCount< QuestManager.questManager.currentQuest.questObjectiveRequirement);
-        _stateMachine.AddTransition(followState, stopState, () => _stop);
+        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E) && _extra && QuestManager.questManager.currentQuest.questObjectiveCount< QuestManager.questManager.currentQuest.questObjectiveRequirement && QuestManager.questManager.questList[1].progress == Quest.QuestProgress.ACCEPTED);
+        _stateMachine.AddTransition(followState, stopState, () => QuestManager.questManager.questList[1].progress == Quest.QuestProgress.DONE);
 
         //START STATE
         _stateMachine.SetState(walkingState);
@@ -186,7 +185,10 @@ public class WalkingState: State
 
     public override void Tik()
     {
-        _extra._isNear = _extra.IsTargetWithinDistance(_extra._stoppingDistance);
+        if (QuestManager.questManager.questList[1].progress == Quest.QuestProgress.ACCEPTED)
+            _extra._isNear = _extra.IsTargetWithinDistance(_extra._stoppingDistance);
+        else
+            _extra._isNear = false;
         if ((_extra._navMeshAgent.remainingDistance <= _extra._navMeshAgent.stoppingDistance))
         {
             _extra.ChangeAnimation(_extra._isNear);
