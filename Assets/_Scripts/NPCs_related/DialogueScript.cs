@@ -8,7 +8,7 @@ public class DialogueScript : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
-
+    public bool fine_dialogo = false;
     private int _index;
 
     //[SerializeField] private GameObject _press_to_End_text;
@@ -80,15 +80,15 @@ public class DialogueScript : MonoBehaviour
 
     }
 
-    void NextLine (){
+    public void NextLine (){
         if (_index < lines.Length - 1){
             _index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
         else{
-            
-            
+            fine_dialogo = true;
+           
             //mostro a schermo per 2 secondi la scritta dove si dice di premere E per chiudere il dialogo
             //_clone_press_to_End_text = (GameObject)GameObject.Instantiate(_press_to_End_text, transform.position, Quaternion.identity);
             //Destroy(_clone_press_to_End_text, 1f);

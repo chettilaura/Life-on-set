@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+using TMPro;
 
 public class QuestCaffe :  QuestNPC
 {
     public GameObject coffeeMachine;
     public GameObject Player;
     private bool _coffeeReceived = false;
-   
     public GameObject dialoguebox_caffe;
     public GameObject dialoguebox_caffe_completed;
     public GameObject dialoguebox_caffe_ricevuto;
@@ -15,6 +16,8 @@ public class QuestCaffe :  QuestNPC
     private GameObject dialogueBoxClone;
     public GameObject spiegazione_canvas;
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3->Finito
+    public CinemachineVirtualCamera camera_dialoghi; //camera per i dialoghi 
+
     void Update()
     {
 
@@ -25,6 +28,11 @@ public class QuestCaffe :  QuestNPC
                 Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe, transform.position, Quaternion.identity);
                 inizio_task = 2;
+                camera_dialoghi.Priority = camera_dialoghi.Priority + 10;
+
+                if(dialogueBoxClone.GetComponent<DialogueScript>().fine_dialogo == true ){
+                    camera_dialoghi.Priority = camera_dialoghi.Priority - 10;
+                }
             }
         }
 
@@ -37,6 +45,7 @@ public class QuestCaffe :  QuestNPC
             {
                 spiegazione_canvas = (GameObject)GameObject.Instantiate(spiegazione_canvas, transform.position, Quaternion.identity);
                 inizio_task = 1;
+
             }
 
             QuestManager.questManager.QuestRequest(this); // assegna come corrente la task caffe
@@ -66,8 +75,6 @@ public class QuestCaffe :  QuestNPC
                 }
                 _coffeeReceived = true;
             }
-
-
 
              //se ha portato tutti e tre i caffè ha finito 
             if (QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE && inizio_task == 2){
