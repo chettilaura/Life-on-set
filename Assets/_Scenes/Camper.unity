@@ -24357,6 +24357,7 @@ MonoBehaviour:
   sprintJoystick: 332
   sprintKeyboard: 304
   footSteps: {fileID: 869581359}
+  speed: 0
 --- !u!1 &938441419
 GameObject:
   m_ObjectHideFlags: 0
@@ -48437,9 +48438,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d1227c009fb644103905284b78800c75, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 36529f0c3a3c641f4b5a234ce60c8162, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
