@@ -67,7 +67,7 @@ public class QuestSuoni : QuestNPC
                     startTask.GetComponent<Collider>().enabled = true;
                     player.GetComponent<sound>().enabled = true; //attivo lo script per la raccolta dei suoni
                                                                  //abbassa il volume del gioco 
-                    suonoAmbienteGioco.GetComponent<AudioSource>().volume = 0.05f;
+                    suonoAmbienteGioco.GetComponent<AudioSource>().volume = 0.005f;
 
 
                     //instanzia la spiegazione
@@ -97,7 +97,7 @@ public class QuestSuoni : QuestNPC
                 else
                 {
                     //rialza il volume del gioco perchè non è più attivo il task dei suoni  
-                    suonoAmbienteGioco.GetComponent<AudioSource>().volume = 0.2f;
+                    suonoAmbienteGioco.GetComponent<AudioSource>().volume = 0.1f;
                     //disattivo 
                     startTask.GetComponent<Collider>().enabled = false;
                     //disattivo lo script per la raccolta dei suoni perchè non è attivo il task dei suoni  
