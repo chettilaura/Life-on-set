@@ -74,9 +74,10 @@ public class QuestCaffe :  QuestNPC
         }
 
         //se si preme E vicino al regista 
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) )
+        //l'ultima condizione è per obbligarlo a fermarsi prima di parlare (se no si blocca in posizioni strane)
+        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && Player.GetComponent<Cinemachine.Examples.CharacterMovement>().speed<0.001f)
         {
-            Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false;
+            Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; //blocco il movimento del player durante dialogo 
             camera_dialoghi.Priority = camera_dialoghi.Priority +10;
             //se è la prima volta che si preme E vicino al regista mostra spiegazione regista
             if (inizio_task == 0 && QuestManager.questManager.questList[0].progress != Quest.QuestProgress.DONE)
