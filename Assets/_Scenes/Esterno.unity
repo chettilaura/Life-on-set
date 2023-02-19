@@ -2091,7 +2091,7 @@ PrefabInstance:
       objectReference: {fileID: 689416843}
     - target: {fileID: 5962299466770505676, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5962299466770505676, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: sprintKeyboard
@@ -3997,18 +3997,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &689416827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689416818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db687f10e6af14218b02a9f6151ff658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &689416836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9761,6 +9749,10 @@ MonoBehaviour:
   dialoguebox_caffe_ricevuto: {fileID: 4855936148645797204, guid: 8359da96addd7445495502c23520e293, type: 3}
   dialoguebox_caffe_inAttesa: {fileID: 4855936148645797204, guid: 51cf6fbf28db5405b9d2f5e5a8836248, type: 3}
   spiegazione_canvas: {fileID: 2149116276955257173, guid: 5a01d8ba1af6943f6977d84315339042, type: 3}
+  dialogue_iniziale: {fileID: 0}
+  dialogue_inattesa: {fileID: 0}
+  dialogue_ricevuto: {fileID: 0}
+  dialogue_completato: {fileID: 0}
   camera_dialoghi: {fileID: 748753821}
 --- !u!136 &2026950213
 CapsuleCollider:

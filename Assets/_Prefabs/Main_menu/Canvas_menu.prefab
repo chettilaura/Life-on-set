@@ -6102,6 +6102,15 @@ PrefabInstance:
       value: 483.96747
       objectReference: {fileID: 0}
     - target: {fileID: 2750318505860298145, guid: 1a37966bd11c43547a8482693c13d266, type: 3}
+      propertyPath: m_text
+      value: "Benvenut* in LifeOnSet ! Qui potrai imparare come funziona un set cinematografico!
+        \n\nCome nuovo runner della produzione dovrai portare a termine i compiti
+        che ti verranno assegnati dai professionisti di questo set ! \nPuoi spostarti
+        nel set utilizzando i comandi WASD insieme all'aiuto del mouse. Per correre
+        tieni premuto shift.\nPer interagire con i professionisti sul set premi E
+        dopo esserti avvicinato e premi INVIO per continuare il dialogo. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750318505860298145, guid: 1a37966bd11c43547a8482693c13d266, type: 3}
       propertyPath: m_fontSize
       value: 21
       objectReference: {fileID: 0}

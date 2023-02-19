@@ -231,6 +231,8 @@ MonoBehaviour:
   - "La macchina del caff\xE8 si trova sotto ai tendoni"
   - "vai e portaceli! non c'\xE8 un minuto da perdere!"
   textSpeed: 0.08
+  fine_dialogo: 0
+  _index: 0
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2

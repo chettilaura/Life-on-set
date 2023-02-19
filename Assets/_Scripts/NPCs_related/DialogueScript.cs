@@ -9,7 +9,7 @@ public class DialogueScript : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     public bool fine_dialogo = false;
-    private int _index;
+    public int _index;
 
     //[SerializeField] private GameObject _press_to_End_text;
     //private GameObject _clone_press_to_End_text;
@@ -42,7 +42,7 @@ public class DialogueScript : MonoBehaviour
             }
             else{
                 StopAllCoroutines();
-                textComponent.text = lines[_index];   
+                textComponent.text = lines[_index];  
             }
         }
     }
@@ -72,15 +72,12 @@ public class DialogueScript : MonoBehaviour
             {
                 audioSource.Stop();
             }
-
-
-            //audioSource.pitch = Random.Range(min_pitch, max_pitch); suono distorto
             audioSource.PlayOneShot(_soundeffect);
         }
 
     }
 
-    public void NextLine (){
+    void NextLine (){
         if (_index < lines.Length - 1){
             _index++;
             textComponent.text = string.Empty;
@@ -88,14 +85,7 @@ public class DialogueScript : MonoBehaviour
         }
         else{
             fine_dialogo = true;
-           
-            //mostro a schermo per 2 secondi la scritta dove si dice di premere E per chiudere il dialogo
-            //_clone_press_to_End_text = (GameObject)GameObject.Instantiate(_press_to_End_text, transform.position, Quaternion.identity);
-            //Destroy(_clone_press_to_End_text, 1f);
-            
             gameObject.SetActive(false);
-            //PlayerNPCinteraction._end_dialogue = true;
-
         }
     }
 

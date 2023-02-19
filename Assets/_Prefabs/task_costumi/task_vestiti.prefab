@@ -200,7 +200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Non hai trovato la combinazione giusta! Trova l'austronauta!
+  m_text: Non hai trovato la combinazione giusta! Trova l'astronauta!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5513f45be11ed8841994556316aac1b4, type: 2}
   m_sharedMaterial: {fileID: 7975829037029162370, guid: 5513f45be11ed8841994556316aac1b4, type: 2}
@@ -1088,9 +1088,6 @@ MonoBehaviour:
   - {fileID: 394696734784509828}
   - {fileID: 474951825917270075}
   - {fileID: 1924396086155833427}
-  contatore_testa: 0
-  contatore_body: 0
-  contatore_legs: 0
   canvas_task: {fileID: 3313034923961126865}
   error_text: {fileID: 396156944409060345}
 --- !u!1 &3794290618185108822
