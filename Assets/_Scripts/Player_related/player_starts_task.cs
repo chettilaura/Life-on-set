@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class player_starts_task : MonoBehaviour
 {
@@ -17,12 +18,15 @@ public class player_starts_task : MonoBehaviour
     [SerializeField] private GameObject start_task_suoni ;
     [SerializeField] private GameObject start_task_comparse ; 
 
- 
-
+    public GameObject faretto;
+    Light spotlight;
+    public Light luci_ambiente;
+    private bool luci_accese = true;
+    private bool faretto_acceso = false;
     //questo script contiene oggetti (canvas) da instanziare quando il player entra in trigger con l'oggetto trigger della task 
         //esempio: player va contro sedia director e compare "Premi INVIO per iniziare il task" + canvas con gioco differenze
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
 
 
@@ -107,5 +111,32 @@ public class player_starts_task : MonoBehaviour
                 Destroy(dialogueBoxClone, 0.5f);
             }
         }
+
+        //accensione faretto 
+        if(other.gameObject.layer == 20){
+            if(faretto_acceso == false){
+            spotlight = (faretto.transform.Find("Directional Light")?.gameObject).GetComponent<Light>();
+            spotlight.enabled = true;
+            faretto_acceso = true;
+            } else {
+            spotlight = (faretto.transform.Find("Directional Light")?.gameObject).GetComponent<Light>();
+            spotlight.enabled = false;
+            faretto_acceso = false;
+            }
+
+
+        }
+
+         if(other.gameObject.layer == 21){
+            if(luci_accese == true){
+                luci_ambiente.GetComponent<Light>().enabled = false;
+                luci_accese = false;
+                Debug.Log("luci spente");
+            } else {
+                luci_ambiente.GetComponent<Light>().enabled = true;
+                luci_accese = true;
+                Debug.Log("luci accese");
+            }  
+        }    
     }
 }

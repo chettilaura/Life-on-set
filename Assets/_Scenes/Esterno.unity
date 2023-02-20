@@ -5967,7 +5967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394601786526, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_CameraDistance
-      value: 4.5
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394601786527, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_VerticalAxis.Value
@@ -5999,15 +5999,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.6796913
+      value: 6.919911
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9288664
+      value: 0.25280523
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.8696923
+      value: 9.109911
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalRotation.w
