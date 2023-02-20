@@ -24,10 +24,12 @@ public class QuestComparse : QuestNPC
     
      private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
 
+
     private void Update()
     {
+        SetQuestMarker();
 
-         if(inizio_task ==1){
+        if (inizio_task ==1){
             if (Input.GetKeyDown(KeyCode.Return)){
                 Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_comparse_iniziale, transform.position, Quaternion.identity);
@@ -142,7 +144,7 @@ public class QuestComparse : QuestNPC
         }
 
 
-        SetQuestMarker();
+
 
        
     }

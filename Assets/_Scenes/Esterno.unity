@@ -1116,7 +1116,8 @@ MonoBehaviour:
   receivableQuestID: 1
   _questAvailable: {fileID: 1553976748}
   _questCompleted: {fileID: 1430577729}
-  questNPC: {fileID: 0}
+  questNPC: {fileID: 271653536}
+  coffeeQuestSign: {fileID: 340479807}
   comparse: {fileID: 1992847535}
   aliens: {fileID: 1778950483}
   Player: {fileID: 689416818}
@@ -1368,7 +1369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667003655063580006, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.101224884
+      value: -0.111959554
       objectReference: {fileID: 0}
     - target: {fileID: 8667003655063580006, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1376,23 +1377,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667003655063580006, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.014014408
+      value: 0.026310101
       objectReference: {fileID: 0}
     - target: {fileID: 8667003655063580006, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.52325463
+      value: -0.075744
       objectReference: {fileID: 0}
     - target: {fileID: 8667003655063580006, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.52307224
+      value: 0.07571719
       objectReference: {fileID: 0}
     - target: {fileID: 8667003655063580006, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.47579297
+      value: 0.70316267
       objectReference: {fileID: 0}
     - target: {fileID: 8667003655063580006, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.47562706
+      value: 0.7029169
       objectReference: {fileID: 0}
     - target: {fileID: 8667003655063580006, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1404,7 +1405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667003655063580006, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 84.54
+      value: 192.301
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68ea602edf7385e469d791d0001a8fb7, type: 3}
@@ -4213,6 +4214,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4831012669268828076, guid: 9e97dd8cbbbdf42448913afec3426032, type: 3}
   m_PrefabInstance: {fileID: 1440513808}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &745640783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+  m_PrefabInstance: {fileID: 774261910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898a072c111dd416ba0dd5b14f8a5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &746534021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4435,6 +4447,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 689416818}
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: questNPC
+      value: 
+      objectReference: {fileID: 745640783}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: startTask
       value: 
       objectReference: {fileID: 621097659}
@@ -4450,6 +4466,10 @@ PrefabInstance:
       propertyPath: leaves_sound
       value: 
       objectReference: {fileID: 456311403}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: coffeeQuestSign
+      value: 
+      objectReference: {fileID: 340479807}
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: FinishedAllTasks
       value: 
@@ -4569,6 +4589,10 @@ PrefabInstance:
     - target: {fileID: 6575456038539189863, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: m_Name
       value: SuoniQuestGiver
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575456038539189863, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
@@ -9741,7 +9765,8 @@ MonoBehaviour:
   receivableQuestID: 0
   _questAvailable: {fileID: 340479807}
   _questCompleted: {fileID: 1418505791}
-  questNPC: {fileID: 0}
+  questNPC: {fileID: 2026950212}
+  coffeeQuestSign: {fileID: 340479807}
   coffeeMachine: {fileID: 6126083417185839104}
   Player: {fileID: 689416818}
   dialoguebox_caffe: {fileID: 4855936148645797204, guid: c333de8e62a84428daaf4652e29b2223, type: 3}

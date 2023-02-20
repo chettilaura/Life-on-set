@@ -10,26 +10,39 @@ public class QuestNPC : MonoBehaviour
     public GameObject _questAvailable;
     public GameObject _questCompleted;
     public QuestNPC questNPC;
+    public GameObject coffeeQuestSign;
 
-    void Start()
+    public void Start()
     {
         SetQuestMarker();
-        questNPC = this;
-        Debug.Log("Here");
-    }
+
+        questNPC = GetComponent<QuestNPC>();
+    } 
 
     public void SetQuestMarker()
     {
-        Debug.Log("Set quest marker");
         if (QuestManager.questManager.CheckCompleteQuest(this))
         {
             _questCompleted.SetActive(true);
         }
         else if (QuestManager.questManager.CheckAvailableQuest(this))
         {
-            _questAvailable.SetActive(true);
-        }
-        else
+            if (QuestManager.questManager.questList.Exists(quest => quest.progress == Quest.QuestProgress.ACCEPTED))
+                _questAvailable.SetActive(false);
+            else
+            {
+                if (QuestManager.questManager.FirstTaskDone)
+                {
+                    _questAvailable.SetActive(true);
+                } else
+                {
+                    _questAvailable.SetActive(false);
+                    if(!QuestManager.questManager.CheckCompleteQuest(this))
+                        coffeeQuestSign.SetActive(true);
+                }
+            }
+                //_questAvailable.SetActive(true);
+        } else
         {
             _questAvailable.SetActive(false);
             _questCompleted.SetActive(false);

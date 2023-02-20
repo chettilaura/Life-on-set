@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using TMPro;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class QuestCaffe :  QuestNPC
 {
@@ -25,6 +26,7 @@ public class QuestCaffe :  QuestNPC
     private bool fine_dialogo_ricevuto = false;
     private bool fine_dialogo_inattesa = false;
     private bool fine_dialogo_completato = false;
+
     void Update()
     {
 
@@ -77,6 +79,10 @@ public class QuestCaffe :  QuestNPC
         //l'ultima condizione è per obbligarlo a fermarsi prima di parlare (se no si blocca in posizioni strane)
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && Player.GetComponent<Cinemachine.Examples.CharacterMovement>().speed<0.001f)
         {
+            Vector3 targetDirection = Player.transform.position - questNPC.transform.position;
+            targetDirection.y = 0;
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            questNPC.transform.rotation = Quaternion.RotateTowards(questNPC.transform.rotation, targetRotation, 150f * Time.deltaTime);
             Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; //blocco il movimento del player durante dialogo 
             camera_dialoghi.Priority = camera_dialoghi.Priority +10;
             //se è la prima volta che si preme E vicino al regista mostra spiegazione regista

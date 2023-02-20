@@ -3961,7 +3961,8 @@ MonoBehaviour:
   receivableQuestID: 5
   _questAvailable: {fileID: 577584445}
   _questCompleted: {fileID: 1742094123}
-  questNPC: {fileID: 0}
+  questNPC: {fileID: 1162085920}
+  coffeeQuestSign: {fileID: 2009510636}
   startTask: {fileID: 121885343363920813}
   dialoguebox_DOP: {fileID: 4855936148645797204, guid: df19b478106304e069ab7a1eb33f8169, type: 3}
   infoContinuity: {fileID: 5666554398098583085, guid: 8b7ac2ce8e64f1c4e9a92e6e85fa5f44, type: 3}
@@ -5970,7 +5971,8 @@ MonoBehaviour:
   receivableQuestID: 3
   _questAvailable: {fileID: 874797679}
   _questCompleted: {fileID: 1548698753}
-  questNPC: {fileID: 0}
+  questNPC: {fileID: 1695458990}
+  coffeeQuestSign: {fileID: 2009510636}
   startTask: {fileID: 3580170732892824823}
   Camera: {fileID: 870464618}
   Light: {fileID: 373005234}
@@ -6638,6 +6640,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 67
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2009510636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009510637}
+  m_Layer: 0
+  m_Name: nothing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2009510637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009510636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2019313016
 PrefabInstance:
