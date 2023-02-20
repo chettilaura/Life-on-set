@@ -226,7 +226,12 @@ MonoBehaviour:
   textComponent: {fileID: 4990690722522834579}
   lines:
   - "Ehmm... qualcosa non \xE8 ancora illuminato correttamente!"
+  - Ricordati che per illuminare i personaggi sul green screen devi puntare l'oggetto
+    con il tasto destro del mouse e contemporaneamente  illuminarlo premendo quello
+    sinistro.
   textSpeed: 0.08
+  fine_dialogo: 0
+  _index: 0
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2

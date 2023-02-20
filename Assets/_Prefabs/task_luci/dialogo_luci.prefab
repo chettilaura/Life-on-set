@@ -230,8 +230,8 @@ MonoBehaviour:
   - "Stiamo per iniziare a registrare: vai a spegnere le luci dello studio, c'\xE8
     il bottone sulla parete dietro di me"
   - 'Poi avvicinati al greenscreen e accendi il faretto con il suo bottone '
-  - 'Infine illumina i personaggi : puoi puntare all''oggetto con il tasto destro
-    del mouse e illuminarlo con quello sinistro!'
+  - 'Infine illumina i personaggi : devi puntare l''oggetto con il tasto destro del
+    mouse e contemporaneamente  illuminarlo premendo quello sinistro.'
   - Appena finisci torna da me!
   textSpeed: 0.08
   fine_dialogo: 0
