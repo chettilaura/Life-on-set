@@ -26,9 +26,19 @@ public class QuestCaffe :  QuestNPC
     private bool fine_dialogo_ricevuto = false;
     private bool fine_dialogo_inattesa = false;
     private bool fine_dialogo_completato = false;
+    public Animator coffeeAnimator;
+    public GameObject Vassoio;
+    public List<GameObject> tazzine;
 
     void Update()
     {
+        if (Player.GetComponent<task_caffe>().CaffePreso)
+        {
+            for(int i=0; i<tazzine.Count; i++)
+            {
+                tazzine[i].SetActive(true);
+            }
+        }
 
         //se si preme spazio dopo la spiegazione parte il primo dialogo 
         if(inizio_task == 1)
@@ -90,6 +100,8 @@ public class QuestCaffe :  QuestNPC
             {
                 spiegazione_canvas = (GameObject)GameObject.Instantiate(spiegazione_canvas, transform.position, Quaternion.identity);
                 inizio_task = 1;
+                coffeeAnimator.SetBool("coffeeTask", true);
+                Vassoio.SetActive(true);
             }
 
             QuestManager.questManager.QuestRequest(this); // assegna come corrente la task caffe
@@ -118,6 +130,7 @@ public class QuestCaffe :  QuestNPC
                 fine_dialogo_ricevuto = true;
                 if(QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement){
                     QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
+                    coffeeAnimator.SetBool("coffeeTask", false);
                 }
                 _coffeeReceived = true;
             }
