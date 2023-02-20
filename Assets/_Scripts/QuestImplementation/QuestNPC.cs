@@ -24,6 +24,7 @@ public class QuestNPC : MonoBehaviour
         if (QuestManager.questManager.CheckCompleteQuest(this))
         {
             _questCompleted.SetActive(true);
+            coffeeQuestSign.SetActive(false);
         }
         else if (QuestManager.questManager.CheckAvailableQuest(this))
         {
