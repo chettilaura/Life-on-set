@@ -11,6 +11,8 @@ public class QuestCostumi : QuestNPC
     public GameObject infoCosumista;
     public GameObject FinishedAllTasks;
     public GameObject Player;
+    public GameObject Manichino;
+    public GameObject TutaAstronauta;
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3-> finito
 
 
@@ -68,7 +70,12 @@ public class QuestCostumi : QuestNPC
         }
 
 
-
+        //istanzia la tuta da astronauta
+        if (QuestManager.questManager.questList[2].progress == Quest.QuestProgress.COMPLETE)
+        {
+            Manichino.SetActive(false);
+            TutaAstronauta.SetActive(true);
+        }
 
 
 
