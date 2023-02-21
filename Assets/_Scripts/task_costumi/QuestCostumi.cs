@@ -23,7 +23,8 @@ public class QuestCostumi : QuestNPC
     public GameObject dialoguebox_finishedAllTasks;
 
     //movimento camera dialoghi 
-    public CinemachineVirtualCamera camera_dialoghi; //camera per i dialoghi 
+    public CinemachineVirtualCamera camera_dialoghi; //camera per i dialoghi
+    public CinemachineVirtualCamera camera_astronauta; //camera per inqaudrare astronauta
     public DialogueScript dialogue_iniziale;
     public DialogueScript dialogue_completato;
     public DialogueScript dialogue_prima_il_caffe;
@@ -33,8 +34,7 @@ public class QuestCostumi : QuestNPC
     private bool fine_dialogo_completato = false;
     private bool fine_dialogo_prima_il_caffe = false;
     private bool fine_dialogo_finishedAllTasks = false;
-
-
+    Coroutine co;
     void Update()
     {     //4 movimenti di camera dei 4 dialoghi 
 
@@ -144,6 +144,7 @@ public class QuestCostumi : QuestNPC
                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_costumi_completed, transform.position, Quaternion.identity);
                     dialogue_completato = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                     fine_dialogo_completato = true;
+                    co = StartCoroutine(astronauta(camera_astronauta));
 
                     if (QuestManager.questManager.CheckEverythingDone())
                     {
@@ -152,6 +153,7 @@ public class QuestCostumi : QuestNPC
                         inizio_task = 4;
                         dialogue_finishedAllTasks = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                         fine_dialogo_finishedAllTasks = true;
+
                     }
                 }
                     
@@ -171,5 +173,13 @@ public class QuestCostumi : QuestNPC
     
 
         SetQuestMarker();
+    }
+
+    IEnumerator astronauta(CinemachineVirtualCamera camera){
+        camera.Priority = camera.Priority + 20;
+
+        yield return new WaitForSeconds(3f);
+
+        camera.Priority = camera.Priority - 20;
     }
 }
