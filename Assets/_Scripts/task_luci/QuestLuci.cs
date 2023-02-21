@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class QuestLuci : QuestNPC
 {
+    public GameObject Player;
     public GameObject startTask;
     public GameObject Camera;
     public GameObject Light;
     public GameObject LightGun;
+
     public GameObject dialoguebox_luci;
     private GameObject dialogueBoxClone;
     public GameObject spiegazione_canvas;
@@ -16,20 +19,85 @@ public class QuestLuci : QuestNPC
     public GameObject dialoguebox_luci_inProgress;
     public GameObject dialoguebox_prima_il_caffe;
     public GameObject FinishedAllTasks;
-    public GameObject Player;
+    public GameObject dialoguebox_finishedAllTasks;
 
     private bool nonCompletedYet = true; //questa variabile diventa true quando torna dal NPC ma non ha ancora raccolto tutti i suoni 
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
- 
+
+    //movimenti camera dialoghi 
+    public CinemachineVirtualCamera camera_dialoghi; //camera per i dialoghi 
+    public DialogueScript dialogue_iniziale;
+    public DialogueScript dialogue_inattesa; 
+    public DialogueScript dialogue_ricevuto;
+    public DialogueScript dialogue_completato;
+    public DialogueScript dialogue_prima_il_caffe;
+    public DialogueScript dialogue_finishedAllTasks;
+    
+    private bool fine_dialogo_iniziale = false;
+    private bool fine_dialogo_caffe_ricevuto = false;
+    private bool fine_dialogo_inattesa = false;
+    private bool fine_dialogo_completato = false;
+    private bool fine_dialogo_prima_il_caffe = false;
+    private bool fine_dialogo_finishedAllTasks = false;
     void Update()
     {
+        //6 movimenti di camera dei 6 dialoghi 
 
+        if (fine_dialogo_iniziale == true){
+            if(dialogue_iniziale.fine_dialogo == true && dialogue_iniziale != null){
+                camera_dialoghi.Priority = camera_dialoghi.Priority -10;
+                fine_dialogo_iniziale = false;  
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;
+            }
+        }
+
+        if (fine_dialogo_caffe_ricevuto == true){
+            if(dialogue_ricevuto.fine_dialogo == true && dialogue_ricevuto != null){
+                camera_dialoghi.Priority = camera_dialoghi.Priority -10;
+                fine_dialogo_caffe_ricevuto = false; 
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;
+            }
+        }  
+
+        if (fine_dialogo_inattesa == true){
+            if(dialogue_inattesa.fine_dialogo == true && dialogue_inattesa != null){
+                camera_dialoghi.Priority = camera_dialoghi.Priority -10;
+                fine_dialogo_inattesa = false;
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;  
+            }
+        }
+
+        if (fine_dialogo_completato == true){
+            if(dialogue_completato.fine_dialogo == true && dialogue_completato != null){
+                camera_dialoghi.Priority = camera_dialoghi.Priority -10;
+                fine_dialogo_completato = false; 
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
+            }
+        }
+
+        if(fine_dialogo_prima_il_caffe == true){
+            if(dialogue_prima_il_caffe.fine_dialogo == true && dialogue_prima_il_caffe != null){
+                camera_dialoghi.Priority = camera_dialoghi.Priority -10;
+                fine_dialogo_prima_il_caffe = false; 
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
+            }
+        }
+
+        if(fine_dialogo_finishedAllTasks == true){
+            if(dialogue_finishedAllTasks.fine_dialogo == true && dialogue_finishedAllTasks != null){
+                camera_dialoghi.Priority = camera_dialoghi.Priority -10;
+                fine_dialogo_finishedAllTasks = false; 
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
+            }
+        }
 
          //istanzia il primo dialogo di partenza se è stato premuto spazio dopo aver visto la spiegazione
          if( inizio_task == 1){
             if (Input.GetKeyDown(KeyCode.Return)){
                 Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci, transform.position, Quaternion.identity);
+                dialogue_iniziale = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
+                fine_dialogo_iniziale = true; 
                 inizio_task = 2;
             }
          }
@@ -37,20 +105,23 @@ public class QuestLuci : QuestNPC
 
         //istanzia il dialogo super finale
 
-        if (inizio_task == 3)
+        /*if (inizio_task == 3)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(FinishedAllTasks, transform.position, Quaternion.identity);
                 inizio_task = 4;
             }
-        }
+        }*/
 
 
-        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
+        if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && Player.GetComponent<Cinemachine.Examples.CharacterMovement>().speed<0.001f)
         {
-            //NPC si gira verso il player
-            LookAtPlayer(Player.transform);
+
+            //blocco i movimenti del player per il dialogo 
+            Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
+            camera_dialoghi.Priority = camera_dialoghi.Priority +10;
+
             if (QuestManager.questManager.FirstTaskDone)
             {
                 if (inizio_task == 0)
@@ -77,7 +148,8 @@ public class QuestLuci : QuestNPC
                     {
                         //esce dialogo "non hai ancora completato il task"
                         dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci_inProgress, transform.position, Quaternion.identity);
-
+                        dialogue_inattesa = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
+                        fine_dialogo_inattesa = true;
                     }
 
                 }
@@ -94,20 +166,27 @@ public class QuestLuci : QuestNPC
 
                         //esce dialogo " hai completato il task" 
                         dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_luci_completed, transform.position, Quaternion.identity);
+                        dialogue_completato = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
+                        fine_dialogo_completato = true;
                         nonCompletedYet = false;
                         if (QuestManager.questManager.CheckEverythingDone())
                         {
-                            inizio_task = 3;
+                            dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_finishedAllTasks, transform.position, Quaternion.identity);
+                            inizio_task = 4;
+                            dialogue_finishedAllTasks = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
+                            fine_dialogo_finishedAllTasks = true;
                         }
                     }
 
 
 
                 }
-            } else
+            } else 
             {
                 //dialogo da far uscire quando non ha ancora fatto task caffè
-                GameObject.Instantiate(dialoguebox_prima_il_caffe, transform.position, Quaternion.identity);
+                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_prima_il_caffe, transform.position, Quaternion.identity);
+                dialogue_prima_il_caffe = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
+                fine_dialogo_prima_il_caffe = true;
             }
 
         }
