@@ -16,28 +16,36 @@ public class QuestCaffe :  QuestNPC
     public GameObject dialoguebox_caffe_inAttesa;
     private GameObject dialogueBoxClone;
     public GameObject spiegazione_canvas;
+    private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3->Finito
+
+     //movimento camera dialoghi 
     public DialogueScript dialogue_iniziale;
-   public DialogueScript dialogue_inattesa; 
+    public DialogueScript dialogue_inattesa; 
     public DialogueScript dialogue_ricevuto;
     public DialogueScript dialogue_completato;
-    private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3->Finito
     public CinemachineVirtualCamera camera_dialoghi; //camera per i dialoghi 
     private bool fine_dialogo_iniziale = false;
     private bool fine_dialogo_ricevuto = false;
     private bool fine_dialogo_inattesa = false;
     private bool fine_dialogo_completato = false;
+
+    //animazione vassoio
     public Animator coffeeAnimator;
     public GameObject Vassoio;
     public List<GameObject> tazzine;
+    private bool tazzine_istanziate = false;
 
     void Update()
     {
-        if (Player.GetComponent<task_caffe>().CaffePreso)
+
+        //dopo essere andato alla macchinetta del caffe compaiono le tazzine
+        if (Player.GetComponent<task_caffe>().CaffePreso && tazzine_istanziate==false)
         {
             for(int i=0; i<tazzine.Count; i++)
             {
                 tazzine[i].SetActive(true);
             }
+            tazzine_istanziate = true;
         }
 
         //se si preme spazio dopo la spiegazione parte il primo dialogo 
@@ -89,17 +97,22 @@ public class QuestCaffe :  QuestNPC
         //l'ultima condizione è per obbligarlo a fermarsi prima di parlare (se no si blocca in posizioni strane)
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && Player.GetComponent<Cinemachine.Examples.CharacterMovement>().speed<0.001f)
         {
+            //NPC si gira verso il player
             Vector3 targetDirection = Player.transform.position - questNPC.transform.position;
             targetDirection.y = 0;
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
             questNPC.transform.rotation = Quaternion.RotateTowards(questNPC.transform.rotation, targetRotation, 150f * Time.deltaTime);
-            Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; //blocco il movimento del player durante dialogo 
+            //blocco il movimento del player durante dialogo 
+            Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
             camera_dialoghi.Priority = camera_dialoghi.Priority +10;
-            //se è la prima volta che si preme E vicino al regista mostra spiegazione regista
+
+
+            //se è la prima volta che si preme E vicino al regista mostra spiegazione regista + Compare vassoio
             if (inizio_task == 0 && QuestManager.questManager.questList[0].progress != Quest.QuestProgress.DONE)
             {
                 spiegazione_canvas = (GameObject)GameObject.Instantiate(spiegazione_canvas, transform.position, Quaternion.identity);
                 inizio_task = 1;
+                //ATTIVA VASSOIO E CAMMINATA RELATIVA
                 coffeeAnimator.SetBool("coffeeTask", true);
                 Vassoio.SetActive(true);
             }
@@ -128,9 +141,16 @@ public class QuestCaffe :  QuestNPC
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe_ricevuto , transform.position, Quaternion.identity);
                 dialogue_ricevuto = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                 fine_dialogo_ricevuto = true;
+                //TOLGO TAZZINA DA VASSOIO
+                tazzine[0].SetActive(false);
+
+
                 if(QuestManager.questManager.currentQuest.questObjectiveCount == QuestManager.questManager.currentQuest.questObjectiveRequirement){
                     QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;
+                    Debug.Log("disattiva vassoio");
+                    //DISATTIVA VASSOIO E CAMMINATA RELATIVA
                     coffeeAnimator.SetBool("coffeeTask", false);
+                    Vassoio.SetActive(false);
                 }
                 _coffeeReceived = true;
             }
@@ -142,6 +162,7 @@ public class QuestCaffe :  QuestNPC
                 dialogue_completato = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                 fine_dialogo_completato = true;
                 QuestManager.questManager.FirstTaskDone = true;
+
             }
 
         }

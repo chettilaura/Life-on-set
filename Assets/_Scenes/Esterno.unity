@@ -1242,7 +1242,20 @@ MonoBehaviour:
   dialoguebox_comparse_inProgress: {fileID: 4855936148645797204, guid: 78ffb1303015a48d899e133f4345a3d5, type: 3}
   dialogo_comparse_completed: {fileID: 4855936148645797204, guid: cbb465a6b297c4307b67ba39546b5388, type: 3}
   dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: 6e8f1abc888b74fdc96972404b4544ae, type: 3}
-  FinishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
+  dialoguebox_finishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
+  camera_dialoghi: {fileID: 748753821}
+  dialogue_iniziale: {fileID: 0}
+  dialogue_inattesa: {fileID: 0}
+  dialogue_ricevuto: {fileID: 0}
+  dialogue_completato: {fileID: 0}
+  dialogue_prima_il_caffe: {fileID: 0}
+  dialogue_finishedAllTasks: {fileID: 0}
+  coffeeAnimator: {fileID: 689416852}
+  Vassoio: {fileID: 691347272}
+  tazzine:
+  - {fileID: 7102373}
+  - {fileID: 485929168}
+  - {fileID: 1877277905}
 --- !u!136 &271653537
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2069,7 +2082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1910074579654621777, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1910074579654621777, guid: ec434c0e1416c464fa95c692d4151a12, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3853,7 +3866,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &602239907
 PrefabInstance:
@@ -4166,7 +4179,7 @@ Transform:
   - {fileID: 543450651712842372}
   - {fileID: 2073148127}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &629960252 stripped
 Transform:
@@ -5033,9 +5046,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 689416818}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 689416818}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: Vassoio
+      value: 
+      objectReference: {fileID: 691347272}
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: questNPC
       value: 
@@ -5056,6 +5077,14 @@ PrefabInstance:
       propertyPath: leaves_sound
       value: 
       objectReference: {fileID: 456311403}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: coffeeAnimator
+      value: 
+      objectReference: {fileID: 689416852}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: camera_dialoghi
+      value: 
+      objectReference: {fileID: 748753821}
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: coffeeQuestSign
       value: 
@@ -5081,9 +5110,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 480195695}
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: tazzine.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: talking_people_sound
       value: 
       objectReference: {fileID: 1008586576}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: tazzine.Array.data[0]
+      value: 
+      objectReference: {fileID: 7102373}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: tazzine.Array.data[1]
+      value: 
+      objectReference: {fileID: 485929168}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: tazzine.Array.data[2]
+      value: 
+      objectReference: {fileID: 1877277905}
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: dialoguebox_caffe_ricevuto
       value: 
@@ -5104,6 +5149,10 @@ PrefabInstance:
       propertyPath: availableQuestIDs.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
+      propertyPath: dialoguebox_finishedAllTasks
+      value: 
+      objectReference: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
     - target: {fileID: 2405612780035163638, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: dialoguebox_sound_inProgress
       value: 
@@ -5134,7 +5183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5767816728501486813, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5767816728501486813, guid: f468a4f3e6351d64db90fc4026e1944d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5321,7 +5370,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &802001691 stripped
 Transform:
@@ -9291,7 +9340,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1560818440185627249, guid: 73e7b5298486b6445aeb8c1a357dbadc, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1560818440185627249, guid: 73e7b5298486b6445aeb8c1a357dbadc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10972,7 +11021,7 @@ Transform:
   - {fileID: 756228964}
   - {fileID: 940209662}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1851487866
 PrefabInstance:
@@ -11687,7 +11736,7 @@ Transform:
   - {fileID: 2013135339}
   - {fileID: 632299316}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1961673806
 PrefabInstance:
@@ -11967,7 +12016,7 @@ Transform:
   - {fileID: 1549581586}
   - {fileID: 342177315}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2009140295
 PrefabInstance:
@@ -14513,7 +14562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389664307989843328, guid: 7a2347a03fd127d429fc28f42e05f801, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7389664307989843328, guid: 7a2347a03fd127d429fc28f42e05f801, type: 3}
       propertyPath: m_LocalPosition.x

@@ -13,6 +13,7 @@ public class task_caffe : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //quando player si avvicina alla macchinetta parte suono e animazione preparazione caffe
         if (other.gameObject.layer == 18)
         {
             co = StartCoroutine(CoffeePreparation(other));
@@ -23,6 +24,7 @@ public class task_caffe : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        //quando player si allontana dalla macchinetta
         if (other.gameObject.layer == 18)
         {
             StopCoroutine(co);
@@ -31,6 +33,7 @@ public class task_caffe : MonoBehaviour
             _coffeeMachine.GetComponent<AudioSource>().enabled = false;
         }
     }
+
 
     IEnumerator CoffeePreparation(Collider collider)
     {
