@@ -6349,7 +6349,7 @@ MonoBehaviour:
   dialoguebox_luci_inProgress: {fileID: 4855936148645797204, guid: 9d4c3e97c0b8846129c9b7cd8418292c, type: 3}
   dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: 53cf9164ab66e4afca428d356e3bc622, type: 3}
   FinishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
-  dialoguebox_finishedAllTasks: {fileID: 0}
+  dialoguebox_finishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
   camera_dialoghi: {fileID: 1841748258}
   dialogue_iniziale: {fileID: 0}
   dialogue_inattesa: {fileID: 0}
