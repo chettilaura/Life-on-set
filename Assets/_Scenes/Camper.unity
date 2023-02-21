@@ -48959,12 +48959,18 @@ MonoBehaviour:
   questNPC: {fileID: 1840320585}
   coffeeQuestSign: {fileID: 1566418785}
   startTask: {fileID: 478157525}
-  dialoguebox_iniziale: {fileID: 4855936148645797204, guid: b15f6144d3c634dc58162e23fad5ceab, type: 3}
   infoCosumista: {fileID: 3563818703036645873, guid: c5e905d1974b443628881d1a98cc3e43, type: 3}
-  dialoguebox_costumi_completed: {fileID: 4855936148645797204, guid: 0e0611f3cbe3f4420931bff3a4257a1f, type: 3}
-  dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: 642ad27fc275044e78e8e7e10aaad2e1, type: 3}
   FinishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
   Player: {fileID: 869581346}
+  dialoguebox_costumi_iniziale: {fileID: 4855936148645797204, guid: b15f6144d3c634dc58162e23fad5ceab, type: 3}
+  dialoguebox_costumi_completed: {fileID: 4855936148645797204, guid: 0e0611f3cbe3f4420931bff3a4257a1f, type: 3}
+  dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: 642ad27fc275044e78e8e7e10aaad2e1, type: 3}
+  dialoguebox_finishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
+  camera_dialoghi: {fileID: 0}
+  dialogue_iniziale: {fileID: 0}
+  dialogue_completato: {fileID: 0}
+  dialogue_prima_il_caffe: {fileID: 0}
+  dialogue_finishedAllTasks: {fileID: 0}
 --- !u!65 &1840320588
 BoxCollider:
   m_ObjectHideFlags: 0
