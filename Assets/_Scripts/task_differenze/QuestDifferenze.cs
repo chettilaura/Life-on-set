@@ -18,6 +18,7 @@ public class QuestDifferenze : QuestNPC
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3 ->finito
 
     public GameObject FinishedAllTasks;
+    public GameObject Player;
 
 
     void Update()
@@ -48,7 +49,8 @@ public class QuestDifferenze : QuestNPC
 
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
         {
-
+            //NPC si gira verso il player
+            LookAtPlayer(Player.transform);
             if (QuestManager.questManager.FirstTaskDone)
             {
                 if (inizio_task == 0)

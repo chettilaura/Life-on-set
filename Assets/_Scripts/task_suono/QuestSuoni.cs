@@ -142,10 +142,7 @@ public class QuestSuoni : QuestNPC
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && Player.GetComponent<Cinemachine.Examples.CharacterMovement>().speed<0.001f )
         {
             //NPC si gira verso il player
-            Vector3 targetDirection = Player.transform.position - questNPC.transform.position;
-            targetDirection.y = 0;
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-            questNPC.transform.rotation = Quaternion.RotateTowards(questNPC.transform.rotation, targetRotation, 150f * Time.deltaTime);
+            LookAtPlayer(Player.transform);
             //blocco il movimento del player durante dialogo 
             Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
             camera_dialoghi.Priority = camera_dialoghi.Priority +10;

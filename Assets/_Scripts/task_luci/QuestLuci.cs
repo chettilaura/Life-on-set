@@ -16,6 +16,7 @@ public class QuestLuci : QuestNPC
     public GameObject dialoguebox_luci_inProgress;
     public GameObject dialoguebox_prima_il_caffe;
     public GameObject FinishedAllTasks;
+    public GameObject Player;
 
     private bool nonCompletedYet = true; //questa variabile diventa true quando torna dal NPC ma non ha ancora raccolto tutti i suoni 
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
@@ -48,6 +49,8 @@ public class QuestLuci : QuestNPC
 
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
         {
+            //NPC si gira verso il player
+            LookAtPlayer(Player.transform);
             if (QuestManager.questManager.FirstTaskDone)
             {
                 if (inizio_task == 0)

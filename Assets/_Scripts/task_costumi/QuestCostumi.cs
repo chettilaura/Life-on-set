@@ -12,6 +12,7 @@ public class QuestCostumi : QuestNPC
     public GameObject dialoguebox_costumi_completed;
     public GameObject dialoguebox_prima_il_caffe;
     public GameObject FinishedAllTasks;
+    public GameObject Player;
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3-> finito
 
 
@@ -42,8 +43,11 @@ public class QuestCostumi : QuestNPC
 
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E))
         {
-             if (QuestManager.questManager.FirstTaskDone)
+            //NPC si gira verso il player
+            LookAtPlayer(Player.transform);
+            if (QuestManager.questManager.FirstTaskDone)
              {
+
 
                 if (inizio_task == 0)
                 {

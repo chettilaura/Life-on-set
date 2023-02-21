@@ -62,4 +62,9 @@ public class QuestNPC : MonoBehaviour
             _inTrigger = false;
     }
 
+    public void LookAtPlayer(Transform Player)
+    {
+        transform.LookAt(Player.transform);
+    }
+
 }
