@@ -225,11 +225,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - Ciao ! Io sono lil segretario di edizione!
+  - Ciao ! Io sono il segretario di edizione!
   - 'Avrei bisogno del tuo aiuto '
   - 'Ma prima vai ad aiutare il regista '
   - Appena finisci torna da me!
   textSpeed: 0.08
+  fine_dialogo: 0
+  _index: 0
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2

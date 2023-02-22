@@ -167,7 +167,6 @@ public class QuestSuoni : QuestNPC
             //NPC si gira verso il player
             LookAtPlayer(Player.transform);
 
-
                     //controllo prima task caffe completata
                     if (QuestManager.questManager.FirstTaskDone)
                     {
