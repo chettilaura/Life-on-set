@@ -39,6 +39,11 @@ public class QuestCostumi : QuestNPC
     private bool attivo_contatore = false;
     private float timer;
     private float soglia = 5;
+    private bool gia_fatto_iniziale = false;
+    private bool gia_fatto_completato = false;
+    private bool gia_fatto_prima_il_caffe = false;
+    private bool gia_fatto_finishedAllTasks = false;
+    private bool gia_fatto_canvas = false;
     void Update()
     {     //4 movimenti di camera dei 4 dialoghi 
         if(attivo_contatore == true){
@@ -47,6 +52,7 @@ public class QuestCostumi : QuestNPC
                 camera_astronauta.Priority = camera_astronauta.Priority - 20; 
                 Debug.Log("camera astronauta diasattivata");
                 attivo_contatore = false;
+                
             }
         }
          
@@ -55,6 +61,7 @@ public class QuestCostumi : QuestNPC
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_iniziale = false;  
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;
+                gia_fatto_iniziale = false; 
             }
         }
 
@@ -67,6 +74,7 @@ public class QuestCostumi : QuestNPC
                 fine_dialogo_completato = false; 
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
                 attivo_contatore = true;
+                gia_fatto_completato = false;
             }
         }
         if(fine_dialogo_prima_il_caffe == true){
@@ -74,6 +82,8 @@ public class QuestCostumi : QuestNPC
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_prima_il_caffe = false; 
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
+                Debug.Log("player torna a muoversi");
+                gia_fatto_prima_il_caffe= false;
             }
         }
 
@@ -82,13 +92,19 @@ public class QuestCostumi : QuestNPC
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_finishedAllTasks = false; 
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
+                gia_fatto_finishedAllTasks = false;
             }
         }
 
         if(fine_primo_piano_manichino == true && fine_dialogo_completato == false ){
            camera_dialoghi.Priority = camera_dialoghi.Priority -10; 
             fine_primo_piano_manichino = false;
+        
         }
+
+
+
+
         //istanzia la tuta da astronauta
         if (QuestManager.questManager.questList[2].progress == Quest.QuestProgress.COMPLETE)
         {
@@ -99,13 +115,14 @@ public class QuestCostumi : QuestNPC
 
 
         //istanzia primo dialogo post spiegazione (non ha check su trigger e E perché va fatto obbligatoriamente post spiegazione)
-         if( inizio_task == 1){
+         if( inizio_task == 1 && gia_fatto_iniziale == false){
             if (Input.GetKeyDown(KeyCode.Mouse0)){
                 Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_costumi_iniziale, transform.position, Quaternion.identity);
                 dialogue_iniziale = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                 fine_dialogo_iniziale = true; 
                 inizio_task = 2;
+                gia_fatto_iniziale = true;
             }
          }
 
@@ -124,14 +141,12 @@ public class QuestCostumi : QuestNPC
         }
         */
 
-         //check principale: entro nel trigger & premo E + blocco movimenti player
+         //check principale: entro nel trigger & premo E + sei fermo 
         if (questNPC._inTrigger && Input.GetKeyDown(KeyCode.E) && Player.GetComponent<Cinemachine.Examples.CharacterMovement>().speed<0.001f)
         {
             //NPC si gira verso il player
             LookAtPlayer(Player.transform);
-             //blocco il movimento del player durante dialogo 
-            Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
-            camera_dialoghi.Priority = camera_dialoghi.Priority +10;
+           
 
 
 
@@ -139,10 +154,14 @@ public class QuestCostumi : QuestNPC
             if (QuestManager.questManager.FirstTaskDone)
              {
 
-                if (inizio_task == 0)
+                if (inizio_task == 0 && gia_fatto_canvas==false)
                 {
+                      //blocco il movimento del player durante dialogo 
+                    Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
+                    camera_dialoghi.Priority = camera_dialoghi.Priority +10;
                     spiegazione_canvas = (GameObject)GameObject.Instantiate(infoCosumista, transform.position, Quaternion.identity);
                     inizio_task = 1;
+                    gia_fatto_canvas = true;
 
                 }
 
@@ -157,34 +176,43 @@ public class QuestCostumi : QuestNPC
                     startTask.GetComponent<Collider>().enabled = false; //disabilita canvas costumi 
 
 
-                 if (QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE && inizio_task == 2)
+                 if (QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE && inizio_task == 2 && gia_fatto_completato == false)
                 {
+                      //blocco il movimento del player durante dialogo 
+                        Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
+                        camera_dialoghi.Priority = camera_dialoghi.Priority +10;
                     //esce dialogo " hai completato il task" & diventa verde 
                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_costumi_completed, transform.position, Quaternion.identity);
                     dialogue_completato = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                     fine_dialogo_completato = true;
+                    gia_fatto_completato = true;
                     //co = StartCoroutine(astronauta(camera_astronauta));
 
-                    if (QuestManager.questManager.CheckEverythingDone())
+                    if (QuestManager.questManager.CheckEverythingDone() && gia_fatto_finishedAllTasks == false)
                     {
+                        
                         //inizio_task = 3;
                         dialogueBoxClone = (GameObject)GameObject.Instantiate(FinishedAllTasks, transform.position, Quaternion.identity);
                         inizio_task = 4;
                         dialogue_finishedAllTasks = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                         fine_dialogo_finishedAllTasks = true;
+                        gia_fatto_finishedAllTasks = true;
 
                     }
                 }
                     
 
-            } else  //se prima task caffe non è ancora completata e se NON ha il caffè in consegna allora deve prima fare caffè
+            } else if(gia_fatto_prima_il_caffe == false)  //se prima task caffe non è ancora completata e se NON ha il caffè in consegna allora deve prima fare caffè
             {
-               
+                 //blocco il movimento del player durante dialogo 
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
+                camera_dialoghi.Priority = camera_dialoghi.Priority +10;
                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_prima_il_caffe, transform.position, Quaternion.identity);
                dialogue_prima_il_caffe = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                fine_dialogo_prima_il_caffe = true;
+               gia_fatto_prima_il_caffe = true;
                 
-            }   
+            } 
 
 
         } //fine intrigger + E
