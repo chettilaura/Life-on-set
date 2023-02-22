@@ -10,14 +10,16 @@ public class task_caffe : MonoBehaviour
     private GameObject dialogueBoxClone;
     public Coroutine co;
     public bool CaffePreso = false;
+    public bool GiaEntrato = false;
 
     private void OnTriggerEnter(Collider other)
     {
         //quando player si avvicina alla macchinetta parte suono e animazione preparazione caffe
-        if (other.gameObject.layer == 18)
+        if (other.gameObject.layer == 18 && !GiaEntrato)
         {
             co = StartCoroutine(CoffeePreparation(other));
             _coffeeMachine.GetComponent<AudioSource>().enabled = true;
+            GiaEntrato = true;
         } 
 
     }
@@ -29,7 +31,7 @@ public class task_caffe : MonoBehaviour
         {
             StopCoroutine(co);
 
-            Destroy(dialogueBoxClone, 0.5f);
+           // Destroy(dialogueBoxClone, 0.5f);
             _coffeeMachine.GetComponent<AudioSource>().enabled = false;
         }
     }
@@ -38,16 +40,19 @@ public class task_caffe : MonoBehaviour
     IEnumerator CoffeePreparation(Collider collider)
     {
         dialogueBoxClone = (GameObject)GameObject.Instantiate(_coffee_bar, transform.position, Quaternion.identity);
+        Debug.Log("mannaggia");
 
-        yield return new WaitForSeconds(2);
-        yield return new WaitForSeconds(1);
-        yield return new WaitForSeconds(1);
-        yield return new WaitForSeconds(1);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(2);
 
         //Destroy(collider.gameObject);
         collider.enabled = false;
-        Destroy(dialogueBoxClone, 3.2f);
+        
+        Destroy(dialogueBoxClone, 3f);
+        Debug.Log("Caffe distrutto");
         CaffePreso = true;
 
     }
