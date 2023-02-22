@@ -35,16 +35,21 @@ public class QuestCostumi : QuestNPC
     private bool fine_dialogo_completato = false;
     private bool fine_dialogo_prima_il_caffe = false;
     private bool fine_dialogo_finishedAllTasks = false;
-    //Coroutine co;
+
+    //inquadratura su manichino dopo 5 secondi 
     private bool fine_primo_piano_manichino = false;
     private bool attivo_contatore = false;
     private float timer;
     private float soglia = 5;
+
+     //check che per evitare che premendo E ricominci il dialogo mentre sta parlando NPC 
     private bool gia_fatto_iniziale = false;
     private bool gia_fatto_completato = false;
     private bool gia_fatto_prima_il_caffe = false;
     private bool gia_fatto_finishedAllTasks = false;
     private bool gia_fatto_canvas = false;
+
+
     void Update()
     {     //4 movimenti di camera dei 4 dialoghi 
         if(attivo_contatore == true){
@@ -226,12 +231,4 @@ public class QuestCostumi : QuestNPC
         SetQuestMarker();
     }
 
-
-    /*IEnumerator astronauta(CinemachineVirtualCamera camera){
-        camera.Priority = camera.Priority + 20;
-
-        yield return new WaitForSeconds(3f);
-
-        camera.Priority = camera.Priority - 20;
-    }*/
 }
