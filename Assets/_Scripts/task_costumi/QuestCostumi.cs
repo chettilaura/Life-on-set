@@ -34,11 +34,23 @@ public class QuestCostumi : QuestNPC
     private bool fine_dialogo_completato = false;
     private bool fine_dialogo_prima_il_caffe = false;
     private bool fine_dialogo_finishedAllTasks = false;
-    Coroutine co;
+    //Coroutine co;
+    private bool fine_primo_piano_manichino = false;
+    private bool attivo_contatore = false;
+    private float timer;
+    private float soglia = 5;
     void Update()
     {     //4 movimenti di camera dei 4 dialoghi 
-
-         if (fine_dialogo_iniziale == true){
+        if(attivo_contatore == true){
+            timer += Time.deltaTime;
+            if(timer > soglia){
+                camera_astronauta.Priority = camera_astronauta.Priority - 20; 
+                Debug.Log("camera astronauta diasattivata");
+                attivo_contatore = false;
+            }
+        }
+         
+        if (fine_dialogo_iniziale == true){
             if(dialogue_iniziale.fine_dialogo == true && dialogue_iniziale != null){
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_iniziale = false;  
@@ -46,11 +58,15 @@ public class QuestCostumi : QuestNPC
             }
         }
 
-        if (fine_dialogo_completato == true){
+        if (fine_dialogo_completato == true && fine_primo_piano_manichino == false ){
             if(dialogue_completato.fine_dialogo == true && dialogue_completato != null){
-                camera_dialoghi.Priority = camera_dialoghi.Priority -10;
+                //camera_dialoghi.Priority = camera_dialoghi.Priority -10;
+                Debug.Log("camera astronauta partita");
+                camera_astronauta.Priority = camera_astronauta.Priority + 20;
+                fine_primo_piano_manichino = true;
                 fine_dialogo_completato = false; 
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
+                attivo_contatore = true;
             }
         }
         if(fine_dialogo_prima_il_caffe == true){
@@ -69,7 +85,10 @@ public class QuestCostumi : QuestNPC
             }
         }
 
-
+        if(fine_primo_piano_manichino == true && fine_dialogo_completato == false ){
+           camera_dialoghi.Priority = camera_dialoghi.Priority -10; 
+            fine_primo_piano_manichino = false;
+        }
         //istanzia la tuta da astronauta
         if (QuestManager.questManager.questList[2].progress == Quest.QuestProgress.COMPLETE)
         {
@@ -144,7 +163,7 @@ public class QuestCostumi : QuestNPC
                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_costumi_completed, transform.position, Quaternion.identity);
                     dialogue_completato = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                     fine_dialogo_completato = true;
-                    co = StartCoroutine(astronauta(camera_astronauta));
+                    //co = StartCoroutine(astronauta(camera_astronauta));
 
                     if (QuestManager.questManager.CheckEverythingDone())
                     {
@@ -175,11 +194,12 @@ public class QuestCostumi : QuestNPC
         SetQuestMarker();
     }
 
-    IEnumerator astronauta(CinemachineVirtualCamera camera){
+
+    /*IEnumerator astronauta(CinemachineVirtualCamera camera){
         camera.Priority = camera.Priority + 20;
 
         yield return new WaitForSeconds(3f);
 
         camera.Priority = camera.Priority - 20;
-    }
+    }*/
 }
