@@ -36,7 +36,7 @@ public class DialogueScript : MonoBehaviour
     
     {
         //se premo invio, se c'è altro, mostra nuovo testo : se è finito chiude il dialogBox
-        if (Input.GetKeyDown(KeyCode.Return)){
+        if (Input.GetKeyDown(KeyCode.Mouse0)){
             if (textComponent.text == lines[_index]){
                 NextLine();
             }

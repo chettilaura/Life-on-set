@@ -90,9 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdf2ed3f154d4000b35ebfd5abbf0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rec: 0
+  rec: 20
   rec_max: 100
-  seconds: 3
+  seconds: 2
   barra: {fileID: 580958653635613722}
 --- !u!1 &1845562764839834175
 GameObject:

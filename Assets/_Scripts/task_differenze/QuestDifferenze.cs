@@ -90,7 +90,7 @@ public class QuestDifferenze : QuestNPC
         }
          //istanzia il primo dialogo di partenza se è stato premuto spazio dopo aver visto la spiegazione
         if( inizio_task == 1){
-            if (Input.GetKeyDown(KeyCode.Return)){
+            if (Input.GetKeyDown(KeyCode.Mouse0)){
                 Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_DOP, transform.position, Quaternion.identity);
                 dialogue_iniziale = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();

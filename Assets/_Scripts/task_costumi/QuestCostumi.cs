@@ -100,7 +100,7 @@ public class QuestCostumi : QuestNPC
 
         //istanzia primo dialogo post spiegazione (non ha check su trigger e E perché va fatto obbligatoriamente post spiegazione)
          if( inizio_task == 1){
-            if (Input.GetKeyDown(KeyCode.Return)){
+            if (Input.GetKeyDown(KeyCode.Mouse0)){
                 Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_costumi_iniziale, transform.position, Quaternion.identity);
                 dialogue_iniziale = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();

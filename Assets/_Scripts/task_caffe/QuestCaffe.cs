@@ -52,7 +52,7 @@ public class QuestCaffe :  QuestNPC
         //se si preme spazio dopo la spiegazione parte il primo dialogo 
         if(inizio_task == 1)
         {
-            if (Input.GetKeyDown(KeyCode.Return)){
+            if (Input.GetKeyDown(KeyCode.Mouse0)){
                 Destroy(spiegazione_canvas);
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_caffe, transform.position, Quaternion.identity);
                 inizio_task = 2; 
