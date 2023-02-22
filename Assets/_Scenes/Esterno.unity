@@ -4503,6 +4503,7 @@ MonoBehaviour:
   _coffee_bar: {fileID: 6041744198588797523, guid: a468e4b90b4af475e95563b922854106, type: 3}
   _coffeeMachine: {fileID: 6126083417185839104}
   CaffePreso: 0
+  GiaEntrato: 0
 --- !u!114 &689416847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4545,7 +4546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691347272}
   m_LocalRotation: {x: -0, y: 0.6776668, z: -0, w: 0.73536915}
-  m_LocalPosition: {x: 0.98, y: 0.026, z: -6.28}
+  m_LocalPosition: {x: 0.92, y: -0.002, z: -6.048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
