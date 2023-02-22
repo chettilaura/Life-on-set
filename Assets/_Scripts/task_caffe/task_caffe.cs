@@ -39,15 +39,15 @@ public class task_caffe : MonoBehaviour
     {
         dialogueBoxClone = (GameObject)GameObject.Instantiate(_coffee_bar, transform.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(3);
-        yield return new WaitForSeconds(3);
-        yield return new WaitForSeconds(3);
         yield return new WaitForSeconds(2);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
 
         //Destroy(collider.gameObject);
         collider.enabled = false;
-        Destroy(dialogueBoxClone, 4f);
+        Destroy(dialogueBoxClone, 3.2f);
         CaffePreso = true;
 
     }
