@@ -15,6 +15,7 @@ public class QuestDifferenze : QuestNPC
     //public GameObject dialoguebox_diff_inProgress; //qui non lo facciamo perché deve finirlo per forza una volta iniziato 
     public GameObject dialoguebox_diff_completed;
     public GameObject FinishedAllTasks;
+    public Animator Animations;
 
     //private bool nonCompletedYet = true; //questa variabile diventa true quando torna dal NPC ma non ha ancora raccolto tutti i suoni 
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3 ->finito
@@ -47,6 +48,7 @@ public class QuestDifferenze : QuestNPC
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_iniziale = false;  
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;
+                Animations.SetBool("talking", false);
             }
         }
 
@@ -55,6 +57,7 @@ public class QuestDifferenze : QuestNPC
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_caffe_ricevuto = false; 
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;
+                Animations.SetBool("talking", false);
             }
         }  
 
@@ -62,7 +65,8 @@ public class QuestDifferenze : QuestNPC
             if(dialogue_inattesa.fine_dialogo == true && dialogue_inattesa != null){
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_inattesa = false;
-                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;  
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;
+                Animations.SetBool("talking", false);
             }
         }
 
@@ -70,14 +74,16 @@ public class QuestDifferenze : QuestNPC
             if(dialogue_completato.fine_dialogo == true && dialogue_completato != null){
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_completato = false; 
-                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;
+                Animations.SetBool("talking", false);
             }
         }
         if(fine_dialogo_prima_il_caffe == true){
             if(dialogue_prima_il_caffe.fine_dialogo == true && dialogue_prima_il_caffe != null){
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_prima_il_caffe = false; 
-                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;
+                Animations.SetBool("talking", false);
             }
         }
 
@@ -85,7 +91,8 @@ public class QuestDifferenze : QuestNPC
             if(dialogue_finishedAllTasks.fine_dialogo == true && dialogue_finishedAllTasks != null){
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_finishedAllTasks = false; 
-                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
+                Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;
+                Animations.SetBool("talking", false);
             }
         }
          //istanzia il primo dialogo di partenza se è stato premuto spazio dopo aver visto la spiegazione
@@ -126,6 +133,7 @@ public class QuestDifferenze : QuestNPC
                 //inizia spiegazione
                 if (inizio_task == 0)
                 {
+                    Animations.SetBool("talking", true);
                     spiegazione_canvas = (GameObject)GameObject.Instantiate(infoContinuity, transform.position, Quaternion.identity);
                     inizio_task = 1;
 
@@ -148,6 +156,7 @@ public class QuestDifferenze : QuestNPC
                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_diff_completed, transform.position, Quaternion.identity);
                     dialogue_completato = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                     fine_dialogo_completato = true;
+                    Animations.SetBool("talking", true);
 
                     if (QuestManager.questManager.CheckEverythingDone())
                     {
@@ -161,6 +170,7 @@ public class QuestDifferenze : QuestNPC
                 }
             } else
             {
+                Animations.SetBool("talking", true);
                 //dialogo task caffè non fatta
                 dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_prima_il_caffe, transform.position, Quaternion.identity);
                 dialogue_prima_il_caffe = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();

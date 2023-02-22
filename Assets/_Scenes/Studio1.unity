@@ -2083,6 +2083,7 @@ MonoBehaviour:
   Player: {fileID: 2135900615}
   dialoguebox_diff_completed: {fileID: 4855936148645797204, guid: 760e20004ad7545ad9ee4bdc2163a85b, type: 3}
   FinishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
+  Animations: {fileID: 639250997}
   camera_dialoghi: {fileID: 1841748258}
   dialogue_iniziale: {fileID: 0}
   dialogue_inattesa: {fileID: 0}
@@ -2090,6 +2091,11 @@ MonoBehaviour:
   dialogue_completato: {fileID: 0}
   dialogue_prima_il_caffe: {fileID: 0}
   dialogue_finishedAllTasks: {fileID: 0}
+--- !u!95 &639250997 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7602377034102110366, guid: 47a4a4aff98469545863516c5065321b, type: 3}
+  m_PrefabInstance: {fileID: 639250992}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &665655943
 GameObject:
   m_ObjectHideFlags: 0
@@ -6645,6 +6651,7 @@ MonoBehaviour:
   dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: 53cf9164ab66e4afca428d356e3bc622, type: 3}
   FinishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
   dialoguebox_finishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
+  Animations: {fileID: 1767619871}
   camera_dialoghi: {fileID: 1841748258}
   dialogue_iniziale: {fileID: 0}
   dialogue_inattesa: {fileID: 0}
@@ -6652,6 +6659,11 @@ MonoBehaviour:
   dialogue_completato: {fileID: 0}
   dialogue_prima_il_caffe: {fileID: 0}
   dialogue_finishedAllTasks: {fileID: 0}
+--- !u!95 &1767619871 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8704606546708172384, guid: 1cc172e7c787c664cac77f1c70eef367, type: 3}
+  m_PrefabInstance: {fileID: 1767619866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1777570984
 GameObject:
   m_ObjectHideFlags: 0
