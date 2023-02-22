@@ -26,7 +26,7 @@ public class player_starts_task : MonoBehaviour
     //questo script contiene oggetti (canvas) da instanziare quando il player entra in trigger con l'oggetto trigger della task 
         //esempio: player va contro sedia director e compare "Premi INVIO per iniziare il task" + canvas con gioco differenze
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
 
 
@@ -114,29 +114,32 @@ public class player_starts_task : MonoBehaviour
 
         //accensione faretto 
         if(other.gameObject.layer == 20){
-            if(faretto_acceso == false){
-            spotlight = (faretto.transform.Find("Directional Light")?.gameObject).GetComponent<Light>();
-            spotlight.enabled = true;
-            faretto_acceso = true;
-            } else {
-            spotlight = (faretto.transform.Find("Directional Light")?.gameObject).GetComponent<Light>();
-            spotlight.enabled = false;
-            faretto_acceso = false;
+            if(Input.GetKeyDown(KeyCode.E)){
+                if(faretto_acceso == false){
+                spotlight = (faretto.transform.Find("Directional Light")?.gameObject).GetComponent<Light>();
+                spotlight.enabled = true;
+                faretto_acceso = true;
+                } else {
+                spotlight = (faretto.transform.Find("Directional Light")?.gameObject).GetComponent<Light>();
+                spotlight.enabled = false;
+                faretto_acceso = false;
+                }
             }
-
 
         }
 
          if(other.gameObject.layer == 21){
-            if(luci_accese == true){
-                luci_ambiente.GetComponent<Light>().enabled = false;
-                luci_accese = false;
-                Debug.Log("luci spente");
-            } else {
+            if(Input.GetKeyDown(KeyCode.E)){
+                if(luci_accese == true){
+                    luci_ambiente.GetComponent<Light>().enabled = false;
+                    luci_accese = false;
+                    Debug.Log("luci spente");
+                }  else {
                 luci_ambiente.GetComponent<Light>().enabled = true;
                 luci_accese = true;
                 Debug.Log("luci accese");
-            }  
+                }  
+            }
         }    
     }
 }
