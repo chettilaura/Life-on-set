@@ -14,6 +14,7 @@ public class QuestCostumi : QuestNPC
     public GameObject Manichino;
     public GameObject TutaAstronauta;
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3-> finito
+    public Animator Animations;
 
 
     //5 dialoghi 
@@ -61,7 +62,8 @@ public class QuestCostumi : QuestNPC
                 camera_dialoghi.Priority = camera_dialoghi.Priority -10;
                 fine_dialogo_iniziale = false;  
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true;
-                gia_fatto_iniziale = false; 
+                gia_fatto_iniziale = false;
+                Animations.SetBool("talking", false);
             }
         }
 
@@ -75,6 +77,7 @@ public class QuestCostumi : QuestNPC
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
                 attivo_contatore = true;
                 gia_fatto_completato = false;
+                Animations.SetBool("talking", false);
             }
         }
         if(fine_dialogo_prima_il_caffe == true){
@@ -84,6 +87,7 @@ public class QuestCostumi : QuestNPC
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
                 Debug.Log("player torna a muoversi");
                 gia_fatto_prima_il_caffe= false;
+                Animations.SetBool("talking", false);
             }
         }
 
@@ -93,6 +97,7 @@ public class QuestCostumi : QuestNPC
                 fine_dialogo_finishedAllTasks = false; 
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = true; 
                 gia_fatto_finishedAllTasks = false;
+                Animations.SetBool("talking", false);
             }
         }
 
@@ -146,17 +151,14 @@ public class QuestCostumi : QuestNPC
         {
             //NPC si gira verso il player
             LookAtPlayer(Player.transform);
-           
-
-
-
             //controllo prima task caffe completata
             if (QuestManager.questManager.FirstTaskDone)
              {
 
                 if (inizio_task == 0 && gia_fatto_canvas==false)
                 {
-                      //blocco il movimento del player durante dialogo 
+                    Animations.SetBool("talking", true);
+                    //blocco il movimento del player durante dialogo 
                     Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
                     camera_dialoghi.Priority = camera_dialoghi.Priority +10;
                     spiegazione_canvas = (GameObject)GameObject.Instantiate(infoCosumista, transform.position, Quaternion.identity);
@@ -178,9 +180,10 @@ public class QuestCostumi : QuestNPC
 
                  if (QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.DONE && inizio_task == 2 && gia_fatto_completato == false)
                 {
-                      //blocco il movimento del player durante dialogo 
-                        Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
-                        camera_dialoghi.Priority = camera_dialoghi.Priority +10;
+                    Animations.SetBool("talking", true);
+                    //blocco il movimento del player durante dialogo 
+                    Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
+                    camera_dialoghi.Priority = camera_dialoghi.Priority +10;
                     //esce dialogo " hai completato il task" & diventa verde 
                     dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_costumi_completed, transform.position, Quaternion.identity);
                     dialogue_completato = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
@@ -204,7 +207,8 @@ public class QuestCostumi : QuestNPC
 
             } else if(gia_fatto_prima_il_caffe == false)  //se prima task caffe non è ancora completata e se NON ha il caffè in consegna allora deve prima fare caffè
             {
-                 //blocco il movimento del player durante dialogo 
+                Animations.SetBool("talking", true);
+                //blocco il movimento del player durante dialogo 
                 Player.GetComponent<Cinemachine.Examples.CharacterMovement>().enabled = false; 
                 camera_dialoghi.Priority = camera_dialoghi.Priority +10;
                dialogueBoxClone = (GameObject)GameObject.Instantiate(dialoguebox_prima_il_caffe, transform.position, Quaternion.identity);
