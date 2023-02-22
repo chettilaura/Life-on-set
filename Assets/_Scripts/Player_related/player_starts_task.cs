@@ -11,6 +11,7 @@ public class player_starts_task : MonoBehaviour
     private bool active_costumi=false;
     private GameObject dialogueBoxClone;
     [SerializeField] private GameObject comunicazione_start;
+    public Animator anim;
 
 
     [SerializeField] private GameObject start_task_differenze ;
@@ -20,7 +21,7 @@ public class player_starts_task : MonoBehaviour
 
     public GameObject faretto;
     Light spotlight;
-    public Light luci_ambiente;
+    public List<Light> luci_ambiente;
     private bool luci_accese = true;
     private bool faretto_acceso = false;
     //questo script contiene oggetti (canvas) da instanziare quando il player entra in trigger con l'oggetto trigger della task 
@@ -116,13 +117,13 @@ public class player_starts_task : MonoBehaviour
         if(other.gameObject.layer == 20){
             if(Input.GetKeyDown(KeyCode.E)){
                 if(faretto_acceso == false){
-                spotlight = (faretto.transform.Find("Directional Light")?.gameObject).GetComponent<Light>();
-                spotlight.enabled = true;
-                faretto_acceso = true;
+                    spotlight = (faretto.transform.Find("Directional Light")?.gameObject).GetComponent<Light>();
+                    spotlight.enabled = true;
+                    faretto_acceso = true;
                 } else {
-                spotlight = (faretto.transform.Find("Directional Light")?.gameObject).GetComponent<Light>();
-                spotlight.enabled = false;
-                faretto_acceso = false;
+                    spotlight = (faretto.transform.Find("Directional Light")?.gameObject).GetComponent<Light>();
+                    spotlight.enabled = false;
+                    faretto_acceso = false;
                 }
             }
 
@@ -131,13 +132,21 @@ public class player_starts_task : MonoBehaviour
          if(other.gameObject.layer == 21){
             if(Input.GetKeyDown(KeyCode.E)){
                 if(luci_accese == true){
-                    luci_ambiente.GetComponent<Light>().enabled = false;
+                    for(int i=0; i<luci_ambiente.Count; i++)
+                    {
+                        luci_ambiente[i].enabled = false;   
+                    }
                     luci_accese = false;
+                    anim.SetBool("On", false);
                     Debug.Log("luci spente");
                 }  else {
-                luci_ambiente.GetComponent<Light>().enabled = true;
-                luci_accese = true;
-                Debug.Log("luci accese");
+                    for (int i = 0; i < luci_ambiente.Count; i++)
+                    {
+                        luci_ambiente[i].enabled = true;
+                    }
+                    luci_accese = true;
+                    Debug.Log("luci accese");
+                    anim.SetBool("On", true);
                 }  
             }
         }    
