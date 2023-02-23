@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6653601543979388618}
   m_Layer: 0
-  m_Name: dialogo_task_comparse_inProgress
+  m_Name: dialogo_sound_inAttesa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,8 +225,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - 'sto aspettando che mi porti tutte le comparse! '
+  - Non hai ancora registrato tutti i suoni che mi servono!
+  - "Una parte fondamentale delle riprese \xE8 la registrazione dei suoni."
+  - Cerca nell'ambiente tutti i suoni e avvicinati ad essi per registrarli.
+  - Attenzione! Devi effettuare la registrazione per almeno 5 secondi.
+  - Appena hai finito torna da me!
   textSpeed: 0.08
+  fine_dialogo: 0
+  _index: 0
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2

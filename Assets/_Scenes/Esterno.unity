@@ -5449,7 +5449,7 @@ MonoBehaviour:
   Animations: {fileID: 865221522}
   dialoguebox_comparse_iniziale: {fileID: 4855936148645797204, guid: 28983880f3d2543f0a141180b968dde2, type: 3}
   dialoguebox_caffe_ricevuto: {fileID: 4855936148645797204, guid: 0a9598c711e584b6b960fc81d92fb46b, type: 3}
-  dialoguebox_comparse_inProgress: {fileID: 4855936148645797204, guid: 78ffb1303015a48d899e133f4345a3d5, type: 3}
+  dialoguebox_comparse_inProgress: {fileID: 4855936148645797204, guid: 46cf637b3c059418fbbb5f24f65ef76c, type: 3}
   dialogo_comparse_completed: {fileID: 4855936148645797204, guid: cbb465a6b297c4307b67ba39546b5388, type: 3}
   dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: 6e8f1abc888b74fdc96972404b4544ae, type: 3}
   dialoguebox_finishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
@@ -6624,7 +6624,7 @@ MonoBehaviour:
   Animations: {fileID: 1758643638}
   suonoAmbienteGioco: {fileID: 480195695}
   dialoguebox_sound: {fileID: 4855936148645797204, guid: b48fddcf897bf4696a631d366d535556, type: 3}
-  dialoguebox_sound_inProgress: {fileID: 4855936148645797204, guid: 54b802883abb0478681f5d839f8c278d, type: 3}
+  dialoguebox_sound_inProgress: {fileID: 4855936148645797204, guid: 94f0475fa9ef74257832bef751d2ce6d, type: 3}
   dialoguebox_sound_completed: {fileID: 4855936148645797204, guid: 6eb49b0c213884a929b8e2f95ae3eddf, type: 3}
   dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: d5cda5e0f8bac438e8ad6bc56540609d, type: 3}
   dialoguebox_caffe_ricevuto: {fileID: 4855936148645797204, guid: f48bb95ed10ed456ead6c3e646a22fcd, type: 3}
@@ -14188,7 +14188,7 @@ MonoBehaviour:
   dialoguebox_caffe: {fileID: 4855936148645797204, guid: c333de8e62a84428daaf4652e29b2223, type: 3}
   dialoguebox_caffe_completed: {fileID: 4855936148645797204, guid: 0b38acd0dde124ddabb44095b0305027, type: 3}
   dialoguebox_caffe_ricevuto: {fileID: 4855936148645797204, guid: 8359da96addd7445495502c23520e293, type: 3}
-  dialoguebox_caffe_inAttesa: {fileID: 4855936148645797204, guid: 51cf6fbf28db5405b9d2f5e5a8836248, type: 3}
+  dialoguebox_caffe_inAttesa: {fileID: 4855936148645797204, guid: a783aa2f545ce496090a1697635299d2, type: 3}
   spiegazione_canvas: {fileID: 2149116276955257173, guid: 5a01d8ba1af6943f6977d84315339042, type: 3}
   Animations: {fileID: 4952496318527516525}
   dialogue_iniziale: {fileID: 0}

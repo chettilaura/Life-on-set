@@ -7629,7 +7629,7 @@ MonoBehaviour:
   spiegazione_canvas: {fileID: 0}
   infoLuci: {fileID: 2149116276955257173, guid: f0f32752eadaf4abcb968f096cc36058, type: 3}
   dialoguebox_luci_completed: {fileID: 4855936148645797204, guid: 13989deccb74c4c4094ce5f7c6bb2e8b, type: 3}
-  dialoguebox_luci_inProgress: {fileID: 4855936148645797204, guid: 9d4c3e97c0b8846129c9b7cd8418292c, type: 3}
+  dialoguebox_luci_inProgress: {fileID: 4855936148645797204, guid: f271c989ad1b444ac89631876eea2509, type: 3}
   dialoguebox_prima_il_caffe: {fileID: 4855936148645797204, guid: 53cf9164ab66e4afca428d356e3bc622, type: 3}
   FinishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}
   dialoguebox_finishedAllTasks: {fileID: 4855936148645797204, guid: b46f26a638a4b4e9b806b9e02d49938d, type: 3}

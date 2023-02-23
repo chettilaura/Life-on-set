@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6653601543979388618}
   m_Layer: 0
-  m_Name: dialogo_sound_inProgress
+  m_Name: dialogo_luci_inAttesa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,9 +225,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - Non hai ancora registrato tutti i suoni che mi servono
-  - 'Cerca meglio le note musicali! '
+  - "Ehmm... qualcosa non \xE8 ancora illuminato correttamente!"
+  - "Vai a spegnere le luci dello studio, c'\xE8 il bottone sulla parete dietro di
+    me che puoi premere con il tasto E"
+  - 'Poi avvicinati al greenscreen e accendi il faretto avvicinandoti ad esso e con
+    il suo bottone premendo il tasto E '
+  - 'Infine illumina i personaggi in scena: devi puntare l''oggetto con il tasto
+    destro del mouse e contemporaneamente  illuminarlo premendo quello sinistro.'
+  - Appena finisci torna da me!
   textSpeed: 0.08
+  fine_dialogo: 0
+  _index: 0
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2

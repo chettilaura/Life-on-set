@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6653601543979388618}
   m_Layer: 0
-  m_Name: dialogo_luci_inProgress
+  m_Name: dialogo_comparse_inAttesa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,10 +225,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - "Ehmm... qualcosa non \xE8 ancora illuminato correttamente!"
-  - Ricordati che per illuminare i personaggi sul green screen devi puntare l'oggetto
-    con il tasto destro del mouse e contemporaneamente  illuminarlo premendo quello
-    sinistro.
+  - 'Sto aspettando che mi porti tutte le comparse! '
+  - "La scelta delle comparse giuste \xE8 fondamentale per la riuscita del prodotto!"
+  - Cerca nell'ambiente tre alieni ! Quando sei vicin* alla comparsa giusta premi
+    E per farti seguire!
+  - Appena finisci torna da me!
   textSpeed: 0.08
   fine_dialogo: 0
   _index: 0

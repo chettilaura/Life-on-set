@@ -225,9 +225,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4990690722522834579}
   lines:
-  - "Sto aspettando il caff\xE8!"
-  - "Non c'\xE8 tempo da perdere!"
+  - "Sto aspettando il caff\xE8! Non c'\xE8 tempo da perdere!"
+  - "Porta il caff\xE8 a me e ai miei due colleghi qui fuori"
+  - "La macchina del caff\xE8 si trova sotto ai tendoni"
   textSpeed: 0.08
+  fine_dialogo: 0
+  _index: 0
   _soundeffect: {fileID: 8300000, guid: ab76dde896261433188fe0cc47b64cda, type: 3}
   stopAudioSource: 0
   frequencyLevel: 2
