@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using TMPro;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using Unity.VisualScripting;
 
 public class QuestCaffe :  QuestNPC
