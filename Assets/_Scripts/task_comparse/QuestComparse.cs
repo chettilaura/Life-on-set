@@ -17,6 +17,7 @@ public class QuestComparse : QuestNPC
     public Animator Animations;
     public GameObject Caffe;
 
+
     //6 dialoghi 
     public GameObject dialoguebox_comparse_iniziale;
     public GameObject dialoguebox_caffe_ricevuto;
@@ -236,6 +237,11 @@ public class QuestComparse : QuestNPC
                                 nonCompletedYet = false;
                                 Animations.SetBool("talking", true);
                                 gia_fatto_completato = true;
+                                for (int i = 0; i < aliens.childCount; i++)
+                                {
+                                    aliens.GetChild(i).gameObject.SetActive(false);
+                                }
+                                aliens.gameObject.SetActive(false); 
 
                                 //se oltre a questa task ha completato anche TUTTE le altre
                                 if (QuestManager.questManager.CheckEverythingDone() && gia_fatto_finishedAllTasks == false)
