@@ -3091,6 +3091,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RightArrow
       objectReference: {fileID: 0}
+    - target: {fileID: 3338845676414637801, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
+      propertyPath: m_text
+      value: "Benvenut* in LifeOnSet ! Qui potrai imparare come funziona un set cinematografico!
+        \n\nCome nuovo runner della produzione dovrai portare a termine i compiti
+        che ti verranno assegnati dai professionisti di questo set ! \nPuoi spostarti
+        nel set utilizzando i comandi WASD insieme all'aiuto del mouse. Per correre
+        tieni premuto shift.\n\nPer interagire con i professionisti sul set premi
+        E dopo esserti avvicinato e premi il tasto sinistro del mouse per continuare
+        il dialogo. "
+      objectReference: {fileID: 0}
     - target: {fileID: 3649661202423255533, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
@@ -3278,6 +3288,10 @@ PrefabInstance:
     - target: {fileID: 7079310885153115881, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 483.96747
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254234226512030663, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 198
       objectReference: {fileID: 0}
     - target: {fileID: 7786116638457371586, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
       propertyPath: m_LocalScale.x

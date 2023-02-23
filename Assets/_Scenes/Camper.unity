@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.2148457
+      value: 5.214824
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.0228682
+      value: -2.0222507
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24209,6 +24209,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1022559562831982041, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3338845676414637801, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
+      propertyPath: m_text
+      value: "Benvenut* in LifeOnSet ! Qui potrai imparare come funziona un set cinematografico!
+        \n\nCome nuovo runner della produzione dovrai portare a termine i compiti
+        che ti verranno assegnati dai professionisti di questo set ! \nPuoi spostarti
+        nel set utilizzando i comandi WASD insieme all'aiuto del mouse. Per correre
+        tieni premuto shift.\n\nPer interagire con i professionisti sul set premi
+        E dopo esserti avvicinato e premi il tasto sinistro del mouse per continuare
+        il dialogo. "
+      objectReference: {fileID: 0}
     - target: {fileID: 5275001309970654282, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
       propertyPath: m_text
       value: Torna sul set
@@ -24304,6 +24318,10 @@ PrefabInstance:
     - target: {fileID: 5275001310895777590, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254234226512030663, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fecb1bf81b10d4cbca2b9dbb9e0b57ce, type: 3}
@@ -24427,12 +24445,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comunicazione_start: {fileID: 3737300524547037870, guid: b51ac152b68284a45be424ab57bcdb13, type: 3}
+  anim: {fileID: 0}
   start_task_differenze: {fileID: 0}
   start_task_costumi: {fileID: 6197429391497875380, guid: 6910e809a889a47488cd347f22a78ba9, type: 3}
   start_task_suoni: {fileID: 0}
   start_task_comparse: {fileID: 0}
   faretto: {fileID: 0}
-  luci_ambiente: {fileID: 0}
+  luci_ambiente:
+  - {fileID: 0}
 --- !u!114 &869581358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24776,7 +24796,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh145330
+  m_Name: pb_Mesh69056
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25362,7 +25382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.56428057
+      value: 0.5642806
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalRotation.x
@@ -25370,7 +25390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8213403
+      value: 0.8213404
       objectReference: {fileID: 0}
     - target: {fileID: 7835383394949375280, guid: 461e50888873c4f19b3a0351abaf28eb, type: 3}
       propertyPath: m_LocalRotation.z
@@ -49695,7 +49715,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh145388
+  m_Name: pb_Mesh69114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
