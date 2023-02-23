@@ -19,6 +19,7 @@ public class QuestCaffe :  QuestNPC
     public GameObject spiegazione_canvas;
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto, 3->Finito
     public Animator Animations;
+    public GameObject Caffe;
 
      //movimento camera dialoghi 
     public DialogueScript dialogue_iniziale;
@@ -179,6 +180,8 @@ public class QuestCaffe :  QuestNPC
                 dialogue_ricevuto = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                 fine_dialogo_ricevuto = true;
                 gia_fatto_caffe_ricevuto = true;
+                //disattivo tazzina sopra la testa
+                Caffe.SetActive(false);
                 //TOLGO TAZZINA DA VASSOIO
                 tazzine[0].SetActive(false);
 

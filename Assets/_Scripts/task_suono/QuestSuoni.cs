@@ -20,6 +20,7 @@ public class QuestSuoni : QuestNPC
     private bool _coffeeReceived = false; //questa variabile diventa true quando il player ha consegnato il caffè
     public Animator Animations;
     public GameObject suonoAmbienteGioco;
+    public GameObject Caffe;
 
 
     //6 dialoghi
@@ -280,6 +281,8 @@ public class QuestSuoni : QuestNPC
                  dialogue_ricevuto = ((dialogueBoxClone.transform.Find("Canvas_dialogue")?.gameObject).transform.Find("dialogueBox")?.gameObject).GetComponent<DialogueScript>();
                 fine_dialogo_caffe_ricevuto = true;
                 _coffeeReceived = true;
+                //disattivo tazzina sulla testa
+                Caffe.SetActive(false);
                 //TOLGO TAZZINA DA VASSOIO
                 tazzine[2].SetActive(false);
                 gia_fatto_caffe_ricevuto = true;

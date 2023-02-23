@@ -1,3 +1,4 @@
+using Cinemachine.Examples;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,12 +12,11 @@ using Random = UnityEngine.Random;
 
 public class extrasMovement : MonoBehaviour
 {
-    //public List<Transform> waypoints;
-
     internal NavMeshAgent _navMeshAgent;
     [SerializeField] private Collider _groundCollider;
     [SerializeField] private GameObject _player;
-    [SerializeField] private Animator _animator;
+    public Animator _animator;
+    public Animator PlayerAnimator;
     [SerializeField] internal bool _extra;
     private NpcInteractable _npc;
     [SerializeField] internal GameObject _comparsaSbagliata;
@@ -43,7 +43,6 @@ public class extrasMovement : MonoBehaviour
         }
         _stateMachine = new FiniteStateMachine<extrasMovement>(this);
 
-        Debug.Log(_player.transform.position);
         //STATES
         State walkingState = new WalkingState("Walk", this);
         State followState = new FollowState("Follow", this);
@@ -55,8 +54,8 @@ public class extrasMovement : MonoBehaviour
         //TRANSITIONS
         _stateMachine.AddTransition(walkingState, stopState, () => _isNear && QuestManager.questManager.questList[1].progress == Quest.QuestProgress.ACCEPTED);
         _stateMachine.AddTransition(stopState, walkingState, () => !_isNear);
-        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E) && _extra && QuestManager.questManager.currentQuest.questObjectiveCount< QuestManager.questManager.currentQuest.questObjectiveRequirement && QuestManager.questManager.questList[1].progress == Quest.QuestProgress.ACCEPTED);
-        _stateMachine.AddTransition(followState, stopState, () => QuestManager.questManager.questList[1].progress == Quest.QuestProgress.DONE);
+        _stateMachine.AddTransition(stopState, followState, () => Input.GetKeyDown(KeyCode.E) && _extra && QuestManager.questManager.currentQuest.questObjectiveCount< QuestManager.questManager.currentQuest.questObjectiveRequirement && QuestManager.questManager.questList[1].progress == Quest.QuestProgress.ACCEPTED );
+        _stateMachine.AddTransition(followState, stopState, () => QuestManager.questManager.questList[1].progress == Quest.QuestProgress.DONE );
 
         //START STATE
         _stateMachine.SetState(walkingState);
@@ -68,7 +67,7 @@ public class extrasMovement : MonoBehaviour
         if (!QuestManager.questManager.RequestFinishedQuest(1))
         {
             _stateMachine.Tik();
-        } 
+        }
     } 
 
 
@@ -77,14 +76,15 @@ public class extrasMovement : MonoBehaviour
     public void FollowPlayer()
     {
         _navMeshAgent.SetDestination(_player.transform.position);
-        if(_navMeshAgent.remainingDistance <= _chosenStoppingDistance)
+        _navMeshAgent.speed = _player.GetComponent<Rigidbody>().velocity.magnitude;
+        if(_navMeshAgent.remainingDistance < (_stoppingDistance - 0.3f))
         {
-            _navMeshAgent.isStopped = true;
             ChangeAnimation(true);
+            StopAgent(true);
         } else
         {
             ChangeAnimation(false);
-            _navMeshAgent.isStopped = false;
+            StopAgent(false);
         }
     }
 
@@ -101,8 +101,8 @@ public class extrasMovement : MonoBehaviour
         targetDirection.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 150f * Time.deltaTime);
-        if(transform.rotation.Equals(targetRotation))
-         ChangeAnimation(_isNear);
+        ChangeAnimation(true);
+
     }
 
     public bool IsTargetWithinDistance(float distance)
@@ -216,14 +216,22 @@ public class FollowState : State
 
     public override void Enter()
     {
-        _extra.StopAgent(false);
+        //_extra.StopAgent(false);
         QuestManager.questManager.currentQuest.questObjectiveCount++;
     }
 
     public override void Tik()
     {
-        _extra.ChangeAnimation(false);
+        //_extra.ChangeAnimation(false);
         _extra.FollowPlayer();
+        if (_extra.PlayerAnimator.GetBool("isSprinting"))
+        {
+            _extra._animator.SetBool("sprinting", true);
+        }
+        else
+        {
+            _extra._animator.SetBool("sprinting", false);
+        }
         if(QuestManager.questManager.currentQuest.id ==1 && QuestManager.questManager.currentQuest.questObjectiveCount >= QuestManager.questManager.currentQuest.questObjectiveRequirement)
         {
             QuestManager.questManager.currentQuest.progress = Quest.QuestProgress.COMPLETE;

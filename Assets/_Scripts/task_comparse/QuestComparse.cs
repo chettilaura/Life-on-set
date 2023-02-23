@@ -15,6 +15,7 @@ public class QuestComparse : QuestNPC
     private bool nonCompletedYet = true; 
     private int inizio_task = 0; //0-> spiegazione, 1-> primo dialogue, 2-> resto
     public Animator Animations;
+    public GameObject Caffe;
 
     //6 dialoghi 
     public GameObject dialoguebox_comparse_iniziale;
@@ -188,20 +189,6 @@ public class QuestComparse : QuestNPC
                                 gia_fatto_canvas = true;
                             }
 
-
-                            //attiva tutte le comparse
-                            /*for (int i = 0; i < comparse.childCount; i++)
-                            {
-                                comparse.GetChild(i).gameObject.SetActive(true);
-                            }
-                            comparse.gameObject.SetActive(true);
-                            for (int i = 0; i < aliens.childCount; i++)
-                            {
-                                aliens.GetChild(i).gameObject.SetActive(true);
-                            }
-                            aliens.gameObject.SetActive(true); */
-
-
                             //non va fatto prima che sia finito il dialogo iniziale -> 
                             //si avvicina all'NPC premendo E ma non ha ancora finito questa task
                             if (nonCompletedYet == true && QuestManager.questManager.currentQuest.progress == Quest.QuestProgress.ACCEPTED && inizio_task == 2 && gia_fatto_inattesa == false)
@@ -290,6 +277,8 @@ public class QuestComparse : QuestNPC
                 fine_dialogo_caffe_ricevuto = true;
                 _coffeeReceived = true;
                 gia_fatto_caffe_ricevuto = true;
+                //disattivo tazzina sulla testa
+                Caffe.SetActive(false);
                 //TOLGO TAZZINA DA VASSOIO
                 tazzine[1].SetActive(false);
 

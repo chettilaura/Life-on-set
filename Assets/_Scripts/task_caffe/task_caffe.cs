@@ -11,6 +11,7 @@ public class task_caffe : MonoBehaviour
     public Coroutine co;
     public bool CaffePreso = false;
     public bool GiaEntrato = false;
+    public List<GameObject> Coffees;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,8 +32,9 @@ public class task_caffe : MonoBehaviour
         {
             StopCoroutine(co);
 
-           // Destroy(dialogueBoxClone, 0.5f);
+            Destroy(dialogueBoxClone, 0.5f);
             _coffeeMachine.GetComponent<AudioSource>().enabled = false;
+            GiaEntrato = false;
         }
     }
 
@@ -54,7 +56,10 @@ public class task_caffe : MonoBehaviour
         Destroy(dialogueBoxClone, 3f);
         Debug.Log("Caffe distrutto");
         CaffePreso = true;
-
+        for(int i=0; i<Coffees.Count; i++)
+        {
+            Coffees[i].SetActive(true);
+        }
     }
 
 }
