@@ -1,5 +1,8 @@
 # Life on Set
 
+## Video Demo
+[![Video Demo](https://img.youtube.com/vi/1zlKHRfq4SI/0.jpg)](https://www.youtube.com/watch?v=1zlKHRfq4SI)
+
 ## Description
 Life On Set is a virtual adventure in which you can live the set through the eyes of the runner while learning the basics of the several jobs related to the film world. 
 
